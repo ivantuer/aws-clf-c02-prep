@@ -49,7 +49,12 @@ export function ExamTracker() {
           <button
             type="button"
             onClick={() => {
-              if (confirm(`Reset all progress for exam ${exam}?`)) clearExam(exam);
+              if (
+                confirm(
+                  `Reset exam ${exam}? Questions shared with other exams keep their history.`,
+                )
+              )
+                clearExam(exam);
             }}
             className="rounded-lg border border-ink-700 px-4 py-2 text-sm text-ink-400 hover:border-bad hover:text-bad"
           >

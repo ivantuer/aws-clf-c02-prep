@@ -41,9 +41,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const value = useMemo<ProgressContextValue>(() => {
     const byId = new Map(bank.questions.map((question) => [question.id, question]));
 
-    const questionsForExam = (exam: number) =>
+    const questionsOnlyInExam = (exam: number) =>
       bank.questions
-        .filter((question) => question.occurrences.some((occurrence) => occurrence.exam === exam))
+        .filter((question) => question.occurrences.every((occurrence) => occurrence.exam === exam))
         .map((question) => question.id);
 
     return {
@@ -58,7 +58,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         setState((current) => setOverride(current, questionId, answer)),
       updateSettings: (settings) =>
         setState((current) => ({ ...current, settings: { ...current.settings, ...settings } })),
-      clearExam: (exam) => setState((current) => resetExam(current, exam, questionsForExam(exam))),
+      clearExam: (exam) => setState((current) => resetExam(current, exam, questionsOnlyInExam(exam))),
       clearAll: () => setState((current) => resetAll(current)),
       exportProgress: () => {
         const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });

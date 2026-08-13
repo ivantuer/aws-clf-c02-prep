@@ -45,7 +45,8 @@ export function recordAttempt(
   attempt: Attempt,
 ): ProgressState {
   const previous = state.questions[questionId] ?? { attempts: [], streak: 0, inRegistry: false };
-  const streak = attempt.correct ? previous.streak + 1 : 0;
+  const advancesStreak = attempt.correct && attempt.mode === 'drill';
+  const streak = attempt.correct ? previous.streak + (advancesStreak ? 1 : 0) : 0;
   const mastered = streak >= MASTERY_STREAK;
 
   return {

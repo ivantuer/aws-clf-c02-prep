@@ -39,7 +39,7 @@ Two markdown dialects exist and both parse cleanly:
 | 8 | Categories | Domain **and** official task statement on every question |
 | 9 | Modes | Both timed mock and untimed drill |
 | 10 | Tracker | Per-exam table + global searchable view across all questions |
-| 11 | Mastery | 2 consecutive correct answers to clear from the incorrect registry |
+| 11 | Mastery | 2 consecutive correct **drill** answers to clear from the incorrect registry. Misses enter the registry from either mode, but only drills advance the streak — otherwise a lucky guess in a timed mock retires a question you never learned |
 | 12 | Mock settings | 90 min configurable; auto-submit at zero; unanswered = incorrect; raw % + per-domain breakdown, 70% marked "approximate" |
 | 13 | Multi-select | All-or-nothing, exact selection count enforced in UI |
 | 14 | Drill filters | Composable: by exam, by registry, by domain/task, unseen only, random mix |
@@ -66,7 +66,7 @@ After submitting a timed mock, the recap leads with what went wrong and how to f
 2. **Weakest task statements first** — misses grouped by task statement, not listed in question order, so three misses on 3.5 read as one lesson rather than three unrelated facts.
 3. **Per missed question** — your answer, the correct answer, why yours was wrong, why the correct one is right, and the named concept.
 4. **What to study next** — the weak task statements linked to their exam-guide section, plus a one-click "drill these" that loads exactly this exam's misses.
-5. All misses land in the incorrect registry, needing 2 consecutive correct to clear.
+5. All misses land in the incorrect registry, needing 2 consecutive correct drill answers to clear.
 
 ## Data model sketch
 

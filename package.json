@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "ingest": "node scripts/ingest.mjs",
     "merge": "node scripts/merge.mjs",
+    "test": "tsx scripts/test-progress.ts",
     "lint": "tsc -b --noEmit"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "@types/react-dom": "^19.1.0",
     "@vitejs/plugin-react": "^4.3.4",
     "tailwindcss": "^4.0.0",
+    "tsx": "^4.23.12",
     "typescript": "^5.7.3",
     "vite": "^6.0.7"
   }

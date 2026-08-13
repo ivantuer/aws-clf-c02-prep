@@ -26,7 +26,11 @@ Progress is stored in this browser's localStorage. Nothing is sent anywhere.
   wrong, and the underlying concept, with a one-click drill of exactly those questions.
 - **Drill** — untimed, immediate feedback on every answer, shuffled questions and options.
   Filters compose: by exam, by retry registry, by domain, by task statement, unseen only.
-- **Retry registry** — every miss enters it and needs **2 correct answers in a row** to clear.
+- **Retry registry** — a miss in either mode enters it, and only **2 correct drill answers in a row**
+  clear it. Mocks detect weakness; drills retire it. A lucky guess inside a timed mock can't
+  silently graduate a question you haven't actually learned.
+- **Per-exam reset** — clears that exam's score history and the progress of questions unique to it.
+  Questions that also appear in other exams keep their history, since the bank is deduplicated.
 - **Trackers** — per-exam table (seen/unseen, last result, attempts, task statement, retry state)
   and a global searchable view across all 963 questions.
 - **Answer-key overrides** — community keys are sometimes wrong. Flagged questions show a banner,
@@ -38,6 +42,7 @@ Progress is stored in this browser's localStorage. Nothing is sent anywhere.
 ```bash
 yarn ingest   # fetch + parse the 23 markdown exams -> data/questions.base.json
 yarn merge    # base + data/explanations/*.json -> src/data/bank.json + data/manifest.json
+yarn test     # asserts the retry-registry mastery rules
 ```
 
 `ingest` refuses to emit a bank if any question has fewer than two options or an answer letter that
