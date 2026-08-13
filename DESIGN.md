@@ -53,6 +53,10 @@ Two markdown dialects exist and both parse cleanly:
 | 22 | Outdated questions | Tagged and shown with an out-of-scope note, never hidden |
 | 23 | Export / reset | Export all user-generated state; reset per-exam and reset-all, both confirmed |
 | 24 | Home screen | Dashboard: overall progress, per-domain and per-task accuracy (weakest first), registry size + "drill these now", 23-exam list with completion and last score |
+| 25 | Generation mechanism | Written in-session, exam by exam (no API key available). Resumable via an on-disk manifest so a context reset never loses the place. App stays usable while explanations fill in |
+| 26 | Explanation volume | Per-distractor rationales kept (why each wrong option is wrong) |
+| 27 | Task statement assignment | Primary + optional secondary; dashboard weights primary, question surfaces under both |
+| 28 | Near-duplicates | 9 fuzzy duplicates (Jaccard >= 0.9) merged along with the 170 exact ones -> 963 unique questions |
 
 ## Post-exam recap (mock mode)
 
@@ -70,6 +74,11 @@ After submitting a timed mock, the recap leads with what went wrong and how to f
 
 **localStorage (user state, exportable):** attempt history per question, incorrect registry with consecutive-correct counters, answer-key overrides, per-exam completion and score history, settings.
 
-## Open item for confirmation
+## Status
 
-Recap grouping is designed around task statements rather than question order (point 2 above). Say if you would rather see a plain question-by-question list.
+All design decisions confirmed. Recap grouping by task statement confirmed.
+
+Build order:
+1. Ingest script -> `data/questions.base.json` (structure only, no explanations yet).
+2. App built against the merged bank; questions without explanations render an "explanation pending" state so the app is usable from day one.
+3. Explanations authored exam by exam into `data/explanations/exam-N.json`, merged into `src/data/bank.json`. Progress tracked in `data/manifest.json`.
