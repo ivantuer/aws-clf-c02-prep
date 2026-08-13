@@ -4,26 +4,35 @@ import { useProgress } from 'src/store/ProgressContext';
 import { QuestionCard } from 'src/components/QuestionCard';
 import { optionOrder, questionsForExam, selectDrill, shuffle } from 'src/lib/session';
 import { effectiveAnswer, isCorrect, makeAttempt } from 'src/store/progress';
+import { clearSession, loadSession, saveSession } from 'src/store/session-store';
 import type { DomainId, TaskStatementId } from 'src/data/taxonomy';
 import type { Question } from 'src/data/types';
 
-function useCountdown(totalMs: number, active: boolean, onExpire: () => void) {
-  const [remaining, setRemaining] = useState(totalMs);
+function useCountdown(deadlineAt: number | null, onExpire: () => void) {
+  const [remaining, setRemaining] = useState(() =>
+    deadlineAt === null ? 0 : deadlineAt - Date.now(),
+  );
   const expired = useRef(false);
+  const expire = useRef(onExpire);
 
   useEffect(() => {
-    if (!active) return;
-    const started = Date.now();
-    const timer = setInterval(() => {
-      const left = totalMs - (Date.now() - started);
+    expire.current = onExpire;
+  }, [onExpire]);
+
+  useEffect(() => {
+    if (deadlineAt === null) return;
+    const tick = () => {
+      const left = deadlineAt - Date.now();
       setRemaining(left);
       if (left <= 0 && !expired.current) {
         expired.current = true;
-        onExpire();
+        expire.current();
       }
-    }, 250);
+    };
+    tick();
+    const timer = setInterval(tick, 250);
     return () => clearInterval(timer);
-  }, [totalMs, active, onExpire]);
+  }, [deadlineAt]);
 
   return Math.max(0, remaining);
 }
@@ -40,7 +49,9 @@ export function Session() {
 
   const mode = params.get('mode') === 'mock' ? 'mock' : 'drill';
   const exam = params.get('exam') ? Number(params.get('exam')) : undefined;
-  const seed = useMemo(() => Date.now(), []);
+  const search = params.toString();
+  const [restored] = useState(() => loadSession(search));
+  const [seed] = useState(() => restored?.seed ?? Date.now());
 
   const pool = useMemo(() => {
     if (mode === 'mock' && exam) return questionsForExam(questions, exam);
@@ -56,10 +67,31 @@ export function Session() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, exam, params, questions, seed]);
 
-  const [index, setIndex] = useState(0);
-  const [selected, setSelected] = useState<Record<string, string[]>>({});
-  const [revealed, setRevealed] = useState<Record<string, boolean>>({});
-  const [startedAt] = useState(() => Date.now());
+  const [index, setIndex] = useState(restored?.index ?? 0);
+  const [selected, setSelected] = useState<Record<string, string[]>>(restored?.selected ?? {});
+  const [revealed, setRevealed] = useState<Record<string, boolean>>(restored?.revealed ?? {});
+  const [startedAt] = useState(() => restored?.startedAt ?? Date.now());
+  const [deadlineAt] = useState(() => {
+    if (mode !== 'mock') return null;
+    return restored?.deadlineAt ?? Date.now() + state.settings.mockDurationMinutes * 60_000;
+  });
+
+  useEffect(() => {
+    if (pool.length > 0 && index > pool.length - 1) setIndex(pool.length - 1);
+  }, [index, pool.length]);
+
+  useEffect(() => {
+    saveSession({
+      version: 1,
+      search,
+      seed,
+      index,
+      selected,
+      revealed,
+      startedAt,
+      deadlineAt,
+    });
+  }, [search, seed, index, selected, revealed, startedAt, deadlineAt]);
 
   const shuffleOptions = mode === 'drill' && state.settings.shuffleDrillOptions;
   const current: Question | undefined = pool[index];
@@ -84,13 +116,13 @@ export function Session() {
         durationMs: Date.now() - startedAt,
         missed,
       });
+      clearSession();
       navigate(`/recap/${exam}`);
     },
     [exam, pool, selected, state, answerQuestion, finishExam, navigate, startedAt],
   );
 
-  const durationMs = state.settings.mockDurationMinutes * 60_000;
-  const remaining = useCountdown(durationMs, mode === 'mock', submitMock);
+  const remaining = useCountdown(deadlineAt, submitMock);
 
   if (pool.length === 0) {
     return (
