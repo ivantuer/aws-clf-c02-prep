@@ -43,8 +43,13 @@ async function main() {
   const byId = new Map(base.questions.map((question) => [question.id, question]));
 
   const explanationsDir = resolve(ROOT, 'data/explanations');
+  const checkOnly = process.argv.includes('--check');
+  const only = checkOnly ? process.argv.slice(2).filter((arg) => arg.endsWith('.json')) : [];
   const files = existsSync(explanationsDir)
-    ? (await readdir(explanationsDir)).filter((file) => file.endsWith('.json')).sort()
+    ? (await readdir(explanationsDir))
+        .filter((file) => file.endsWith('.json'))
+        .filter((file) => only.length === 0 || only.includes(file))
+        .sort()
     : [];
 
   const problems = [];
@@ -70,6 +75,12 @@ async function main() {
   }
 
   const questions = [...byId.values()];
+
+  if (checkOnly) {
+    console.log(`validation passed — ${annotated}/${questions.length} annotated (nothing written)`);
+    return;
+  }
+
   await mkdir(resolve(ROOT, 'src/data'), { recursive: true });
   await writeFile(
     resolve(ROOT, 'src/data/bank.json'),
