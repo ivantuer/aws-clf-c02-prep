@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-08-13T15:04:47.323Z",
+  "updatedAt": "2026-08-13T15:15:35.491Z",
   "uniqueQuestions": 963,
-  "annotated": 0,
-  "remaining": 963,
+  "annotated": 50,
+  "remaining": 913,
   "needsReview": [],
   "outdated": [],
   "byExam": {
     "1": {
       "total": 50,
-      "annotated": 0
+      "annotated": 50
     },
     "2": {
       "total": 50,
@@ -92,7 +92,7 @@
     },
     "22": {
       "total": 50,
-      "annotated": 0
+      "annotated": 1
     },
     "23": {
       "total": 50,

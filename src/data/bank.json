@@ -24,7 +24,17 @@
           "exam": 1,
           "number": 1
         }
-      ]
+      ],
+      "taskStatement": "3.1",
+      "explanation": {
+        "concept": "The four ways to interact with AWS",
+        "correct": "The AWS Management Console is the browser-based UI for creating and managing resources. The other three access methods are the CLI, the SDKs, and the underlying API — all of them programmatic rather than web-based.",
+        "distractors": {
+          "A": "The CLI is a command-line tool you install and run in a terminal, not a web interface.",
+          "B": "The API is the HTTPS interface everything else calls underneath; it has no UI of its own.",
+          "C": "SDKs are language-specific libraries (Python, Java, JavaScript) for calling AWS from your own code."
+        }
+      }
     },
     {
       "id": "c9f253135ea5",
@@ -46,7 +56,17 @@
           "exam": 1,
           "number": 2
         }
-      ]
+      ],
+      "taskStatement": "1.2",
+      "explanation": {
+        "concept": "Horizontal vs vertical scaling",
+        "correct": "Horizontal scaling means adding more instances of the same size — scaling out. It is the cloud-native approach because it has no upper bound and tolerates the loss of any single instance.",
+        "distractors": {
+          "A": "Replacing one instance with a bigger one is vertical scaling — scaling up.",
+          "B": "Increasing the capacity of a single instance is vertical scaling.",
+          "C": "Adding RAM to one instance is vertical scaling, and it requires a stop and restart."
+        }
+      }
     },
     {
       "id": "b63270e2a028",
@@ -68,7 +88,17 @@
           "exam": 1,
           "number": 3
         }
-      ]
+      ],
+      "taskStatement": "2.2",
+      "explanation": {
+        "concept": "CloudTrail answers 'who did it'; CloudWatch answers 'how is it performing'",
+        "correct": "AWS CloudTrail records every API call made in the account — who made it, from which IP, and when. Terminating an EC2 instance is an API call, so CloudTrail is where you find the responsible identity.",
+        "distractors": {
+          "A": "Amazon Inspector scans workloads for software vulnerabilities and unintended network exposure; it does not log user actions.",
+          "C": "Trusted Advisor gives best-practice recommendations on cost, performance, security and limits — not an audit trail.",
+          "D": "The EC2 Instance Usage Report covers usage and cost data, not the identity behind an action."
+        }
+      }
     },
     {
       "id": "ee7f54857ad2",
@@ -92,7 +122,17 @@
           "exam": 1,
           "number": 4
         }
-      ]
+      ],
+      "taskStatement": "1.1",
+      "explanation": {
+        "concept": "Reliability = recovering from failure and scaling to meet demand",
+        "correct": "Reliability is the ability of a workload to perform correctly and consistently, which means both recovering quickly from failures (E) and acquiring resources automatically as demand changes (B).",
+        "distractors": {
+          "A": "Least privilege is a security principle, not a reliability one.",
+          "C": "False — most AWS services are Region-scoped. Only a handful (IAM, Route 53, CloudFront) are global.",
+          "D": "Service credits exist in the SLA, but compensation is a commercial remedy, not a reliability mechanism."
+        }
+      }
     },
     {
       "id": "c4fe25708e4e",
@@ -114,7 +154,17 @@
           "exam": 1,
           "number": 5
         }
-      ]
+      ],
+      "taskStatement": "2.1",
+      "explanation": {
+        "concept": "The responsibility line moves with the service model",
+        "correct": "The split depends on the service. With EC2 (IaaS) you patch the guest OS; with S3 or Lambda the provider handles far more. AWS is always responsible for security *of* the cloud, the customer for security *in* the cloud.",
+        "distractors": {
+          "B": "With IaaS the customer carries most of the security burden — OS, network config, and data.",
+          "C": "Guest OS patching on EC2 is the customer's responsibility, never AWS's.",
+          "D": "For managed services AWS handles the underlying infrastructure and platform patching."
+        }
+      }
     },
     {
       "id": "ebf89ced29c9",
@@ -136,7 +186,17 @@
           "exam": 1,
           "number": 6
         }
-      ]
+      ],
+      "taskStatement": "4.2",
+      "explanation": {
+        "concept": "Consolidated billing shares Reserved Instance benefit across the whole organization",
+        "correct": "Under consolidated billing, unused Reserved Instance capacity is shared across all accounts in the organization, so any account running a matching instance can receive the discounted hourly rate.",
+        "distractors": {
+          "A": "The benefit is not restricted to the management account — that is the point of sharing.",
+          "C": "A Reserved Instance is a billing construct. It delivers identical performance to On-Demand.",
+          "D": "Consolidated billing gives real savings through volume tiering and RI sharing, not just a single invoice."
+        }
+      }
     },
     {
       "id": "ed0d94d0f329",
@@ -158,7 +218,18 @@
           "exam": 1,
           "number": 7
         }
-      ]
+      ],
+      "taskStatement": "3.2",
+      "secondaryTaskStatement": "1.2",
+      "explanation": {
+        "concept": "Availability tiers: AZ < Region",
+        "correct": "Multiple Availability Zones protect against a data-centre failure; multiple Regions additionally protect against an entire Region becoming unavailable. Combining both gives the highest level of availability.",
+        "distractors": {
+          "A": "Edge locations cache content for CloudFront — they do not run your application.",
+          "B": "Subnets live inside a single AZ, so adding subnets adds no availability beyond the AZs themselves.",
+          "D": "Multiple VPCs in one Region share the same Regional failure domain."
+        }
+      }
     },
     {
       "id": "82fa3732f06a",
@@ -182,7 +253,17 @@
           "exam": 1,
           "number": 8
         }
-      ]
+      ],
+      "taskStatement": "3.6",
+      "explanation": {
+        "concept": "Snowball: physical device for bulk data transfer, with compute on board",
+        "correct": "Snowball is a ruggedised physical appliance for securely moving large data sets into and out of AWS (E), and Snowball Edge variants include on-board compute so you can process data locally before shipping (A).",
+        "distractors": {
+          "B": "That describes AWS Marketplace.",
+          "C": "Hybrid storage between on-premises and AWS is AWS Storage Gateway.",
+          "D": "Exabyte-scale transfer is Snowmobile, the shipping-container service — Snowball is petabyte-scale."
+        }
+      }
     },
     {
       "id": "ff6d9859e3fa",
@@ -204,7 +285,17 @@
           "exam": 1,
           "number": 9
         }
-      ]
+      ],
+      "taskStatement": "4.3",
+      "explanation": {
+        "concept": "Concierge is the Enterprise-plan billing specialist",
+        "correct": "The AWS Support Concierge is a billing and account expert included with Enterprise Support, dedicated to non-technical billing and account inquiries.",
+        "distractors": {
+          "A": "The AWS Health Dashboard reports service health and events affecting your resources.",
+          "C": "AWS Customer Service handles billing questions for all plans, but the Enterprise-specific, faster route is Concierge.",
+          "D": "There is no AWS service called Operations Support."
+        }
+      }
     },
     {
       "id": "67f58dab4435",
@@ -226,7 +317,17 @@
           "exam": 1,
           "number": 10
         }
-      ]
+      ],
+      "taskStatement": "3.2",
+      "explanation": {
+        "concept": "Latency is driven by physical distance — move the workload closer",
+        "correct": "Deploying EC2 instances in a US Region places compute physically near the US users, which is the direct and low-cost way to cut latency.",
+        "distractors": {
+          "A": "Amazon Connect is a cloud contact-centre service and has nothing to do with routing policies.",
+          "B": "A domain name does not change where the servers are, so latency is unchanged.",
+          "C": "Building a data centre is the most expensive option and contradicts the cost constraint."
+        }
+      }
     },
     {
       "id": "41e3863a3c59",
@@ -248,7 +349,17 @@
           "exam": 1,
           "number": 11
         }
-      ]
+      ],
+      "taskStatement": "2.3",
+      "explanation": {
+        "concept": "IAM groups attach permissions to a collection of users",
+        "correct": "An IAM user group is a collection of IAM users that share an attached permission set — exactly the mechanism for organising employees into teams and granting each team its permissions.",
+        "distractors": {
+          "A": "Roles are assumed temporarily by users, applications or services; they are not a way to organise people into teams.",
+          "B": "IAM users are individual identities — that is what you are trying to group.",
+          "D": "AWS Organizations groups *accounts*, not users within an account."
+        }
+      }
     },
     {
       "id": "566be914c6b8",
@@ -270,7 +381,18 @@
           "exam": 1,
           "number": 12
         }
-      ]
+      ],
+      "taskStatement": "1.3",
+      "secondaryTaskStatement": "3.4",
+      "explanation": {
+        "concept": "DMS migrates databases while the source stays online",
+        "correct": "AWS Database Migration Service keeps the source database fully operational during migration and supports continuous replication, so applications keep running throughout the move.",
+        "distractors": {
+          "A": "OpsWorks is managed Chef/Puppet configuration management.",
+          "C": "Server Migration Service migrates whole virtual machines, not databases specifically.",
+          "D": "Application Discovery Service inventories your on-premises estate to plan a migration; it does not perform one."
+        }
+      }
     },
     {
       "id": "9c520d681e61",
@@ -292,7 +414,17 @@
           "exam": 1,
           "number": 13
         }
-      ]
+      ],
+      "taskStatement": "1.2",
+      "explanation": {
+        "concept": "Elasticity: match supply to demand automatically",
+        "correct": "Implementing elasticity means acquiring resources when demand rises and releasing them when it falls, so you stop paying for idle capacity.",
+        "distractors": {
+          "A": "Security in every layer is a separate design principle about defence in depth.",
+          "B": "Parallelising tasks is about throughput and concurrency, not cost-driven capacity changes.",
+          "D": "AWS recommends the opposite of monolithic architecture — decoupled, loosely joined components."
+        }
+      }
     },
     {
       "id": "43c344104b1a",
@@ -316,7 +448,17 @@
           "exam": 1,
           "number": 14
         }
-      ]
+      ],
+      "taskStatement": "1.1",
+      "explanation": {
+        "concept": "Cloud benefits: agility, and inheriting AWS's security controls",
+        "correct": "Provisioning in minutes rather than weeks increases speed and agility (A), and customers inherit AWS's physical and much of its network security under the shared responsibility model (E).",
+        "distractors": {
+          "B": "Security is a shared responsibility — the customer still secures data, IAM and configuration.",
+          "C": "Customers never get control over physical infrastructure; AWS owns and operates it.",
+          "D": "AWS does not operate customer applications, except under specific managed-service engagements."
+        }
+      }
     },
     {
       "id": "061e8dab41d4",
@@ -338,7 +480,17 @@
           "exam": 1,
           "number": 15
         }
-      ]
+      ],
+      "taskStatement": "1.2",
+      "explanation": {
+        "concept": "Decoupling contains the blast radius of a failure",
+        "correct": "Decoupling reduces interdependencies between components — typically via queues or load balancers — so that when one component fails or slows, the others keep working.",
+        "distractors": {
+          "A": "Treating an application as one cohesive unit is the monolithic approach decoupling moves away from.",
+          "C": "Decoupling breaks monoliths apart rather than making them easier to update as a whole.",
+          "D": "Tracking API calls is AWS CloudTrail, unrelated to architectural coupling."
+        }
+      }
     },
     {
       "id": "1d758fa240e3",
@@ -360,7 +512,17 @@
           "exam": 1,
           "number": 16
         }
-      ]
+      ],
+      "taskStatement": "4.2",
+      "explanation": {
+        "concept": "Cost & Usage Report is the most granular record of what you were charged",
+        "correct": "AWS Cost & Usage Reports contain the most detailed billing data available, broken down by service, resource and time period — the right tool for reviewing last month's EC2 charges.",
+        "distractors": {
+          "A": "AWS Budgets sets thresholds and alerts on future or ongoing spend; it is not a detailed historical report.",
+          "B": "The Pricing Calculator estimates the cost of a future architecture.",
+          "C": "Systems Manager is for operational management of instances, not billing."
+        }
+      }
     },
     {
       "id": "c23b3ab99cce",
@@ -382,7 +544,17 @@
           "exam": 1,
           "number": 17
         }
-      ]
+      ],
+      "taskStatement": "4.2",
+      "explanation": {
+        "concept": "Consolidated billing aggregates usage into higher volume-discount tiers",
+        "correct": "Usage from all accounts is combined for pricing purposes, so the whole organization reaches volume-discount tiers sooner and every account benefits from the blended rate.",
+        "distractors": {
+          "A": "There is no flat 50% discount — savings come from tiering and RI sharing.",
+          "B": "Consolidated billing produces genuine cost benefits, not merely organizational tidiness.",
+          "D": "The AWS Free Tier applies once across the organization, not per member account."
+        }
+      }
     },
     {
       "id": "02003fe87299",
@@ -406,7 +578,18 @@
           "exam": 1,
           "number": 18
         }
-      ]
+      ],
+      "taskStatement": "3.6",
+      "secondaryTaskStatement": "2.4",
+      "explanation": {
+        "concept": "Protect EBS data with snapshots (durability) and encryption (confidentiality)",
+        "correct": "Snapshots give you point-in-time backups stored durably in S3 (B), and encryption at rest protects the data if the underlying storage were ever accessed (C).",
+        "distractors": {
+          "A": "Firmware on the underlying hardware is AWS's responsibility; customers have no access to it.",
+          "D": "Copying data to an external drive is neither practical nor part of the AWS model.",
+          "E": "Physical data-centre access control is AWS's responsibility under the shared responsibility model."
+        }
+      }
     },
     {
       "id": "3cd35849a100",
@@ -428,7 +611,17 @@
           "exam": 1,
           "number": 19
         }
-      ]
+      ],
+      "taskStatement": "1.2",
+      "explanation": {
+        "concept": "Elasticity provisions and releases resources as demand changes",
+        "correct": "Elasticity means AWS resources are automatically provisioned when demand rises and released when it falls, so capacity tracks actual load instead of a fixed guess.",
+        "distractors": {
+          "A": "On-premises resources are physically fixed — you cannot scale them automatically.",
+          "B": "A load balancer distributes traffic across existing targets; Auto Scaling changes how many exist.",
+          "C": "Reducing interdependencies is decoupling, a different design principle."
+        }
+      }
     },
     {
       "id": "7effeac5cc56",
@@ -452,7 +645,17 @@
           "exam": 1,
           "number": 20
         }
-      ]
+      ],
+      "taskStatement": "4.2",
+      "explanation": {
+        "concept": "Two ways to alert on spend: CloudWatch billing alarms and AWS Budgets",
+        "correct": "A CloudWatch billing alarm can publish to an SNS topic when estimated charges cross a threshold (A), and AWS Budgets can alert directly on a cost threshold (C). Both are legitimate answers.",
+        "distractors": {
+          "B": "Amazon SES sends email you compose yourself; it has no awareness of your bill.",
+          "D": "CloudTrail logs API activity and cannot delete resources — and auto-deleting resources would be catastrophic anyway.",
+          "E": "Amazon Connect is a contact-centre service, unrelated to billing."
+        }
+      }
     },
     {
       "id": "cfc222d6e3de",
@@ -474,7 +677,18 @@
           "exam": 1,
           "number": 21
         }
-      ]
+      ],
+      "taskStatement": "3.2",
+      "secondaryTaskStatement": "3.5",
+      "explanation": {
+        "concept": "Edge locations are the CloudFront caching tier",
+        "correct": "CloudFront caches content at edge locations — a far larger global network than Regions or AZs — so requests are served from a point physically close to the user.",
+        "distractors": {
+          "A": "Global Accelerator also uses the edge network but is a separate service for TCP/UDP traffic routing.",
+          "B": "Regions are where your origin infrastructure runs, not the caching tier.",
+          "D": "Availability Zones are data centre clusters within a Region, not caching points."
+        }
+      }
     },
     {
       "id": "50ec990e63f6",
@@ -496,7 +710,17 @@
           "exam": 1,
           "number": 22
         }
-      ]
+      ],
+      "taskStatement": "2.3",
+      "explanation": {
+        "concept": "Least privilege: the minimum permissions, for the minimum time",
+        "correct": "Least privilege means granting only the permissions required to perform a task, only when required — and removing them when no longer needed.",
+        "distractors": {
+          "B": "Granting access to 'the core services' by default is broader than the task requires.",
+          "C": "Blanket access for trusted users is the opposite of least privilege.",
+          "D": "Granting no permissions at all would make users unable to work; the principle is minimum necessary, not zero."
+        }
+      }
     },
     {
       "id": "fec23834a3a0",
@@ -518,7 +742,17 @@
           "exam": 1,
           "number": 23
         }
-      ]
+      ],
+      "taskStatement": "1.1",
+      "explanation": {
+        "concept": "The three cloud service models: IaaS, PaaS, SaaS",
+        "correct": "Networking as a Service is not one of the three standard cloud computing models. The recognised models are IaaS, PaaS and SaaS.",
+        "distractors": {
+          "A": "PaaS is a standard model — you manage the application, the provider manages the platform.",
+          "B": "IaaS is a standard model — you manage OS and above, the provider the hardware.",
+          "C": "SaaS is a standard model — the provider manages everything, you just use the software."
+        }
+      }
     },
     {
       "id": "2ef23fef6c8d",
@@ -540,7 +774,17 @@
           "exam": 1,
           "number": 24
         }
-      ]
+      ],
+      "taskStatement": "3.6",
+      "explanation": {
+        "concept": "Match the storage class to the retrieval pattern",
+        "correct": "The videos are almost never retrieved and only needed for rare legal or compliance events. S3 Glacier Deep Archive is the lowest-cost class in AWS, designed for exactly this long-term, rarely-accessed archive pattern.",
+        "distractors": {
+          "A": "Intelligent-Tiering suits unpredictable access patterns and costs more than Deep Archive for known-cold data.",
+          "B": "AWS Marketplace is a software catalogue, not storage.",
+          "D": "EBS is block storage attached to an EC2 instance — far more expensive and the wrong shape for archives."
+        }
+      }
     },
     {
       "id": "91fbfba46a43",
@@ -562,7 +806,17 @@
           "exam": 1,
           "number": 25
         }
-      ]
+      ],
+      "taskStatement": "3.5",
+      "explanation": {
+        "concept": "Route 53 is the DNS service (named after DNS port 53)",
+        "correct": "Amazon Route 53 is the managed, highly available DNS web service, also handling domain registration and health-check-based routing policies.",
+        "distractors": {
+          "B": "AWS Config records and evaluates resource configuration changes for compliance.",
+          "C": "CloudFront is the content delivery network.",
+          "D": "Amazon EMR runs big-data frameworks such as Spark and Hadoop."
+        }
+      }
     },
     {
       "id": "aea45f1c3afb",
@@ -586,7 +840,17 @@
           "exam": 1,
           "number": 26
         }
-      ]
+      ],
+      "taskStatement": "2.4",
+      "explanation": {
+        "concept": "Shield handles network-layer DDoS; WAF handles application-layer attacks",
+        "correct": "AWS Shield provides managed DDoS protection at layers 3 and 4 (A), and AWS WAF filters malicious HTTP/HTTPS requests at layer 7, including application-layer floods (D).",
+        "distractors": {
+          "B": "AWS Config tracks resource configuration changes for compliance auditing.",
+          "C": "Amazon Cognito handles user sign-up, sign-in and identity federation for your applications.",
+          "E": "AWS KMS manages encryption keys — it protects data, not availability."
+        }
+      }
     },
     {
       "id": "f817d528a5be",
@@ -608,7 +872,17 @@
           "exam": 1,
           "number": 27
         }
-      ]
+      ],
+      "taskStatement": "3.4",
+      "explanation": {
+        "concept": "In-memory caching removes repeated database round trips",
+        "correct": "Amazon ElastiCache holds frequently accessed data in memory (Redis or Memcached), serving it in microseconds instead of re-querying the database — the standard way to optimise response time for hot data.",
+        "distractors": {
+          "A": "OpsWorks is configuration management via Chef or Puppet.",
+          "B": "Storage Gateway bridges on-premises storage to AWS; it adds latency rather than removing it.",
+          "C": "An EBS volume is disk-based storage attached to one instance — much slower than memory and not shared."
+        }
+      }
     },
     {
       "id": "b2f61b77ab4f",
@@ -630,7 +904,17 @@
           "exam": 1,
           "number": 28
         }
-      ]
+      ],
+      "taskStatement": "4.1",
+      "explanation": {
+        "concept": "Match the purchase option to the workload's duration and interruption tolerance",
+        "correct": "On-Demand charges by the second with no commitment, which suits a short one-day workload that must not be interrupted.",
+        "distractors": {
+          "A": "Reserved Instances require a 1 or 3 year commitment — wasteful for one day.",
+          "B": "Spot Instances can be reclaimed by AWS with two minutes' notice, violating the 'without interruption' requirement.",
+          "C": "Dedicated Instances run on single-tenant hardware at a premium; there is no such isolation requirement here."
+        }
+      }
     },
     {
       "id": "a3354bd67ff0",
@@ -652,7 +936,17 @@
           "exam": 1,
           "number": 29
         }
-      ]
+      ],
+      "taskStatement": "4.1",
+      "explanation": {
+        "concept": "Spot is cheapest when the work is interruptible",
+        "correct": "Thumbnail generation is fault-tolerant and does not need continuous uptime, so Spot Instances — up to 90% cheaper by using spare AWS capacity — are the most cost-effective choice.",
+        "distractors": {
+          "A": "Reserved Instances demand a long-term commitment for a batch job that does not run continuously.",
+          "B": "On-Demand is the safe default but costs far more than Spot for interruptible work.",
+          "C": "Dedicated Instances are the most expensive option and solve a compliance problem, not a cost one."
+        }
+      }
     },
     {
       "id": "98dba43e989c",
@@ -674,7 +968,17 @@
           "exam": 1,
           "number": 30
         }
-      ]
+      ],
+      "taskStatement": "3.5",
+      "explanation": {
+        "concept": "CloudFront is the CDN",
+        "correct": "Amazon CloudFront is the global content delivery network, caching content at edge locations worldwide to reduce latency for end users.",
+        "distractors": {
+          "A": "AWS VPN creates encrypted tunnels between your network and AWS.",
+          "B": "Direct Connect is a dedicated private physical link into AWS.",
+          "C": "Regions are geographic groupings of Availability Zones, not a delivery network."
+        }
+      }
     },
     {
       "id": "daf7042c3b0b",
@@ -696,7 +1000,17 @@
           "exam": 1,
           "number": 31
         }
-      ]
+      ],
+      "taskStatement": "2.2",
+      "explanation": {
+        "concept": "Artifact is the self-service portal for AWS compliance reports and agreements",
+        "correct": "AWS Artifact provides on-demand access to AWS compliance reports (such as SOC and PCI) and lets customers review, accept and manage agreements like the BAA with AWS.",
+        "distractors": {
+          "B": "Certificate Manager provisions and renews SSL/TLS certificates.",
+          "C": "Systems Manager operates and patches your instances at scale.",
+          "D": "AWS Organizations manages multiple AWS accounts and consolidated billing."
+        }
+      }
     },
     {
       "id": "b2bd9142c015",
@@ -720,7 +1034,17 @@
           "exam": 1,
           "number": 32
         }
-      ]
+      ],
+      "taskStatement": "2.1",
+      "explanation": {
+        "concept": "Managed services shift operational burden to AWS",
+        "correct": "DynamoDB (B) and Amazon EMR (C) are managed services — AWS runs the underlying servers, patching and scaling. Your job is the data and the configuration.",
+        "distractors": {
+          "A": "Amazon VPC is networking you configure yourself — subnets, route tables and gateways are your responsibility.",
+          "D": "IAM is a tool you use to define identities and permissions; managing those policies is entirely your responsibility.",
+          "E": "EC2 is the clearest example of unmanaged infrastructure — you patch the OS and manage the instance."
+        }
+      }
     },
     {
       "id": "478443b9baa0",
@@ -742,7 +1066,17 @@
           "exam": 1,
           "number": 33
         }
-      ]
+      ],
+      "taskStatement": "3.4",
+      "explanation": {
+        "concept": "DynamoDB is the managed NoSQL database",
+        "correct": "Amazon DynamoDB is AWS's fully managed key-value and document NoSQL database, delivering single-digit millisecond latency at any scale.",
+        "distractors": {
+          "A": "Aurora is a relational (SQL) database compatible with MySQL and PostgreSQL.",
+          "C": "EBS is block storage for EC2 instances, not a database.",
+          "D": "Redshift is a relational data warehouse for analytics."
+        }
+      }
     },
     {
       "id": "dead5bc8dff1",
@@ -764,7 +1098,17 @@
           "exam": 1,
           "number": 34
         }
-      ]
+      ],
+      "taskStatement": "4.3",
+      "explanation": {
+        "concept": "Enterprise Support includes a designated TAM",
+        "correct": "The Technical Account Manager is the designated primary point of contact on the Enterprise plan, providing proactive guidance, architectural review and coordination across AWS.",
+        "distractors": {
+          "A": "An IAM user is an identity in your account, not a support contact.",
+          "B": "Infrastructure Event Management is a service offering for planned events, not the ongoing point of contact.",
+          "C": "Consulting Partners are third-party firms, not part of the AWS support plan."
+        }
+      }
     },
     {
       "id": "d814fd47b465",
@@ -786,7 +1130,17 @@
           "exam": 1,
           "number": 35
         }
-      ]
+      ],
+      "taskStatement": "4.2",
+      "explanation": {
+        "concept": "Cost Explorer visualises where the money goes",
+        "correct": "AWS Cost Explorer provides graphs and filters showing spend broken down by service, account, tag and time, plus forecasting of future costs.",
+        "distractors": {
+          "A": "The VPC console manages networking, not billing.",
+          "B": "Support can help with billing disputes, but the self-service view is Cost Explorer.",
+          "D": "There is no customer-facing 'AWS Finance team' contact for this."
+        }
+      }
     },
     {
       "id": "7bca7ac13bfe",
@@ -808,7 +1162,17 @@
           "exam": 1,
           "number": 36
         }
-      ]
+      ],
+      "taskStatement": "2.3",
+      "explanation": {
+        "concept": "Console uses passwords; CLI and SDK use access keys",
+        "correct": "Programmatic access via the CLI or SDK requires an access key ID and secret access key. Username and password authenticate only to the Management Console.",
+        "distractors": {
+          "B": "A session token appears only with temporary credentials from STS, and never on its own.",
+          "C": "A user ID is an internal identifier, not a credential you supply.",
+          "D": "Username and password are for console sign-in, not the CLI."
+        }
+      }
     },
     {
       "id": "578338be191d",
@@ -830,7 +1194,17 @@
           "exam": 1,
           "number": 37
         }
-      ]
+      ],
+      "taskStatement": "4.3",
+      "explanation": {
+        "concept": "The Abuse team handles misuse of AWS resources, on any support plan",
+        "correct": "The AWS Trust & Safety (Abuse) team is the correct contact when AWS resources are being used maliciously. It is reachable regardless of support plan, which matters here because Basic support has no technical support.",
+        "distractors": {
+          "A": "Customer Service handles billing and account questions.",
+          "C": "The Concierge team is an Enterprise-plan billing benefit, unavailable on Basic.",
+          "D": "There is no general customer-facing 'AWS Security team' contact channel for this."
+        }
+      }
     },
     {
       "id": "590edf62ef38",
@@ -854,7 +1228,17 @@
           "exam": 1,
           "number": 38
         }
-      ]
+      ],
+      "taskStatement": "2.1",
+      "explanation": {
+        "concept": "Shared controls apply to both layers — AWS for infrastructure, you for the guest",
+        "correct": "Patch management (A) and configuration management (D) are shared controls: AWS patches and configures the underlying infrastructure while the customer does the same for the guest OS and applications. Awareness and training is the third shared control.",
+        "distractors": {
+          "B": "IAM management is entirely the customer's responsibility.",
+          "C": "VPC configuration is entirely the customer's responsibility.",
+          "E": "Data centre operations are entirely AWS's responsibility."
+        }
+      }
     },
     {
       "id": "ec54adf546cc",
@@ -878,7 +1262,18 @@
           "exam": 1,
           "number": 39
         }
-      ]
+      ],
+      "taskStatement": "1.2",
+      "secondaryTaskStatement": "3.3",
+      "explanation": {
+        "concept": "ELB detects failure, Auto Scaling reacts to it",
+        "correct": "An Elastic Load Balancer health-checks targets and stops routing to unhealthy ones (A), while Auto Scaling replaces failed instances and adds capacity on demand (B). Together they detect and react automatically.",
+        "distractors": {
+          "C": "Amazon Athena queries data in S3 with SQL — unrelated to failure handling. (The source spells it 'Athen'.)",
+          "D": "Amazon ECR is a container image registry.",
+          "E": "EC2 is the instance itself — a single instance is the single point of failure you are trying to eliminate."
+        }
+      }
     },
     {
       "id": "74ff126d97df",
@@ -900,7 +1295,17 @@
           "exam": 1,
           "number": 40
         }
-      ]
+      ],
+      "taskStatement": "3.5",
+      "explanation": {
+        "concept": "Global video delivery is a CDN problem",
+        "correct": "Amazon CloudFront caches and streams the video content from edge locations near viewers worldwide, giving high transfer speeds and low latency.",
+        "distractors": {
+          "A": "Amazon SNS is a pub/sub notification service.",
+          "B": "Kinesis Video Streams ingests live video for processing and analytics, not global course delivery.",
+          "C": "CloudFormation provisions infrastructure as code."
+        }
+      }
     },
     {
       "id": "936deae4d5ae",
@@ -922,7 +1327,17 @@
           "exam": 1,
           "number": 41
         }
-      ]
+      ],
+      "taskStatement": "3.4",
+      "explanation": {
+        "concept": "Managed relational databases give you automated backups for free",
+        "correct": "Amazon Aurora is a managed MySQL-compatible relational database, and like all RDS engines it provides automated backups, point-in-time recovery and patching.",
+        "distractors": {
+          "A": "Self-installing MySQL on EC2 makes backups entirely your responsibility.",
+          "C": "DynamoDB is NoSQL and does not satisfy the MySQL requirement.",
+          "D": "Neptune is a graph database, not MySQL-compatible."
+        }
+      }
     },
     {
       "id": "148b77a4ad6d",
@@ -944,7 +1359,17 @@
           "exam": 1,
           "number": 42
         }
-      ]
+      ],
+      "taskStatement": "3.1",
+      "explanation": {
+        "concept": "CloudFormation is infrastructure as code",
+        "correct": "AWS CloudFormation provisions and manages entire stacks of AWS resources from declarative JSON or YAML templates, making infrastructure versionable and repeatable.",
+        "distractors": {
+          "B": "AWS Config records configuration state and evaluates compliance; it does not provision resources.",
+          "C": "Amazon SES sends email.",
+          "D": "Amazon EMR runs big-data frameworks."
+        }
+      }
     },
     {
       "id": "382afc6682f9",
@@ -972,7 +1397,17 @@
           "exam": 22,
           "number": 33
         }
-      ]
+      ],
+      "taskStatement": "2.1",
+      "explanation": {
+        "concept": "AWS owns the infrastructure; you own everything you configure on top",
+        "correct": "Configuring the underlying infrastructure devices — the physical routers, switches and hosts — is AWS's responsibility as part of security *of* the cloud.",
+        "distractors": {
+          "A": "Client-side encryption is performed by the customer before data reaches AWS.",
+          "C": "Server-side encryption is enabled and configured by the customer, even though AWS performs the operation.",
+          "D": "Security Group rules are written by the customer."
+        }
+      }
     },
     {
       "id": "a8790c88ed51",
@@ -996,7 +1431,17 @@
           "exam": 1,
           "number": 44
         }
-      ]
+      ],
+      "taskStatement": "4.3",
+      "explanation": {
+        "concept": "The Health Dashboard is about AWS-side events affecting you",
+        "correct": "The AWS Health Dashboard gives a personalized view of service health for the resources you actually use (E), together with troubleshooting guidance and remediation steps for events impacting them (A).",
+        "distractors": {
+          "B": "Auto Scaling performs its own instance health checks; that is not part of the Health Dashboard.",
+          "C": "Cost optimization recommendations come from Trusted Advisor or Cost Explorer.",
+          "D": "Application vulnerability scanning is Amazon Inspector."
+        }
+      }
     },
     {
       "id": "7008e620735c",
@@ -1018,7 +1463,17 @@
           "exam": 1,
           "number": 45
         }
-      ]
+      ],
+      "taskStatement": "3.8",
+      "explanation": {
+        "concept": "CloudWatch is the metrics and monitoring service",
+        "correct": "Amazon CloudWatch collects metrics, logs and alarms for EC2 instances — CPU, network, status checks — which is what you need to diagnose intermittent reachability.",
+        "distractors": {
+          "A": "Lambda runs code without servers; it is not a monitoring service.",
+          "B": "AWS Config tracks configuration changes, not runtime performance.",
+          "D": "CloudTrail logs API calls — who did what, not how the instance is performing."
+        }
+      }
     },
     {
       "id": "68d93955c35e",
@@ -1040,7 +1495,17 @@
           "exam": 1,
           "number": 46
         }
-      ]
+      ],
+      "taskStatement": "2.4",
+      "explanation": {
+        "concept": "Trusted Advisor audits your account against best practices",
+        "correct": "AWS Trusted Advisor inspects your environment and makes recommendations across five pillars, including security — flagging open security groups, missing MFA on the root user and exposed access keys.",
+        "distractors": {
+          "A": "AWS Shield defends against DDoS attacks but makes no optimization recommendations.",
+          "B": "The Management Console is the UI itself, not an advisory service.",
+          "C": "Secrets Manager stores and rotates credentials."
+        }
+      }
     },
     {
       "id": "84022b00a408",
@@ -1064,7 +1529,17 @@
           "exam": 1,
           "number": 47
         }
-      ]
+      ],
+      "taskStatement": "3.6",
+      "explanation": {
+        "concept": "S3 is object storage that scales automatically — it does not run code",
+        "correct": "This asks which statements are NOT benefits. S3 cannot run applications or backend systems (B) — it stores objects. And S3 scales automatically rather than manually (D).",
+        "distractors": {
+          "A": "True — S3 offers unlimited total storage for any data type, so it is a genuine benefit.",
+          "C": "True — S3 stores any number of objects, with a 5 TB limit per individual object.",
+          "E": "True — S3 is designed for 99.999999999% durability."
+        }
+      }
     },
     {
       "id": "d292e476cd71",
@@ -1088,7 +1563,17 @@
           "exam": 1,
           "number": 48
         }
-      ]
+      ],
+      "taskStatement": "2.1",
+      "explanation": {
+        "concept": "Customers own identity and network configuration; AWS owns the physical layer",
+        "correct": "Setting password complexity rules through an IAM password policy (D) and configuring network access rules such as security groups and NACLs (E) are both squarely customer responsibilities.",
+        "distractors": {
+          "A": "Disk disposal and media destruction are performed by AWS in its data centres.",
+          "B": "Physical access control to compute resources is AWS's responsibility.",
+          "C": "Patching the underlying network infrastructure is AWS's responsibility."
+        }
+      }
     },
     {
       "id": "fd1cbd354ef1",
@@ -1110,7 +1595,17 @@
           "exam": 1,
           "number": 49
         }
-      ]
+      ],
+      "taskStatement": "3.1",
+      "explanation": {
+        "concept": "Quick Starts are pre-built reference deployments",
+        "correct": "AWS Quick Start reference deployments are CloudFormation-based, expert-reviewed templates that deploy popular third-party technologies on AWS in a fraction of the usual time.",
+        "distractors": {
+          "A": "Aurora is a relational database service.",
+          "B": "CloudWatch monitors resources.",
+          "D": "OpsWorks manages configuration with Chef or Puppet — more effort, not less, for a standard product deployment."
+        }
+      }
     },
     {
       "id": "9c21debc3dd5",
@@ -1132,7 +1627,17 @@
           "exam": 1,
           "number": 50
         }
-      ]
+      ],
+      "taskStatement": "4.1",
+      "explanation": {
+        "concept": "Convertible RIs trade some discount for the right to change instance attributes",
+        "correct": "A Convertible Reserved Instance can be exchanged during its term for another RI with different attributes — including a larger instance type — provided the new reservation is of equal or greater value.",
+        "distractors": {
+          "A": "There is no 'Elastic RI' purchase type.",
+          "B": "There is no 'Premium RI' purchase type.",
+          "C": "Standard RIs offer the deepest discount but cannot be exchanged for a different instance family."
+        }
+      }
     },
     {
       "id": "57de1e49d962",

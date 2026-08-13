@@ -1,0 +1,303 @@
+{
+  "aea45f1c3afb": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "Shield handles network-layer DDoS; WAF handles application-layer attacks",
+      "correct": "AWS Shield provides managed DDoS protection at layers 3 and 4 (A), and AWS WAF filters malicious HTTP/HTTPS requests at layer 7, including application-layer floods (D).",
+      "distractors": {
+        "B": "AWS Config tracks resource configuration changes for compliance auditing.",
+        "C": "Amazon Cognito handles user sign-up, sign-in and identity federation for your applications.",
+        "E": "AWS KMS manages encryption keys — it protects data, not availability."
+      }
+    }
+  },
+  "f817d528a5be": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "In-memory caching removes repeated database round trips",
+      "correct": "Amazon ElastiCache holds frequently accessed data in memory (Redis or Memcached), serving it in microseconds instead of re-querying the database — the standard way to optimise response time for hot data.",
+      "distractors": {
+        "A": "OpsWorks is configuration management via Chef or Puppet.",
+        "B": "Storage Gateway bridges on-premises storage to AWS; it adds latency rather than removing it.",
+        "C": "An EBS volume is disk-based storage attached to one instance — much slower than memory and not shared."
+      }
+    }
+  },
+  "b2f61b77ab4f": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Match the purchase option to the workload's duration and interruption tolerance",
+      "correct": "On-Demand charges by the second with no commitment, which suits a short one-day workload that must not be interrupted.",
+      "distractors": {
+        "A": "Reserved Instances require a 1 or 3 year commitment — wasteful for one day.",
+        "B": "Spot Instances can be reclaimed by AWS with two minutes' notice, violating the 'without interruption' requirement.",
+        "C": "Dedicated Instances run on single-tenant hardware at a premium; there is no such isolation requirement here."
+      }
+    }
+  },
+  "a3354bd67ff0": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Spot is cheapest when the work is interruptible",
+      "correct": "Thumbnail generation is fault-tolerant and does not need continuous uptime, so Spot Instances — up to 90% cheaper by using spare AWS capacity — are the most cost-effective choice.",
+      "distractors": {
+        "A": "Reserved Instances demand a long-term commitment for a batch job that does not run continuously.",
+        "B": "On-Demand is the safe default but costs far more than Spot for interruptible work.",
+        "C": "Dedicated Instances are the most expensive option and solve a compliance problem, not a cost one."
+      }
+    }
+  },
+  "98dba43e989c": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "CloudFront is the CDN",
+      "correct": "Amazon CloudFront is the global content delivery network, caching content at edge locations worldwide to reduce latency for end users.",
+      "distractors": {
+        "A": "AWS VPN creates encrypted tunnels between your network and AWS.",
+        "B": "Direct Connect is a dedicated private physical link into AWS.",
+        "C": "Regions are geographic groupings of Availability Zones, not a delivery network."
+      }
+    }
+  },
+  "daf7042c3b0b": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "Artifact is the self-service portal for AWS compliance reports and agreements",
+      "correct": "AWS Artifact provides on-demand access to AWS compliance reports (such as SOC and PCI) and lets customers review, accept and manage agreements like the BAA with AWS.",
+      "distractors": {
+        "B": "Certificate Manager provisions and renews SSL/TLS certificates.",
+        "C": "Systems Manager operates and patches your instances at scale.",
+        "D": "AWS Organizations manages multiple AWS accounts and consolidated billing."
+      }
+    }
+  },
+  "b2bd9142c015": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Managed services shift operational burden to AWS",
+      "correct": "DynamoDB (B) and Amazon EMR (C) are managed services — AWS runs the underlying servers, patching and scaling. Your job is the data and the configuration.",
+      "distractors": {
+        "A": "Amazon VPC is networking you configure yourself — subnets, route tables and gateways are your responsibility.",
+        "D": "IAM is a tool you use to define identities and permissions; managing those policies is entirely your responsibility.",
+        "E": "EC2 is the clearest example of unmanaged infrastructure — you patch the OS and manage the instance."
+      }
+    }
+  },
+  "478443b9baa0": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "DynamoDB is the managed NoSQL database",
+      "correct": "Amazon DynamoDB is AWS's fully managed key-value and document NoSQL database, delivering single-digit millisecond latency at any scale.",
+      "distractors": {
+        "A": "Aurora is a relational (SQL) database compatible with MySQL and PostgreSQL.",
+        "C": "EBS is block storage for EC2 instances, not a database.",
+        "D": "Redshift is a relational data warehouse for analytics."
+      }
+    }
+  },
+  "dead5bc8dff1": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Enterprise Support includes a designated TAM",
+      "correct": "The Technical Account Manager is the designated primary point of contact on the Enterprise plan, providing proactive guidance, architectural review and coordination across AWS.",
+      "distractors": {
+        "A": "An IAM user is an identity in your account, not a support contact.",
+        "B": "Infrastructure Event Management is a service offering for planned events, not the ongoing point of contact.",
+        "C": "Consulting Partners are third-party firms, not part of the AWS support plan."
+      }
+    }
+  },
+  "d814fd47b465": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Cost Explorer visualises where the money goes",
+      "correct": "AWS Cost Explorer provides graphs and filters showing spend broken down by service, account, tag and time, plus forecasting of future costs.",
+      "distractors": {
+        "A": "The VPC console manages networking, not billing.",
+        "B": "Support can help with billing disputes, but the self-service view is Cost Explorer.",
+        "D": "There is no customer-facing 'AWS Finance team' contact for this."
+      }
+    }
+  },
+  "7bca7ac13bfe": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Console uses passwords; CLI and SDK use access keys",
+      "correct": "Programmatic access via the CLI or SDK requires an access key ID and secret access key. Username and password authenticate only to the Management Console.",
+      "distractors": {
+        "B": "A session token appears only with temporary credentials from STS, and never on its own.",
+        "C": "A user ID is an internal identifier, not a credential you supply.",
+        "D": "Username and password are for console sign-in, not the CLI."
+      }
+    }
+  },
+  "578338be191d": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "The Abuse team handles misuse of AWS resources, on any support plan",
+      "correct": "The AWS Trust & Safety (Abuse) team is the correct contact when AWS resources are being used maliciously. It is reachable regardless of support plan, which matters here because Basic support has no technical support.",
+      "distractors": {
+        "A": "Customer Service handles billing and account questions.",
+        "C": "The Concierge team is an Enterprise-plan billing benefit, unavailable on Basic.",
+        "D": "There is no general customer-facing 'AWS Security team' contact channel for this."
+      }
+    }
+  },
+  "590edf62ef38": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Shared controls apply to both layers — AWS for infrastructure, you for the guest",
+      "correct": "Patch management (A) and configuration management (D) are shared controls: AWS patches and configures the underlying infrastructure while the customer does the same for the guest OS and applications. Awareness and training is the third shared control.",
+      "distractors": {
+        "B": "IAM management is entirely the customer's responsibility.",
+        "C": "VPC configuration is entirely the customer's responsibility.",
+        "E": "Data centre operations are entirely AWS's responsibility."
+      }
+    }
+  },
+  "ec54adf546cc": {
+    "taskStatement": "1.2",
+    "secondaryTaskStatement": "3.3",
+    "explanation": {
+      "concept": "ELB detects failure, Auto Scaling reacts to it",
+      "correct": "An Elastic Load Balancer health-checks targets and stops routing to unhealthy ones (A), while Auto Scaling replaces failed instances and adds capacity on demand (B). Together they detect and react automatically.",
+      "distractors": {
+        "C": "Amazon Athena queries data in S3 with SQL — unrelated to failure handling. (The source spells it 'Athen'.)",
+        "D": "Amazon ECR is a container image registry.",
+        "E": "EC2 is the instance itself — a single instance is the single point of failure you are trying to eliminate."
+      }
+    }
+  },
+  "74ff126d97df": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Global video delivery is a CDN problem",
+      "correct": "Amazon CloudFront caches and streams the video content from edge locations near viewers worldwide, giving high transfer speeds and low latency.",
+      "distractors": {
+        "A": "Amazon SNS is a pub/sub notification service.",
+        "B": "Kinesis Video Streams ingests live video for processing and analytics, not global course delivery.",
+        "C": "CloudFormation provisions infrastructure as code."
+      }
+    }
+  },
+  "936deae4d5ae": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Managed relational databases give you automated backups for free",
+      "correct": "Amazon Aurora is a managed MySQL-compatible relational database, and like all RDS engines it provides automated backups, point-in-time recovery and patching.",
+      "distractors": {
+        "A": "Self-installing MySQL on EC2 makes backups entirely your responsibility.",
+        "C": "DynamoDB is NoSQL and does not satisfy the MySQL requirement.",
+        "D": "Neptune is a graph database, not MySQL-compatible."
+      }
+    }
+  },
+  "148b77a4ad6d": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "CloudFormation is infrastructure as code",
+      "correct": "AWS CloudFormation provisions and manages entire stacks of AWS resources from declarative JSON or YAML templates, making infrastructure versionable and repeatable.",
+      "distractors": {
+        "B": "AWS Config records configuration state and evaluates compliance; it does not provision resources.",
+        "C": "Amazon SES sends email.",
+        "D": "Amazon EMR runs big-data frameworks."
+      }
+    }
+  },
+  "382afc6682f9": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "AWS owns the infrastructure; you own everything you configure on top",
+      "correct": "Configuring the underlying infrastructure devices — the physical routers, switches and hosts — is AWS's responsibility as part of security *of* the cloud.",
+      "distractors": {
+        "A": "Client-side encryption is performed by the customer before data reaches AWS.",
+        "C": "Server-side encryption is enabled and configured by the customer, even though AWS performs the operation.",
+        "D": "Security Group rules are written by the customer."
+      }
+    }
+  },
+  "a8790c88ed51": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "The Health Dashboard is about AWS-side events affecting you",
+      "correct": "The AWS Health Dashboard gives a personalized view of service health for the resources you actually use (E), together with troubleshooting guidance and remediation steps for events impacting them (A).",
+      "distractors": {
+        "B": "Auto Scaling performs its own instance health checks; that is not part of the Health Dashboard.",
+        "C": "Cost optimization recommendations come from Trusted Advisor or Cost Explorer.",
+        "D": "Application vulnerability scanning is Amazon Inspector."
+      }
+    }
+  },
+  "7008e620735c": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "CloudWatch is the metrics and monitoring service",
+      "correct": "Amazon CloudWatch collects metrics, logs and alarms for EC2 instances — CPU, network, status checks — which is what you need to diagnose intermittent reachability.",
+      "distractors": {
+        "A": "Lambda runs code without servers; it is not a monitoring service.",
+        "B": "AWS Config tracks configuration changes, not runtime performance.",
+        "D": "CloudTrail logs API calls — who did what, not how the instance is performing."
+      }
+    }
+  },
+  "68d93955c35e": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "Trusted Advisor audits your account against best practices",
+      "correct": "AWS Trusted Advisor inspects your environment and makes recommendations across five pillars, including security — flagging open security groups, missing MFA on the root user and exposed access keys.",
+      "distractors": {
+        "A": "AWS Shield defends against DDoS attacks but makes no optimization recommendations.",
+        "B": "The Management Console is the UI itself, not an advisory service.",
+        "C": "Secrets Manager stores and rotates credentials."
+      }
+    }
+  },
+  "84022b00a408": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "S3 is object storage that scales automatically — it does not run code",
+      "correct": "This asks which statements are NOT benefits. S3 cannot run applications or backend systems (B) — it stores objects. And S3 scales automatically rather than manually (D).",
+      "distractors": {
+        "A": "True — S3 offers unlimited total storage for any data type, so it is a genuine benefit.",
+        "C": "True — S3 stores any number of objects, with a 5 TB limit per individual object.",
+        "E": "True — S3 is designed for 99.999999999% durability."
+      }
+    }
+  },
+  "d292e476cd71": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Customers own identity and network configuration; AWS owns the physical layer",
+      "correct": "Setting password complexity rules through an IAM password policy (D) and configuring network access rules such as security groups and NACLs (E) are both squarely customer responsibilities.",
+      "distractors": {
+        "A": "Disk disposal and media destruction are performed by AWS in its data centres.",
+        "B": "Physical access control to compute resources is AWS's responsibility.",
+        "C": "Patching the underlying network infrastructure is AWS's responsibility."
+      }
+    }
+  },
+  "fd1cbd354ef1": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "Quick Starts are pre-built reference deployments",
+      "correct": "AWS Quick Start reference deployments are CloudFormation-based, expert-reviewed templates that deploy popular third-party technologies on AWS in a fraction of the usual time.",
+      "distractors": {
+        "A": "Aurora is a relational database service.",
+        "B": "CloudWatch monitors resources.",
+        "D": "OpsWorks manages configuration with Chef or Puppet — more effort, not less, for a standard product deployment."
+      }
+    }
+  },
+  "9c21debc3dd5": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Convertible RIs trade some discount for the right to change instance attributes",
+      "correct": "A Convertible Reserved Instance can be exchanged during its term for another RI with different attributes — including a larger instance type — provided the new reservation is of equal or greater value.",
+      "distractors": {
+        "A": "There is no 'Elastic RI' purchase type.",
+        "B": "There is no 'Premium RI' purchase type.",
+        "C": "Standard RIs offer the deepest discount but cannot be exchanged for a different instance family."
+      }
+    }
+  }
+}
