@@ -1,9 +1,12 @@
 {
-  "updatedAt": "2026-08-13T15:27:19.067Z",
+  "updatedAt": "2026-08-13T15:35:18.983Z",
   "uniqueQuestions": 963,
-  "annotated": 50,
-  "remaining": 913,
-  "needsReview": [],
+  "annotated": 349,
+  "remaining": 614,
+  "needsReview": [
+    "9e11e2fb7c94",
+    "64c015eb9f6a"
+  ],
   "outdated": [],
   "byExam": {
     "1": {
@@ -12,23 +15,23 @@
     },
     "2": {
       "total": 50,
-      "annotated": 0
+      "annotated": 50
     },
     "3": {
       "total": 50,
-      "annotated": 0
+      "annotated": 50
     },
     "4": {
       "total": 50,
-      "annotated": 0
+      "annotated": 50
     },
     "5": {
       "total": 50,
-      "annotated": 0
+      "annotated": 50
     },
     "6": {
       "total": 50,
-      "annotated": 0
+      "annotated": 50
     },
     "7": {
       "total": 50,
@@ -36,7 +39,7 @@
     },
     "8": {
       "total": 50,
-      "annotated": 0
+      "annotated": 50
     },
     "9": {
       "total": 50,
@@ -56,15 +59,15 @@
     },
     "13": {
       "total": 50,
-      "annotated": 0
+      "annotated": 3
     },
     "14": {
       "total": 50,
-      "annotated": 0
+      "annotated": 3
     },
     "15": {
       "total": 50,
-      "annotated": 0
+      "annotated": 1
     },
     "16": {
       "total": 50,
@@ -80,7 +83,7 @@
     },
     "19": {
       "total": 50,
-      "annotated": 0
+      "annotated": 1
     },
     "20": {
       "total": 50,

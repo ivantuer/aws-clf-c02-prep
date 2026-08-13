@@ -1,0 +1,597 @@
+{
+  "975607695125": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "File-level storage: EFS (shared file system) and EBS (block volumes)",
+      "correct": "Amazon EFS is a managed NFS file system you can mount from multiple instances, and Amazon EBS provides block volumes attached to an EC2 instance — both are places to store files.",
+      "distractors": {
+        "B": "SNS is a pub/sub messaging service for sending notifications between systems, not a place to store files.",
+        "D": "ECS is a container orchestration service for running and scaling containers, not a storage service.",
+        "E": "EMR is a managed big-data processing platform (Hadoop/Spark), not a storage service."
+      }
+    }
+  },
+  "d92c9c8271d1": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "SQS decouples distributed systems with durable message queues",
+      "correct": "Amazon SQS is a fully managed message queuing service that reliably stores and delivers messages between decoupled application components, even if a consumer is temporarily unavailable.",
+      "distractors": {
+        "B": "AWS Storage Gateway connects on-premises storage to AWS cloud storage; it does not queue or deliver messages.",
+        "C": "Amazon SES sends and receives email — a narrower purpose than general-purpose distributed messaging.",
+        "D": "Amazon S3 is object storage for files; it has no built-in queuing or message-delivery semantics."
+      }
+    }
+  },
+  "0aefa48f68b1": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Reserved Instances trade a term commitment for a discount",
+      "correct": "\"Save when you reserve\" describes Reserved Instances: you commit to running EC2 for a one- or three-year term in exchange for a significant discount off On-Demand rates.",
+      "distractors": {
+        "A": "\"Pay less as AWS grows\" is not an AWS pricing model name; it doesn't describe a term-commitment discount.",
+        "B": "\"Pay as you go\" describes On-Demand pricing — no commitment and no discount, the opposite of reserving.",
+        "C": "\"Pay less by using more\" describes tiered/volume pricing (economies of scale), not a fixed-term reservation."
+      }
+    }
+  },
+  "ace7197eea7f": {
+    "taskStatement": "1.4",
+    "secondaryTaskStatement": "1.3",
+    "explanation": {
+      "concept": "Right-sizing before and after migration keeps spend matched to actual demand",
+      "correct": "Right-sizing means matching instance/DB class to real workload demand both before migrating and again after, so the company isn't paying for capacity it doesn't use — a core cost-optimization practice.",
+      "distractors": {
+        "B": "A Multi-Region Active-Passive architecture adds standby infrastructure in a second Region for disaster recovery; it increases cost rather than minimizing it.",
+        "C": "On-Demand Capacity Reservations are an EC2 construct, not applicable to RDS, and combining them with Savings Plans adds cost rather than reducing it.",
+        "D": "A Multi-Region Active-Active architecture runs full capacity in two Regions simultaneously, which raises cost significantly."
+      }
+    }
+  },
+  "613bc5e268b8": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "RDS instances sit on EBS volumes",
+      "correct": "Amazon RDS database instances store their data on underlying Amazon EBS volumes, which provide the persistent block storage for the database files.",
+      "distractors": {
+        "A": "Glacier is a low-cost archival object storage tier; it is not attached to RDS instances as live storage.",
+        "C": "EFS is a shared network file system, not the storage layer RDS instances use.",
+        "D": "S3 stores RDS backups and snapshots, but it is not the primary storage for a running database instance."
+      }
+    }
+  },
+  "bc309e0c766a": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "X-Ray traces a request across microservices to pinpoint latency",
+      "correct": "AWS X-Ray traces requests as they travel through the components of a distributed application, showing where time is spent at each hop, which pinpoints performance and latency bottlenecks.",
+      "distractors": {
+        "A": "CodePipeline orchestrates CI/CD release pipelines; it doesn't trace runtime request latency.",
+        "C": "Amazon Inspector scans for software vulnerabilities and network exposure, not application performance.",
+        "D": "CloudTrail logs API calls for auditing who did what; it doesn't trace request latency through an application."
+      }
+    }
+  },
+  "420b20903a65": {
+    "taskStatement": "3.2",
+    "secondaryTaskStatement": "1.2",
+    "explanation": {
+      "concept": "Regional services that replicate across AZs automatically",
+      "correct": "Amazon S3 and Amazon DynamoDB are Regional services that automatically replicate data across multiple Availability Zones within the Region without any customer configuration.",
+      "distractors": {
+        "A": "Redshift runs as a single-node or single-AZ cluster by default; multi-AZ resilience is not automatic the way it is for S3 or DynamoDB.",
+        "B": "Snowball is a physical device for shipping data into and out of AWS, not an online service with built-in AZ redundancy.",
+        "D": "An EBS volume lives in a single Availability Zone; achieving redundancy requires manually snapshotting or copying it elsewhere."
+      }
+    }
+  },
+  "3e2b36b72143": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Multi-AZ for failover, Read Replicas for offloading reads",
+      "correct": "Multi-AZ deployment keeps a synchronous standby copy of the database in another Availability Zone for automatic failover, and Read Replicas offload read traffic and can be promoted if needed — both improve availability.",
+      "distractors": {
+        "A": "AWS Regions is the global infrastructure concept, not an RDS feature you enable on a database.",
+        "C": "Automatic patching is a maintenance convenience; it doesn't itself protect availability during an outage.",
+        "E": "Edge Locations are CloudFront/Route 53 caching points for content delivery, unrelated to RDS availability."
+      }
+    }
+  },
+  "c9ba8f13fef4": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "CloudFront caches content at edge locations near users",
+      "correct": "CloudFront caches content at edge locations around the world, including in Asia, so users there are served from a nearby cache instead of round-tripping to us-west-1, cutting latency.",
+      "distractors": {
+        "A": "Adding Availability Zones within the same Region doesn't help users on another continent — the origin is still in California.",
+        "B": "Migrating to a different hosting provider abandons AWS entirely and is a drastic, unnecessary step.",
+        "C": "Recreating the website content doesn't address the geographic distance causing the latency."
+      }
+    }
+  },
+  "28d01ba4c115": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "IAM governs which identities can do what",
+      "correct": "AWS Identity and Access Management lets an organization create users and roles and attach policies that precisely control which actions each developer can perform on which AWS resources.",
+      "distractors": {
+        "B": "Amazon RDS is a managed relational database service, not an access-control tool.",
+        "C": "Network ACLs filter traffic at the subnet level; they don't govern what actions a developer can take on AWS products.",
+        "D": "Amazon EMR is a big-data processing service, unrelated to controlling developer access."
+      }
+    }
+  },
+  "36a6d1e2168f": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "IaaS: you get raw virtualized compute and manage everything above it",
+      "correct": "EC2 gives you virtual machines where you choose and manage the guest OS, runtime, and application stack yourself — the definition of Infrastructure as a Service.",
+      "distractors": {
+        "A": "EC2 is not SaaS at all — you configure and maintain the OS and software stack yourself, so pairing it with SaaS is wrong.",
+        "C": "SaaS is a fully managed software product (like a hosted email client); EC2 requires you to manage everything above the hypervisor.",
+        "D": "PaaS (like Elastic Beanstalk) manages the runtime and platform for you; EC2 leaves OS and platform management to the customer."
+      }
+    }
+  },
+  "184ccfe662d0": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Loose coupling lets components fail and scale independently",
+      "correct": "Decoupling application components — for example with queues or load balancers between them — means one component's failure or scaling event doesn't cascade to the others, a core Well-Architected design principle.",
+      "distractors": {
+        "A": "Physical security is AWS's responsibility under the shared responsibility model, not something an application design decision addresses.",
+        "B": "AWS manages the physical hardware; choosing a hardware vendor isn't a decision available to, or relevant for, an application builder.",
+        "C": "IAM policies control permissions and access, not application performance."
+      }
+    }
+  },
+  "a5db81447f67": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Glacier is built for infrequently accessed, long-lived data",
+      "correct": "Glacier is a low-cost archival storage class suited to active archives kept for record-keeping and long-term analytic data sets retained for periodic analysis, both of which tolerate retrieval delay.",
+      "distractors": {
+        "B": "Dynamic website assets need low-latency, frequent access — S3 Standard fits that, not an archival tier.",
+        "D": "Active databases require constant fast reads and writes, incompatible with archival-tier retrieval times.",
+        "E": "Cached data needs millisecond access (e.g., via ElastiCache), the opposite of what an archival storage tier provides."
+      }
+    }
+  },
+  "67e179c3597c": {
+    "taskStatement": "3.1",
+    "secondaryTaskStatement": "3.3",
+    "explanation": {
+      "concept": "Elastic Beanstalk is a PaaS: upload code, AWS handles the rest",
+      "correct": "Elastic Beanstalk is a Platform as a Service offering — you upload your application code and it automatically handles provisioning, load balancing, scaling, and health monitoring.",
+      "distractors": {
+        "B": "Elastic Beanstalk is not a compute engine for ECS; it's its own deployment and management layer that can run on EC2.",
+        "C": "Scalable file storage describes Amazon EFS, not Elastic Beanstalk.",
+        "D": "A NoSQL database describes DynamoDB, unrelated to Elastic Beanstalk."
+      }
+    }
+  },
+  "8d6ae83508fd": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "Inspector automates vulnerability scanning of EC2 workloads",
+      "correct": "Amazon Inspector automatically and continuously scans EC2 instances (and container images) for known software vulnerabilities and unintended network exposure.",
+      "distractors": {
+        "A": "Amazon Kinesis is a real-time data streaming service, unrelated to vulnerability scanning.",
+        "B": "Security groups are firewalls you configure manually; they don't perform automated vulnerability assessments.",
+        "D": "Network ACLs are subnet-level traffic filters you configure, not an automated scanning service."
+      }
+    }
+  },
+  "ac1056f936cb": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Inherited controls vs. shared controls in the responsibility model",
+      "correct": "Environmental controls and physical controls (data center power, cooling, physical access) are entirely AWS's domain — customers inherit them fully with no action required on their part.",
+      "distractors": {
+        "A": "Patch management is a shared control: AWS patches the underlying infrastructure, but customers must patch their guest OS on services like EC2.",
+        "B": "Database controls depend on the service — largely customer-managed unless using a fully managed database — so they aren't fully inherited.",
+        "C": "Awareness & Training is a shared control: AWS trains its own staff, but customers must separately train their own employees."
+      }
+    }
+  },
+  "c2c689390bb2": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "More paid upfront on a Reserved Instance means a bigger discount",
+      "correct": "Between the two Reserved Instance options offered, Partial Upfront pays a portion of the cost at the start for a lower recurring rate, yielding a larger total discount than No Upfront over the same three-year term.",
+      "distractors": {
+        "A": "No Upfront requires no initial payment but delivers a smaller overall discount than Partial Upfront for the same commitment length.",
+        "C": "On-Demand pricing has no term discount at all, making it the most expensive option for a guaranteed three-year workload.",
+        "D": "Spot Instances can be interrupted with little notice, unsuitable for a database that needs to run continuously for three years."
+      }
+    }
+  },
+  "ac7ff0775044": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "Global reach: Regions and edge locations close to users worldwide",
+      "correct": "Global reach refers to AWS's worldwide footprint of Regions and edge locations, letting you deploy resources or cache content near users anywhere, which is what reduces latency for a growing international audience.",
+      "distractors": {
+        "A": "Elasticity is about scaling capacity up or down with demand; it doesn't address geographic distance from users.",
+        "C": "Data durability is about not losing stored data, unrelated to network latency.",
+        "D": "High availability is about uptime and resilience to failure, not about proximity to users."
+      }
+    }
+  },
+  "b2d43b536b63": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Savings Plans cover flexible compute usage, not fixed instance types",
+      "correct": "Savings Plans apply to flexible compute usage on Amazon EC2 and AWS Lambda (as well as Fargate) in exchange for a one- or three-year usage commitment measured in dollars-per-hour.",
+      "distractors": {
+        "A": "AWS Batch runs jobs on top of EC2/Fargate/ECS; it isn't itself a Savings-Plans-eligible compute category.",
+        "B": "AWS Outposts has its own separate pricing model and isn't covered by Compute Savings Plans.",
+        "C": "Amazon Lightsail uses its own bundled flat-rate pricing, separate from Savings Plans."
+      }
+    }
+  },
+  "d17dfa9d7172": {
+    "taskStatement": "3.2",
+    "secondaryTaskStatement": "1.2",
+    "explanation": {
+      "concept": "Only a second Region protects against a regional disaster",
+      "correct": "Deploying to a separate AWS Region protects against the whole primary Region becoming unavailable, and an Active-Active strategy keeps both Regions serving live traffic so failover causes zero downtime.",
+      "distractors": {
+        "A": "Edge locations only cache content for CloudFront; they don't run the application's backend, so they can't fail over a full workload.",
+        "B": "Multiple Availability Zones protect against a data-center failure within one Region, not a Region-wide natural disaster.",
+        "C": "Subnets live within the same Region, so backing up to another subnet doesn't protect against a regional disaster, and restoring from backup still incurs downtime."
+      }
+    }
+  },
+  "632672ff05e2": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Quotas can be raised via Support and monitored via Trusted Advisor",
+      "correct": "You can request a service limit (quota) increase through AWS Support, and AWS Trusted Advisor includes checks that flag when your usage is approaching a service limit.",
+      "distractors": {
+        "B": "Service limits are set per account (and often per Region), not individually per IAM user.",
+        "C": "Nearly every AWS service has default quotas; the claim that there are no service limits is false.",
+        "E": "Amazon SES is an email-sending service; it doesn't monitor or notify about AWS service limits across the account."
+      }
+    }
+  },
+  "2ac3dd81ed1e": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "The CLI is the scriptable way to drive any AWS service",
+      "correct": "The AWS CLI lets you script and automate calls to AWS services from a terminal, with commands that map directly onto the underlying API, so you can manage any resource from a script.",
+      "distractors": {
+        "A": "The AWS Console is a browser-based UI meant for manual clicking, not scripting.",
+        "B": "AWS Service Catalog lets admins publish approved IT service templates for users to launch; it's not a general scripting tool.",
+        "C": "AWS OpsWorks is a configuration management service built around Chef/Puppet, not a general-purpose scripting interface to all AWS services."
+      }
+    }
+  },
+  "d5ec113cde89": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Direct Connect and Site-to-Site VPN both bridge on-premises to AWS",
+      "correct": "AWS Direct Connect provides a dedicated private network link, and AWS Site-to-Site VPN provides an encrypted connection over the public internet — both let you connect an on-premises network to AWS to build a hybrid architecture.",
+      "distractors": {
+        "A": "AWS Artifact is a portal for compliance reports and agreements, not a connectivity service.",
+        "B": "AWS Cloud9 is a cloud-based IDE, unrelated to network connectivity.",
+        "D": "AWS CloudTrail logs API activity for auditing; it has no role in network connectivity."
+      }
+    }
+  },
+  "ac7782e8d9c7": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "ALB distributes HTTP traffic at Layer 7",
+      "correct": "The Application Load Balancer operates at Layer 7 and distributes incoming HTTP/HTTPS requests evenly across registered EC2 targets, with support for content-based routing rules.",
+      "distractors": {
+        "A": "There is no such thing as \"EC2 Auto Recovery\" load balancing; automatic instance recovery from CloudWatch alarms is a different, unrelated feature.",
+        "B": "Auto Scaling adjusts how many instances are running based on demand; it does not itself distribute incoming traffic.",
+        "C": "The Network Load Balancer operates at Layer 4 for raw TCP/UDP traffic; the Application Load Balancer is the purpose-built choice for distributing HTTP traffic with content-aware routing."
+      }
+    }
+  },
+  "0dc30b27b1fc": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Aurora: MySQL/PostgreSQL-compatible with automatic storage scaling",
+      "correct": "Amazon Aurora is a managed relational database compatible with MySQL (and PostgreSQL) that automatically scales storage up to large capacity and offers Aurora Serverless for automatic compute scaling based on demand.",
+      "distractors": {
+        "A": "Amazon Neptune is a graph database, not a relational, MySQL-compatible engine.",
+        "C": "RDS for SQL Server runs the Microsoft SQL Server engine, which is not MySQL-compatible.",
+        "D": "RDS for PostgreSQL is PostgreSQL-compatible, not MySQL-compatible."
+      }
+    }
+  },
+  "2f4fc8f1beb1": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "Security Groups and NACLs restrict traffic reaching an instance",
+      "correct": "Security Groups filter traffic at the instance level and Network ACLs filter traffic at the subnet level; used together they restrict inbound access to only what's needed, reducing the surface exposed to DDoS traffic.",
+      "distractors": {
+        "A": "AWS CloudHSM is a dedicated hardware module for storing cryptographic keys, not a traffic-filtering tool.",
+        "C": "AWS Batch is a batch-computing job scheduler, unrelated to network protection.",
+        "D": "AWS IAM manages permissions to AWS resources; it does not filter network traffic reaching an instance."
+      }
+    }
+  },
+  "131beaa38b90": {
+    "taskStatement": "3.7",
+    "secondaryTaskStatement": "3.4",
+    "explanation": {
+      "concept": "Redshift: columnar, MPP data warehouse for analytical queries",
+      "correct": "Amazon Redshift is a fully managed data warehouse purpose-built for fast, complex queries over large-scale structured data, using columnar storage and massively parallel processing.",
+      "distractors": {
+        "B": "Amazon Kinesis ingests real-time streaming data; it isn't a queryable data warehouse.",
+        "C": "DynamoDB is a key-value/document NoSQL database tuned for low-latency transactional workloads, not large-scale analytical queries.",
+        "D": "Amazon RDS is a general-purpose relational database for OLTP workloads, not optimized for warehouse-scale analytics."
+      }
+    }
+  },
+  "e28120ade63d": {
+    "taskStatement": "1.4",
+    "explanation": {
+      "concept": "TCO weighs on-prem hardware costs against AWS's pay-as-you-go model",
+      "correct": "A TCO comparison must account for the on-premises cost of physical hardware — servers, storage, networking gear, power, cooling, and facilities — against AWS's consumption-based pricing.",
+      "distractors": {
+        "A": "Application development cost is typically incurred whether hosted on-premises or on AWS, so it doesn't distinguish the two options' TCO.",
+        "B": "Market research is unrelated to comparing infrastructure hosting costs.",
+        "C": "Business analysis isn't an infrastructure cost input for a TCO comparison of hosting environments."
+      }
+    }
+  },
+  "7a94631991cf": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "EC2 billing: per-second, with a 60-second minimum",
+      "correct": "Linux-based (and most) On-Demand and Reserved EC2 instances are billed in one-second increments, with a minimum charge of 60 seconds.",
+      "distractors": {
+        "B": "Billing by the hour with a one-day minimum is far coarser than how EC2 actually bills and is incorrect.",
+        "C": "Per-minute increments with a one-hour minimum described the older EC2 billing model before AWS moved to per-second billing.",
+        "D": "Billing by the day with a one-month minimum is far too coarse and is not how EC2 billing works."
+      }
+    }
+  },
+  "cabf7a8235b5": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Instance type and location set the hourly rate",
+      "correct": "The instance type (vCPU/memory/family) and the Region or Availability Zone where the instance runs both directly determine the hourly price charged for an EC2 instance.",
+      "distractors": {
+        "C": "Load balancing is a separate service billed independently; it doesn't change the price of the EC2 instance itself.",
+        "D": "The number of S3 buckets is unrelated to EC2 instance pricing.",
+        "E": "Additional private IPs on an instance's network interface don't affect its price; only certain public/Elastic IP usage carries a separate small charge."
+      }
+    }
+  },
+  "e9e98cf5276e": {
+    "taskStatement": "3.3",
+    "explanation": {
+      "concept": "AMIs capture a full launchable copy of an instance's configuration",
+      "correct": "Creating an Amazon Machine Image from the configured instance captures its OS, installed software, and settings, so new instances launched from that AMI are identical copies.",
+      "distractors": {
+        "A": "AWS Config tracks resource configuration compliance over time; it doesn't produce a launchable instance template.",
+        "B": "An EBS snapshot only captures the attached volume's data, not a full launchable instance image with instance-level settings.",
+        "C": "Aurora is a managed relational database engine; installing it on EC2 has nothing to do with replicating a generic instance's configuration."
+      }
+    }
+  },
+  "49748d4d62e8": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "SCPs set the permission ceiling across Organizations accounts",
+      "correct": "Service Control Policies attach to accounts or organizational units in AWS Organizations and define the maximum permissions available, restricting which services and actions member accounts can use regardless of their local IAM policies.",
+      "distractors": {
+        "A": "An IAM principal is the entity making a request (a user or role), not a mechanism for restricting permissions.",
+        "C": "IAM policies grant permissions within a single account but can't enforce an organization-wide restriction across all member accounts the way SCPs do.",
+        "D": "AWS Fargate is a serverless compute engine for containers, unrelated to restricting account permissions."
+      }
+    }
+  },
+  "fde44367b0b0": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "Agility: provisioning resources in minutes instead of weeks",
+      "correct": "Agility means being able to quickly provision, spin up, and tear down resources on demand, instead of waiting weeks for physical hardware procurement — a direct benefit of the cloud's pay-as-you-go, self-service model.",
+      "distractors": {
+        "A": "Hosting applications in multiple Regions describes global reach, not agility.",
+        "B": "Customizable hardware at the lowest cost describes an economy-of-scale cost benefit, not agility.",
+        "D": "Paying upfront to reduce costs describes a commitment-based pricing strategy, not the speed of provisioning that defines agility."
+      }
+    }
+  },
+  "1b7ffa596c94": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "RDS: managed operations plus resizable compute capacity",
+      "correct": "RDS is a managed service, so AWS handles patching, backups, and provisioning, lowering the administrative burden, and you can resize the DB instance class to scale compute capacity up or down.",
+      "distractors": {
+        "B": "Complete control over the underlying host is the opposite of a managed service; RDS abstracts away host-level access.",
+        "D": "Resizing an RDS instance class requires an explicit change (and typically a restart); it isn't automatic the way Aurora Serverless compute scaling is.",
+        "E": "Support for document and key-value structures describes DynamoDB; RDS engines are relational and store tabular data."
+      }
+    }
+  },
+  "91786d400b27": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Site-to-Site VPN: IPSec tunnel over the internet",
+      "correct": "AWS Site-to-Site VPN establishes an IPSec-encrypted tunnel over the public internet between an on-premises network and a VPC.",
+      "distractors": {
+        "A": "An Internet Gateway lets a VPC communicate with the public internet in general; it isn't an IPSec tunnel to a specific on-premises network.",
+        "B": "AWS IQ is a marketplace for hiring AWS-certified freelancers, unrelated to networking.",
+        "C": "AWS Direct Connect provides a dedicated private network link over physical infrastructure — it isn't an IPSec-encrypted tunnel."
+      }
+    }
+  },
+  "117c6a9872bc": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Business Support is the minimum tier with 24x7 phone/chat access",
+      "correct": "Business Support is the lowest AWS Support tier that includes 24x7 access to Cloud Support Engineers via phone, chat, and email, along with faster response times.",
+      "distractors": {
+        "A": "Enterprise Support also includes 24x7 phone/chat but adds a Technical Account Manager and is a higher tier than the minimum needed.",
+        "B": "Developer Support provides only business-hours email access to Cloud Support Associates, with no phone or chat access.",
+        "C": "Basic Support is free but limited to account/billing help and documentation/forums, with no technical support by phone or chat."
+      }
+    }
+  },
+  "fb891b07bbdb": {
+    "taskStatement": "2.4",
+    "secondaryTaskStatement": "3.5",
+    "explanation": {
+      "concept": "NACLs filter at the subnet, Security Groups filter at the instance",
+      "correct": "Network ACLs filter traffic at the subnet boundary (stateless), and Security Groups filter traffic at the instance/ENI level (stateful) — together these are the two mechanisms for controlling network traffic in a VPC.",
+      "distractors": {
+        "B": "Key Pairs authenticate SSH login to an instance; they don't filter network traffic.",
+        "C": "Access Keys are credentials for programmatic API calls, unrelated to network traffic control.",
+        "D": "IAM Policies control permissions to take actions on AWS resources, not the flow of network packets."
+      }
+    }
+  },
+  "ecca4510cfb8": {
+    "taskStatement": "4.1",
+    "secondaryTaskStatement": "3.3",
+    "explanation": {
+      "concept": "Spot Instances suit fault-tolerant, interruptible workloads",
+      "correct": "Spot Instances offer the deepest discount off On-Demand pricing and suit interruption-tolerant workloads like transcoding, which can resume on another instance if the Spot capacity is reclaimed.",
+      "distractors": {
+        "A": "Reserved Instances are cheaper than On-Demand but require a one- to three-year commitment, which isn't the cheapest option for a flexible, interruption-tolerant workload.",
+        "C": "On-Demand pricing is flexible but the most expensive per hour, with no discount for cost-sensitive batch work.",
+        "D": "Dedicated Instances run on hardware reserved for a single customer at a price premium, aimed at compliance/licensing needs rather than cost savings."
+      }
+    }
+  },
+  "7237e714fa59": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Service Health Dashboard reports status of every AWS service, every Region",
+      "correct": "The AWS Service Health Dashboard publicly reports the current operational status of every AWS service across every AWS Region.",
+      "distractors": {
+        "B": "The AWS Management Console is the web UI for managing your resources, not a service-status reporting tool.",
+        "C": "Amazon CloudWatch monitors metrics and logs for your own resources, not the overall health of AWS services.",
+        "D": "The AWS Personal Health Dashboard shows events personalized to your own account's resources, not the global status of all AWS services."
+      }
+    }
+  },
+  "484e5c1d119e": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "SDKs are language-specific libraries for calling AWS from code",
+      "correct": "AWS SDKs are language-specific libraries (Python, Java, JavaScript, and more) that let you call AWS service APIs directly from your application code in the language you're already using.",
+      "distractors": {
+        "B": "The AWS CLI is a single command-line tool, not a set of per-language libraries for embedding in application code.",
+        "C": "AWS CodeDeploy automates deploying application code to compute resources; it isn't a mechanism for calling AWS APIs from code.",
+        "D": "The AWS Management Console is a browser-based UI, not a programmatic interface usable from multiple programming languages."
+      }
+    }
+  },
+  "f1fc99aa5a0a": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Route 53 handles both DNS and domain registration",
+      "correct": "Amazon Route 53 is AWS's DNS and domain name registration service, letting you register new domain names directly through it.",
+      "distractors": {
+        "A": "Amazon Personalize is a machine learning recommendation service, unrelated to domain names.",
+        "C": "AWS KMS manages encryption keys, unrelated to domain registration.",
+        "D": "AWS Config tracks and evaluates resource configuration compliance, unrelated to domain names."
+      }
+    }
+  },
+  "9453073ec7c3": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "CloudFormation and Elastic Beanstalk automate getting apps live",
+      "correct": "AWS CloudFormation automates infrastructure provisioning as code, and AWS Elastic Beanstalk automates application deployment on managed infrastructure — together they speed up getting applications from code to running.",
+      "distractors": {
+        "B": "AWS Migration Hub tracks the status of migrations from on-premises to AWS; it doesn't automate application deployment.",
+        "C": "AWS IAM manages access and permissions, not deployment automation.",
+        "E": "Amazon Macie discovers and protects sensitive data using machine learning, unrelated to deployment speed."
+      }
+    }
+  },
+  "9dd33946d1b2": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Trusted Advisor gives account-wide cost-optimization checks",
+      "correct": "AWS Trusted Advisor inspects your account and provides recommendations across cost optimization, performance, security, fault tolerance, and service limits.",
+      "distractors": {
+        "B": "The AWS Pricing Calculator estimates costs for a planned architecture before you build it; it doesn't analyze resources you've already deployed.",
+        "C": "Amazon QuickSight is a business intelligence and visualization tool, not built to generate AWS cost-optimization advice.",
+        "D": "AWS X-Ray traces application performance and latency, unrelated to cost optimization."
+      }
+    }
+  },
+  "e72f1a2dcc6c": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Transit Gateway replaces a VPC peering mesh with a hub",
+      "correct": "AWS Transit Gateway acts as a central hub that VPCs and on-premises networks connect to, replacing a complex mesh of point-to-point peering connections with simple hub-and-spoke routing across accounts and Regions.",
+      "distractors": {
+        "A": "VPC Peering creates a direct one-to-one connection between two VPCs; at the scale of hundreds of VPCs this becomes an unmanageable full mesh — exactly the problem Transit Gateway solves.",
+        "C": "Amazon Connect is a cloud contact-center service, unrelated to VPC networking.",
+        "D": "Security Groups are instance-level firewalls, not a connectivity or routing hub between VPCs."
+      }
+    }
+  },
+  "55f12d20b8c4": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Reserved Instances: commitment is the cost, discount is the benefit",
+      "correct": "Reserved Instances require committing to at least a one-year term — the drawback, reduced flexibility — in exchange for a significant discount compared to On-Demand pricing — the benefit.",
+      "distractors": {
+        "A": "Being shut down by AWS with no notice describes Spot Instance interruption behavior, not Reserved Instances.",
+        "C": "Dedicated Instances carry an additional premium cost rather than being free, and this is unrelated to Reserved Instance mechanics.",
+        "E": "Reserved Instances suit steady-state, continuous workloads, not periodic ones — intermittent workloads are better matched to Spot or On-Demand."
+      }
+    }
+  },
+  "c555a02a82c4": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Multiple AZs let you architect around a data-center failure",
+      "correct": "Each Region contains multiple, physically separate Availability Zones so you can spread resources across them and keep your application running even if one data center fails, achieving resilience and high availability.",
+      "distractors": {
+        "B": "Multiple AZs are about resilience, not lowering cost — running across AZs typically costs the same or more, not less.",
+        "C": "Data replication for global reach describes multiple Regions and edge locations; AZs are all within a single Region.",
+        "D": "AZs are separate facilities for fault isolation, not a mechanism for pooling additional storage capacity."
+      }
+    }
+  },
+  "7d9c862b313c": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Short, fixed-duration needs are cheapest as On-Demand",
+      "correct": "For a short, fixed two-month need, On-Demand avoids the one- to three-year commitment Reserved Instances require to break even, making it the more cost-effective and appropriate choice.",
+      "distractors": {
+        "B": "Spot Instances can be reclaimed with short notice, unsuitable for a workload that \"must always be available.\"",
+        "C": "Reserved Instances All Upfront require a one- to three-year commitment paid upfront; over just two months you'd pay for capacity you don't use and lose that payment if you stop early.",
+        "D": "Reserved Instances No Upfront still lock you into at least a one-year term, far longer than the two months needed, so you pay for unused months."
+      }
+    }
+  },
+  "a83cc4e34bb0": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Multiple AZs directly raise availability by isolating failures",
+      "correct": "Running an application across multiple Availability Zones means the failure of one data center doesn't take the application down, directly increasing its availability.",
+      "distractors": {
+        "A": "Availability Zones don't change account-level service quotas, so this doesn't let you exceed service limits.",
+        "B": "Reducing response time for distant users is a latency/CDN concern, solved by edge locations or additional Regions, not by AZs that sit close together within one Region.",
+        "C": "AZs are about fault isolation, not about granting extra compute capacity or quota."
+      }
+    }
+  },
+  "3d5bbf4f544e": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "AWS follows documented media-sanitization procedures at end of life",
+      "correct": "AWS destroys decommissioned storage devices following documented data-destruction and media-sanitization procedures, preventing any recovery of data from retired hardware.",
+      "distractors": {
+        "A": "Selling old devices to other hosting providers would risk exposing customer data and contradicts AWS's security commitments.",
+        "C": "Remanufacturing and reusing devices without destruction would risk data leakage, not how AWS handles decommissioned media.",
+        "D": "Indefinitely storing old devices isn't a documented AWS practice and doesn't itself protect data — destruction, not storage, is the control."
+      }
+    }
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "2442bd87abad": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Fault tolerance keeps a system running through component failure",
+      "correct": "Fault tolerance is the design principle of building redundancy in so that the failure of an individual component (an instance, an AZ) does not take the whole application down — critical when every minute of downtime costs money.",
+      "distractors": {
+        "A": "Least privilege is an IAM security principle about granting only the permissions needed, not an availability concept.",
+        "B": "Pilot light is a disaster-recovery strategy where a minimal version of the environment runs in a second Region, ready to scale up — it is one implementation detail, not the general design principle being asked about here.",
+        "D": "Multi-threading is an application-level programming technique, not an AWS architectural principle for outage resilience."
+      }
+    }
+  },
+  "028a7405bf4c": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Reserved Instance payment options trade upfront cash for a bigger discount",
+      "correct": "Paying the full amount upfront (All Upfront) gives AWS the most certainty and the customer the largest discount off the equivalent On-Demand rate, compared with partial or no upfront payment.",
+      "distractors": {
+        "B": "The discount level does differ by payment option — the more you pay upfront, the greater the total savings.",
+        "C": "Partial Upfront reduces the hourly rate less than paying the full amount upfront.",
+        "D": "No Upfront still discounts against On-Demand, but it is the smallest discount of the three options."
+      }
+    }
+  },
+  "c97fc2483697": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "Data protection in AWS: control who gets in, and scramble what they see",
+      "correct": "Access control (via IAM policies) restricts who can reach a resource, and data encryption (at rest and in transit, e.g. via KMS) makes the data unreadable without the right key — together these are core data-protection features AWS provides.",
+      "distractors": {
+        "B": "MFA devices protect account sign-in, and AWS supports virtual and hardware MFA, but there is no distinct \"physical MFA devices\" data-protection feature framed this way.",
+        "D": "AWS storage services are highly scalable, but none of them offer literally unlimited storage as a data-protection feature.",
+        "E": "Load balancing (ELB) distributes traffic for availability and performance; it does not protect data confidentiality or integrity."
+      }
+    }
+  },
+  "e5e4dc29fee0": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "EC2 billing granularity depends on the OS",
+      "correct": "Amazon Linux and most Linux distributions bill per-second (with a one-minute minimum), so the exact 2h 5m 9s is what's billed. Windows and other licensed/hourly-billed OSes like some CentOS AMI listings round up to the next full hour, so 4h 23m 7s becomes 5 hours.",
+      "distractors": {
+        "A": "Rounding the Linux instance up to 3 hours is wrong — per-second billing means Linux is charged for the exact duration used, not rounded up.",
+        "B": "Charging the exact duration for both instances ignores that hourly-billed AMIs round up to the next full hour.",
+        "D": "Rounding the Linux instance up to 3 hours is incorrect for per-second billing; only the CentOS instance rounds up here."
+      }
+    }
+  },
+  "f88bdea566f9": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "AWS Support API lets you manage cases programmatically",
+      "correct": "The AWS Support API exposes operations to create, update, and resolve support cases and to check service health, letting customers integrate support case management into their own tools instead of using the console.",
+      "distractors": {
+        "A": "AWS Trusted Advisor gives automated best-practice checks across cost, performance, security, and limits — it doesn't manage support cases.",
+        "B": "\"AWS Operations Support\" is not an AWS service name.",
+        "D": "AWS Personal Health Dashboard shows the status of AWS events affecting your specific resources, not a way to open or manage support cases."
+      }
+    }
+  },
+  "865bd55a680e": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "IAM can be driven through the console, CLI, or SDKs",
+      "correct": "The AWS CLI and AWS SDKs both let customers create and manage IAM users, roles, and policies programmatically, in addition to the Management Console.",
+      "distractors": {
+        "B": "Security Groups are EC2/VPC instance-level firewalls, not a way to interact with IAM.",
+        "D": "Network ACLs are subnet-level firewalls in a VPC, unrelated to managing IAM identities.",
+        "E": "AWS CodeCommit is a managed Git source-control service; it has no role in interacting with IAM."
+      }
+    }
+  },
+  "11302d47f45c": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "IAM identities vs. IAM tools/attachments",
+      "correct": "IAM Roles and IAM Users are the two identity types IAM provides (alongside groups) — a role is an identity assumable temporarily, a user is a persistent named identity.",
+      "distractors": {
+        "A": "AWS Resource Groups organize resources for management/tagging purposes; they are not an IAM identity type.",
+        "B": "IAM Policies are permission documents attached to identities — they define what an identity can do, but a policy is not itself an identity.",
+        "E": "AWS Organizations manages multiple AWS accounts as a hierarchy; an organization is not an IAM identity."
+      }
+    }
+  },
+  "a261342817cc": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Read Replicas offload read traffic from the primary database",
+      "correct": "RDS Read Replicas are asynchronously-updated copies of the primary database that applications can direct read-only queries to, reducing load on the primary and improving read scalability.",
+      "distractors": {
+        "A": "Database snapshots are point-in-time backups used for restore, not for offloading live read traffic.",
+        "B": "Multi-AZ deployments provide a synchronously replicated standby for failover/high availability; the standby is not used for serving read traffic in standard Multi-AZ.",
+        "C": "Automated backups create recovery points for restoring the database; they don't serve live queries."
+      }
+    }
+  },
+  "734a2855c6ca": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "AWS Security Bulletins are the channel for security/privacy event notices",
+      "correct": "AWS publishes Security Bulletins on the AWS Security Center to notify customers about vulnerabilities and security/privacy events affecting AWS services.",
+      "distractors": {
+        "A": "AWS Certificate Manager (ACM) issues and manages SSL/TLS certificates; it is not a notification channel.",
+        "C": "The Management Console is where you operate resources, not where AWS pushes formal security notices.",
+        "D": "AWS compliance resources (reports, certifications via Artifact) document AWS's compliance posture; they are not the notification mechanism for security events."
+      }
+    }
+  },
+  "012f9ec161c2": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "IAM Roles provide temporary, assumable credentials",
+      "correct": "IAM Roles are assumed temporarily and issue short-lived credentials via AWS STS, making them the right mechanism for granting temporary access instead of permanent, long-lived credentials.",
+      "distractors": {
+        "A": "IAM Users have persistent, long-term credentials meant for people or applications with ongoing access needs, not temporary access.",
+        "B": "A key pair is used for SSH access to EC2 instances, not for granting scoped AWS API access.",
+        "D": "IAM Groups are collections of users sharing permissions; they don't grant temporary access themselves."
+      }
+    }
+  },
+  "2735bfa2b8bf": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Application Load Balancer distributes traffic across EC2 instances",
+      "correct": "An Application Load Balancer sits in front of the three EC2 instances and distributes incoming HTTP/HTTPS traffic across them, which is exactly the horizontal-scaling pattern described.",
+      "distractors": {
+        "A": "AWS Global Accelerator improves global network performance by routing traffic over the AWS backbone to the nearest healthy endpoint; it's not the primary tool for distributing traffic across instances within one deployment.",
+        "C": "Amazon CloudFront is a content delivery network that caches content at edge locations; it doesn't load-balance traffic across application servers.",
+        "D": "Transit VPC is a network hub-and-spoke pattern for connecting multiple VPCs, unrelated to distributing web traffic across instances."
+      }
+    }
+  },
+  "61708249f9c4": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "Infrastructure as Code removes manual, error-prone provisioning",
+      "correct": "Using code (e.g. AWS CloudFormation templates) to provision and operate infrastructure makes environment creation repeatable and consistent, eliminating manual configuration mistakes.",
+      "distractors": {
+        "A": "Software test automation tools test application code; they don't provision or manage AWS infrastructure.",
+        "B": "AWS CodeDeploy automates application code deployments to existing compute, it doesn't provision the underlying infrastructure itself.",
+        "D": "Moving to dedicated hosts changes the EC2 tenancy model; it does nothing to automate provisioning or reduce human error."
+      }
+    }
+  },
+  "3c578fe36e37": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "MFA adds a second factor beyond the password",
+      "correct": "Requiring Multi-Factor Authentication for all IAM users means a stolen or guessed password alone isn't enough to sign in, significantly reducing the risk of unauthorized account access.",
+      "distractors": {
+        "A": "Restricting all SDK/CLI API calls would break legitimate automation and application access — it doesn't target unauthorized access specifically.",
+        "B": "Sharing one IAM account across a department violates least-privilege and destroys individual accountability; it's the opposite of a good security practice.",
+        "D": "AWS doesn't support \"two login passwords\" as an authentication mechanism — MFA using a separate device/app is the actual second factor."
+      }
+    }
+  },
+  "ec689a076c4d": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "S3 pricing includes volume-tiered discounts",
+      "correct": "Amazon S3 Standard storage pricing decreases per GB as usage crosses volume tiers, giving customers a lower effective rate at higher usage levels.",
+      "distractors": {
+        "A": "Amazon VPC itself is free to use (you pay for the resources inside it, like NAT gateways); it has no usage-based volume discount structure.",
+        "C": "Amazon Lightsail uses simple flat monthly bundle pricing, not a volume discount model.",
+        "D": "AWS Cost Explorer is a cost-visualization and reporting tool; it doesn't itself have usage pricing or volume discounts."
+      }
+    }
+  },
+  "cf5993960939": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Region selection balances compliance and cost against other factors",
+      "correct": "Data sovereignty (legal requirements on where data can reside) and cost (pricing varies by Region) are two of the standard criteria AWS documents for choosing a Region, alongside latency, service availability, and compliance requirements.",
+      "distractors": {
+        "A": "Security level does not vary by Region — AWS applies the same security standards and shared responsibility model globally.",
+        "D": "The number of VPCs planned is an account-level architecture decision, not a factor that drives which Region to deploy into.",
+        "E": "Geographic proximity to the company's own location matters far less than proximity to end users/customers, and isn't one of the two best answers here."
+      }
+    }
+  },
+  "6da4b850de44": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "ElastiCache adds an in-memory caching layer in front of a database",
+      "correct": "Amazon ElastiCache (Redis or Memcached) is an in-memory data store used as a cache in front of a database like MySQL/RDS, dramatically reducing read latency for frequently accessed data.",
+      "distractors": {
+        "A": "Amazon EFS is a managed NFS file system for shared file storage, not an in-memory cache.",
+        "B": "Amazon Neptune is a managed graph database service, unrelated to in-memory caching for a MySQL workload.",
+        "D": "DAX is specifically an in-memory cache for DynamoDB, not for MySQL-based applications."
+      }
+    }
+  },
+  "ee03af488b53": {
+    "taskStatement": "3.3",
+    "explanation": {
+      "concept": "Auto Scaling adjusts capacity across AZs for availability",
+      "correct": "Auto Scaling Groups can launch instances across multiple Availability Zones and automatically replace unhealthy ones, which increases both application availability and fault tolerance.",
+      "distractors": {
+        "A": "Caching responses at edge locations describes Amazon CloudFront, not Auto Scaling.",
+        "C": "Auto Scaling Groups operate within a Region across AZs; they don't scale instances across multiple Regions.",
+        "D": "Distributing traffic across Availability Zones is the job of an Elastic Load Balancer, not Auto Scaling itself."
+      }
+    }
+  },
+  "6be4ddad7175": {
+    "taskStatement": "1.4",
+    "explanation": {
+      "concept": "AWS passes economies of scale on to customers over time",
+      "correct": "AWS has a long track record of repeatedly lowering prices as its own scale and efficiency improve, which widens the TCO advantage over on-premises infrastructure whose costs don't fall the same way.",
+      "distractors": {
+        "A": "AWS actually helps customers shift spend from capital expenditure to operating expenditure (pay-as-you-go), the opposite of investing more in capex.",
+        "B": "AWS doesn't automate \"all\" infrastructure operations, and this overstated claim isn't the documented driver of the widening TCO gap.",
+        "D": "Security of the cloud is included at no extra charge, but that's a security benefit, not the cost-reduction mechanism behind a widening TCO gap."
+      }
+    }
+  },
+  "1dce11c13136": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Security IN the cloud is the customer's side of the shared responsibility model",
+      "correct": "Building an application's data schema and encrypting the file system are both customer-controlled configuration and data-layer tasks — squarely \"security in the cloud,\" the customer's responsibility.",
+      "distractors": {
+        "B": "Replacing physical hardware is an infrastructure task AWS handles as \"security of the cloud.\"",
+        "C": "Creating/managing the hypervisor is AWS's responsibility as the underlying virtualization layer.",
+        "D": "Patch management of the underlying infrastructure (host OS, hypervisor) is AWS's responsibility, not the customer's."
+      }
+    }
+  },
+  "705b63daa0d8": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "MFA device types: virtual, hardware token, and U2F security key",
+      "correct": "A U2F (Universal 2nd Factor) security key is a physical hardware device customers can register as an MFA device for their AWS account, alongside virtual MFA apps and hardware TOTP tokens.",
+      "distractors": {
+        "A": "AWS CloudHSM is a dedicated hardware security module for cryptographic key management, not an MFA device.",
+        "C": "AWS Access Keys are long-term credentials for programmatic API access, not an MFA mechanism.",
+        "D": "An AWS Key Pair is used for SSH access to EC2 instances, not for multi-factor sign-in authentication."
+      }
+    }
+  },
+  "85fc70f1188d": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "Elastic Beanstalk is the fast path to deploy an existing app",
+      "correct": "AWS Elastic Beanstalk lets you upload an existing application (including .NET) and automatically handles provisioning, load balancing, scaling, and health monitoring, making it the quickest way to get an app running on AWS without managing infrastructure by hand.",
+      "distractors": {
+        "A": "Amazon SNS is a pub/sub messaging service, unrelated to deploying an application.",
+        "C": "AWS Systems Manager is an operations/management tool for existing infrastructure, not a rapid application deployment service.",
+        "D": "AWS Trusted Advisor gives best-practice recommendations; it doesn't deploy applications."
+      }
+    }
+  },
+  "7e14c3e226e6": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "EC2 cost drivers: compute, IPs, and instance count — not security groups or Route 53 zones",
+      "correct": "Security groups and Hosted Zones don't factor into EC2 pricing at all — security groups are free to create/use, and Hosted Zones are a Route 53 (DNS) billing item, unrelated to EC2 cost estimation.",
+      "distractors": {
+        "A": "Running time is a direct driver of EC2 compute cost, so it is a relevant factor (not one of the two correct \"NOT\" answers).",
+        "C": "Elastic IP addresses incur charges when allocated but not attached to a running instance, making them a relevant EC2 cost factor.",
+        "E": "The number of instances running directly multiplies compute cost, so it is clearly a relevant EC2 cost factor."
+      }
+    }
+  },
+  "8d57563f4e1a": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Storage Gateway bridges on-premises storage to AWS",
+      "correct": "AWS Storage Gateway is a hybrid storage service that connects on-premises applications to AWS cloud storage (S3, EBS, or Glacier-backed volumes), letting enterprises extend on-prem storage capacity cost-effectively.",
+      "distractors": {
+        "A": "AWS Data Pipeline orchestrates data movement and transformation between compute/storage services; it isn't a hybrid storage extension service.",
+        "C": "Amazon Aurora is a managed relational database, unrelated to extending on-premises storage.",
+        "D": "Amazon EFS is a cloud-native NFS file system for use by AWS compute resources, not a hybrid on-premises extension tool."
+      }
+    }
+  },
+  "60abee39ff8c": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "S3 scales storage automatically with pay-as-you-go pricing",
+      "correct": "Amazon S3 is an object storage service that scales capacity automatically with no provisioning required, and customers pay only for what they store — ideal for a storage platform that must grow without manual capacity planning.",
+      "distractors": {
+        "B": "Amazon EBS volumes are provisioned with a fixed size that must be manually resized, so it doesn't scale automatically.",
+        "C": "Amazon Elastic Container Service runs containers; it is a compute service, not a storage service.",
+        "D": "AWS Storage Gateway connects on-premises environments to AWS storage; it's not itself the scalable storage backend for a cloud storage platform."
+      }
+    }
+  },
+  "b27b39641812": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "New IAM users start with no permissions (implicit deny)",
+      "correct": "By default, a newly created IAM user has no permissions attached; IAM's default is an implicit deny on everything until a policy explicitly grants access, so he can't touch EBS or S3 until permissions are attached.",
+      "distractors": {
+        "A": "EBS and S3 are not restricted to the root account — IAM users can absolutely be granted access to them via policies.",
+        "B": "New IAM users are usable immediately after creation; there's no AWS Support activation step required.",
+        "C": "S3 storage capacity is effectively unlimited for this purpose; running out of space isn't a real blocker here."
+      }
+    }
+  },
+  "9ff23769c80e": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "CloudTrail is the audit log of account activity",
+      "correct": "AWS CloudTrail records every API call made against the account — who made it, when, and from where — making it the service that supplies an auditor with a full access log.",
+      "distractors": {
+        "B": "Amazon CloudFront is a content delivery network; it doesn't log account-wide API access.",
+        "C": "AWS CloudFormation provisions infrastructure from templates; it's not an audit logging service.",
+        "D": "Amazon CloudWatch monitors metrics, logs, and alarms for operational performance, not a full identity-level audit trail of API calls."
+      }
+    }
+  },
+  "e2ef39f88290": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "Amazon Cloud Directory stores hierarchical, multi-dimensional data",
+      "correct": "Amazon Cloud Directory is a managed directory service that lets you organize data into flexible, multiple hierarchies (dimensions) at once, unlike a traditional single-hierarchy directory.",
+      "distractors": {
+        "B": "Real-time video/data stream analysis describes services like Kinesis Video Streams, not Cloud Directory.",
+        "C": "Accessing AWS with existing Active Directory credentials describes AWS Directory Service / AD Connector, a different service.",
+        "D": "Domain name registration and management describes Amazon Route 53, not Cloud Directory."
+      }
+    }
+  },
+  "f0c2d327846f": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Business/Enterprise Support response times scale with case severity",
+      "correct": "A \"Production System Down\" case is the most severe category under Business and Enterprise Support plans, and AWS commits to a one-hour first response time for it.",
+      "distractors": {
+        "A": "12 hours is the response time for a lower-severity \"general guidance\" or similar case type, not for a production-down case.",
+        "B": "15 minutes is the response commitment reserved for \"business-critical system down\" under the Enterprise plan specifically, a different severity tier from the general \"production system down\" case here.",
+        "C": "24 hours is far too slow for a case marked as a production outage."
+      }
+    }
+  },
+  "1d6dd9f65d53": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "High availability starts with spreading across multiple Availability Zones",
+      "correct": "Deploying to at least two Availability Zones is the foundational best practice for high availability, since it protects the application from a single data-center-level failure.",
+      "distractors": {
+        "B": "Using ELB across multiple Regions is a much more advanced/costly pattern than the basic best practice being asked about, and Regions aren't the standard first-line HA unit.",
+        "C": "Deploying to multiple servers within a single Availability Zone still leaves the application exposed if that one AZ fails.",
+        "D": "Rewriting application code doesn't address infrastructure-level availability at all."
+      }
+    }
+  },
+  "b2c6f9fb004f": {
+    "taskStatement": "1.4",
+    "explanation": {
+      "concept": "TCO on-prem vs AWS includes hidden facility and labor costs",
+      "correct": "Labor/IT staffing costs and facility overhead like cooling and power consumption are classic on-premises costs that a TCO comparison must include, since AWS eliminates or dramatically reduces them.",
+      "distractors": {
+        "C": "\"Amazon EBS computing power\" isn't a meaningful TCO line item — EBS is storage, not compute, and this phrase doesn't correspond to a real cost category.",
+        "D": "Software architecture is a design decision, not itself a cost input for a TCO calculation.",
+        "E": "Software compatibility is a technical migration consideration, not a direct cost factor weighed in a TCO analysis."
+      }
+    }
+  },
+  "1f7bf1df7243": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Enterprise Support offers the fastest response commitment",
+      "correct": "AWS Enterprise Support commits to a 15-minute response time for business-critical system down cases, the fastest response tier of any Support plan — matching the requirement described.",
+      "distractors": {
+        "A": "Basic Support provides no case response SLA for technical issues beyond account/billing support.",
+        "B": "Developer Support offers response times measured in hours (e.g. up to 24 hours), far slower than 15 minutes.",
+        "C": "Business Support's fastest response for business-critical issues is one hour, not 15 minutes."
+      }
+    }
+  },
+  "5d723864ee98": {
+    "taskStatement": "3.3",
+    "explanation": {
+      "concept": "Serverless means no servers to provision or manage",
+      "correct": "AWS Lambda (serverless compute) and Amazon DynamoDB (serverless NoSQL database) both require no server provisioning or management — capacity and scaling are handled automatically by AWS.",
+      "distractors": {
+        "A": "Amazon EC2 requires you to provision and manage virtual server instances yourself, the opposite of serverless.",
+        "D": "Amazon EMR runs on a managed cluster of EC2 instances that you size and manage, not a serverless offering.",
+        "E": "Amazon RDS runs on provisioned database instances you size and manage, not a serverless service by default."
+      }
+    }
+  },
+  "884151b137aa": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "ACM issues and manages SSL/TLS certificates",
+      "correct": "AWS Certificate Manager (ACM) lets you provision, manage, and deploy public and private SSL/TLS certificates for use with AWS services like ELB and CloudFront, quickly and at no extra cost for public certificates.",
+      "distractors": {
+        "A": "Amazon GuardDuty is a threat-detection service that monitors for malicious activity, unrelated to certificate issuance.",
+        "C": "Amazon Detective helps investigate security findings by analyzing log data; it doesn't issue certificates.",
+        "D": "AWS WAF filters web traffic against rules to block common exploits; it's not a certificate management service."
+      }
+    }
+  },
+  "2fabe09f9995": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "OpsWorks manages configuration via Chef and Puppet",
+      "correct": "AWS OpsWorks is a configuration management service that provides managed Chef and Puppet, letting you automate how EC2 instances are configured using Chef recipes/cookbooks.",
+      "distractors": {
+        "A": "AWS Config tracks and evaluates resource configuration changes for compliance; it doesn't integrate with Chef to configure instances.",
+        "C": "Auto Scaling adjusts the number of running instances based on demand; it doesn't perform Chef-based configuration.",
+        "D": "AWS CloudFormation provisions infrastructure from templates (infrastructure as code); it's a different automation model from Chef-based configuration management."
+      }
+    }
+  },
+  "8ef0ffcd868f": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "S3 objects are natively downloadable over the internet",
+      "correct": "Amazon S3 stores data as objects in buckets and can serve them directly over HTTP/HTTPS with public or signed URLs, making it the right choice for internet-downloadable object storage.",
+      "distractors": {
+        "A": "Amazon EBS volumes are block storage attached to a single EC2 instance; they aren't designed for direct internet downloads.",
+        "B": "Amazon EFS is a network file system mounted by EC2 instances; it isn't built for public internet object downloads.",
+        "D": "Instance Store is ephemeral, instance-local disk storage that disappears when the instance stops; it has no internet-facing download capability."
+      }
+    }
+  },
+  "5b218f46d078": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "CloudWatch monitors CloudFront request metrics",
+      "correct": "Amazon CloudWatch collects and displays metrics for CloudFront, including HTTP/HTTPS request counts, error rates, and latency, letting you monitor how requests are being handled.",
+      "distractors": {
+        "A": "AWS WAF filters and blocks malicious web requests at CloudFront; it protects traffic rather than monitoring it as a metrics/logging service.",
+        "C": "AWS Cloud9 is a cloud-based IDE for writing and debugging code, unrelated to monitoring CloudFront traffic.",
+        "D": "AWS CloudTrail logs API calls made against AWS accounts/resources, not the end-user HTTP/HTTPS requests flowing through CloudFront."
+      }
+    }
+  },
+  "7884d6c8d834": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Steady, predictable usage favors Reserved Instances",
+      "correct": "When compute capacity is continually utilized throughout the year, committing to a Reserved Instance term (1 or 3 years) delivers the largest discount versus On-Demand, since the workload's steady-state nature matches the commitment.",
+      "distractors": {
+        "A": "On-Demand pricing is the most expensive per-hour rate and is meant for unpredictable or short-term usage, not continuous year-round workloads.",
+        "B": "Dedicated Hosts are priced for full physical server control (often for licensing needs), not the most cost-effective option for a typical continually-used workload.",
+        "C": "Spot Instances offer deep discounts but can be interrupted at any time, making them unsuitable for a workload that must run continually."
+      }
+    }
+  },
+  "547ae5af6c51": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Long-term human access uses an IAM user with a scoped policy",
+      "correct": "For a person who needs ongoing, long-term access, creating an IAM user and attaching a policy scoped to just DynamoDB access follows least privilege — granting only what's needed, not broad admin rights.",
+      "distractors": {
+        "A": "IAM roles are best suited for temporary or delegated access (e.g. for services or federated users), not for a permanent, individual employee's long-term access.",
+        "B": "Attaching Administrator access grants far more than DynamoDB permissions, violating least privilege.",
+        "D": "Granting an IAM user Administrator access is excessive for a task scoped to managing DynamoDB, violating least privilege."
+      }
+    }
+  },
+  "f4ac9327503f": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "EC2 instance permissions should come from IAM roles, not embedded credentials",
+      "correct": "Attaching an IAM role to the EC2 instance provides temporary, automatically rotated credentials via the instance metadata service, which is the recommended best practice over hardcoding long-term keys.",
+      "distractors": {
+        "A": "Manually generating new access keys for every delegation is operationally heavy and still relies on long-term credentials that must be distributed and rotated by hand.",
+        "B": "Hardcoding credentials in application code is a well-known anti-pattern — a security risk if the code is ever exposed or checked into version control.",
+        "D": "Applications on EC2 frequently need to call other AWS services (e.g. S3, DynamoDB), so this statement is simply false."
+      }
+    }
+  },
+  "a11caae4a422": {
+    "taskStatement": "1.4",
+    "explanation": {
+      "concept": "Bring-your-own-license reduces migration cost",
+      "correct": "Reusing existing third-party software licenses on AWS (via License Mobility or BYOL programs) avoids paying for new licenses, directly lowering the total cost of migrating workloads.",
+      "distractors": {
+        "A": "Using self-managed servers instead of managed services typically increases operational overhead and cost, not savings.",
+        "C": "AWS edge locations serve cached content for CDNs; production workloads are not migrated to run on edge locations.",
+        "D": "AWS Outposts brings AWS infrastructure on-premises for specific hybrid needs; it's a specialized, often costlier option, not a general cost-saving migration strategy for all workloads."
+      }
+    }
+  },
+  "a9109371c252": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "SQS decouples application components with a message queue",
+      "correct": "Amazon SQS is a managed message queuing service that lets components of a monolithic application communicate asynchronously through queues instead of direct calls, breaking tight coupling between them.",
+      "distractors": {
+        "B": "A Virtual Private Gateway is the VPC-side endpoint for a VPN connection; it's a networking construct, not an application decoupling tool.",
+        "C": "AWS Artifact provides compliance reports and agreements; it has nothing to do with application architecture.",
+        "D": "Amazon CloudFront is a content delivery network for caching and distributing content, not a mechanism for decoupling application components."
+      }
+    }
+  },
+  "4db7b5d697be": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "MFA is configured through IAM, using the CLI or console",
+      "correct": "Virtual MFA devices are enabled by attaching them to an IAM identity, and this can be done either through IAM directly (console) or via the AWS CLI issuing IAM API calls.",
+      "distractors": {
+        "A": "Amazon Connect is a cloud contact center service, unrelated to configuring MFA.",
+        "D": "Amazon SNS is a pub/sub notification service; it plays no role in enabling MFA devices.",
+        "E": "Amazon VPC is a networking service for isolated virtual networks, unrelated to enabling MFA."
+      }
+    }
+  },
+  "54e79a09b072": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Horizontal scaling suits parallelizable workloads like binary file processing",
+      "correct": "Running many EC2 instances in parallel (horizontal scaling) lets you process a large number of independent binary files concurrently, which scales further and more resiliently than a single bigger instance.",
+      "distractors": {
+        "A": "Vertically scaling EC2 instances hits a ceiling on instance size and doesn't parallelize independent file-processing work as effectively.",
+        "B": "Running RDS instances in parallel doesn't make sense for processing binary files — RDS is a relational database service, not a compute/processing tool.",
+        "C": "Vertically scaling RDS instances is about database capacity, unrelated to processing a batch of binary files."
+      }
+    }
+  },
+  "debe1840afe4": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "AWS Pricing Calculator estimates costs before you deploy",
+      "correct": "AWS Pricing Calculator lets you model and estimate the cost of AWS services — like S3 storage and CloudFront distribution — before actually provisioning anything, ideal for upfront cost planning.",
+      "distractors": {
+        "A": "AWS Cost Explorer visualizes and analyzes costs you've already incurred; it doesn't estimate costs for a not-yet-built architecture.",
+        "C": "AWS Budgets sets alerts against actual or forecasted spend on existing resources; it isn't a pre-deployment cost estimation tool.",
+        "D": "The AWS Cost & Usage Report is a detailed historical billing dataset, not a forward-looking cost estimation tool."
+      }
+    }
+  },
+  "171b69485b8e": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "Responding to a suspected account compromise: investigate and rotate credentials",
+      "correct": "Opening an investigation and deleting any compromised IAM users, plus changing the root and IAM user passwords, are AWS's recommended steps to contain and remediate suspicious activity in the account.",
+      "distractors": {
+        "A": "Stopping all running services is disruptive and not the recommended first step — targeted investigation and credential rotation come first.",
+        "B": "Never share your root account password with anyone, including AWS Support — this is explicitly against AWS security guidance.",
+        "C": "Deleting all IAM users indiscriminately (rather than just compromised ones) is overly destructive and not the recommended targeted response."
+      }
+    }
+  },
+  "099f5c0c4e38": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Loose coupling isolates component failures",
+      "correct": "Loose coupling is the design principle of minimizing dependencies between components (often via queues or APIs) so that one component's failure doesn't cascade to others.",
+      "distractors": {
+        "A": "\"Elastic coupling\" is not a recognized AWS design principle term.",
+        "C": "\"Scalable coupling\" is not a recognized AWS design principle term.",
+        "D": "Tightly coupling is the opposite of the described practice — it means components depend directly on each other, so one failure impacts the rest."
+      }
+    }
+  },
+  "ad514872cc9d": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "EFS is the shared, concurrently-mountable NFS file system",
+      "correct": "Amazon Elastic File System provides a managed NFS file system that can be mounted concurrently by many EC2 instances across multiple AZs, ideal for shared file access.",
+      "distractors": {
+        "B": "Amazon S3 is object storage accessed via API/HTTP, not mounted as a traditional NFS file system across instances.",
+        "C": "Amazon EBS volumes attach to a single EC2 instance at a time (with limited multi-attach exceptions for specific volume types); they are not a general-purpose concurrent NFS solution.",
+        "D": "AWS Storage Gateway bridges on-premises environments to AWS storage; it isn't the native concurrently-mountable EC2 file system being described here."
+      }
+    }
+  },
+  "951ad5b461c5": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Low-latency AZ links enable synchronous replication",
+      "correct": "The low-latency, high-throughput links between AZs within a Region are fast enough to support synchronous data replication (e.g. RDS Multi-AZ), keeping a standby copy consistently up to date.",
+      "distractors": {
+        "A": "Private connections to an on-premises data center are provided by Direct Connect, not by inter-AZ links.",
+        "B": "Global high availability spans multiple Regions, which is a separate concept from the low-latency links within a single Region's AZs.",
+        "C": "Automating resource provisioning is unrelated to the physical network characteristics between AZs."
+      }
+    }
+  },
+  "d16dad317671": {
+    "taskStatement": "3.3",
+    "explanation": {
+      "concept": "Lambda has native runtimes plus a custom runtime API for any language",
+      "correct": "Lambda natively supports several languages (Node.js, Python, Java, Go, Ruby, .NET, and more) out of the box, and its custom runtime API lets you package and run essentially any programming language beyond the native list.",
+      "distractors": {
+        "A": "Lambda supports far more than just Python and Node.js natively, and it doesn't rely on third-party plugins to convert code between languages.",
+        "C": "Lambda is not a programming language — it is a serverless compute service that runs code you write in supported languages.",
+        "D": "This is false — Lambda explicitly does support numerous programming languages, both natively and via custom runtimes."
+      }
+    }
+  },
+  "7e0ae74c273a": {
+    "taskStatement": "3.7",
+    "explanation": {
+      "concept": "X-Ray traces requests to find and fix performance issues",
+      "correct": "AWS X-Ray traces requests as they travel through a distributed application, helping developers identify where issues and bottlenecks occur, which in turn helps improve overall application performance.",
+      "distractors": {
+        "A": "X-Ray observes and traces existing components; it doesn't automatically decouple or restructure an application's architecture.",
+        "D": "X-Ray is a tracing/observability tool, not a deployment service for EC2 instances.",
+        "E": "X-Ray is a tracing/observability tool, not a deployment service for on-premises servers."
+      }
+    }
+  }
+}
