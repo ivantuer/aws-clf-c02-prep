@@ -1,0 +1,610 @@
+{
+  "3e9663951de6": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "Securing S3 data means encrypting it, not just locking down access",
+      "correct": "Enabling S3 server-side encryption protects data at rest, and encrypting data before you ever upload it adds a second, independent layer of protection. Both are legitimate ways to secure sensitive S3 data.",
+      "distractors": {
+        "A": "Deleting the encryption keys after encrypting the data makes it permanently unreadable to everyone, including you — that destroys access, it doesn't secure the data.",
+        "B": "False: AWS secures the underlying infrastructure, but under the shared responsibility model the customer is still responsible for encrypting their own data — it isn't automatic.",
+        "E": "Deleting every IAM user with S3 access removes your own team's ability to use the bucket; it isn't a targeted security control."
+      }
+    }
+  },
+  "3d8efe58af7f": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "CodeCommit stores code, CodeBuild compiles and tests it, CodeDeploy ships it",
+      "correct": "AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces deployable artifacts.",
+      "distractors": {
+        "A": "AWS CodeDeploy automates deploying already-built code to EC2, Lambda, or on-premises servers — it runs after the build step, not during it.",
+        "B": "AWS CodeCommit is a managed private Git repository for storing source code; it doesn't compile or run tests.",
+        "C": "CloudEndure is AWS's disaster recovery and migration service, unrelated to compiling or testing code."
+      }
+    }
+  },
+  "f4db74a8780a": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "S3 storage cost = storage class rate x GB stored",
+      "correct": "The storage class you choose (Standard, IA, Glacier, etc.) sets the per-GB rate, and the total size in gigabytes of everything you store is the volume that rate applies to — together these drive S3 storage cost.",
+      "distractors": {
+        "A": "Enabling default encryption (SSE-S3) doesn't add any extra charge.",
+        "B": "EBS volumes are billed separately as block storage attached to EC2 instances; they have nothing to do with S3 storage cost.",
+        "D": "Creating or deleting a bucket is free — you're only charged for what you actually store, transfer, and request."
+      }
+    }
+  },
+  "65f591a860bc": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "CloudFront caches at the edge, which cuts latency and boosts availability",
+      "correct": "CloudFront caches content at edge locations close to users, which lowers latency for viewers (E) and increases availability, since cached copies keep serving requests even if the origin has trouble (B).",
+      "distractors": {
+        "A": "Tracking user activity and API usage is what CloudTrail and CloudWatch do, not CloudFront's job.",
+        "C": "Disaster recovery is handled by backup and replication services, not a CDN.",
+        "D": "Archiving data at very low cost describes S3 Glacier; CloudFront doesn't store data long-term."
+      }
+    }
+  },
+  "1e7c62480245": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "Amazon Connect = cloud-based contact center",
+      "correct": "Amazon Connect is a cloud contact center service that lets you stand up customer service call and chat operations without on-premises hardware, with built-in analytics and integrations.",
+      "distractors": {
+        "A": "Lightsail is a simplified VPS offering aimed at small web apps and blogs, not contact centers.",
+        "C": "Direct Connect provides a dedicated private network link between your data center and AWS; it doesn't run a contact center.",
+        "D": "Elastic Beanstalk is a PaaS for deploying and running web applications, not a customer-service platform."
+      }
+    }
+  },
+  "1c4136b1f45c": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Cost & Usage Report = the most detailed AWS billing dataset",
+      "correct": "The AWS Cost & Usage Report (CUR) is the most comprehensive dataset of your AWS costs and usage, and is the standard way to see exactly what you're being charged for and why.",
+      "distractors": {
+        "B": "There's no \"AWS Total Cost of Ownership dashboard\" service; TCO comparisons are done with the separate AWS Pricing Calculator, which projects on-premises vs cloud cost rather than showing your actual incurred charges.",
+        "C": "The CloudWatch logs dashboard shows operational logs and metrics, not billing data.",
+        "D": "The Amazon VPC dashboard manages networking resources, not cost."
+      }
+    }
+  },
+  "5ded256e2339": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Reserved Instances come in two types: Standard and Convertible",
+      "correct": "AWS offers two Reserved Instance types — Standard RIs, which give the largest discount but fix the instance attributes for the term, and Convertible RIs, which give a smaller discount but let you change instance family, OS, or tenancy during the term.",
+      "distractors": {
+        "B": "\"Expedited\" is not an AWS Reserved Instance type.",
+        "C": "\"Bulk\" is not an AWS Reserved Instance type.",
+        "D": "Spot Instances are a separate EC2 purchasing option — spare capacity at a discount — not a type of Reserved Instance."
+      }
+    }
+  },
+  "841a71ca6a2e": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "AWS Artifact = self-service portal for compliance reports",
+      "correct": "AWS Artifact is the on-demand portal for downloading AWS's compliance reports and agreements, including auditor-issued certifications such as SOC, PCI, and ISO reports.",
+      "distractors": {
+        "B": "AWS Config tracks and evaluates configuration changes to your own resources; it doesn't hold third-party audit reports.",
+        "C": "CloudWatch monitors metrics, logs, and alarms — an operational tool, not a compliance repository.",
+        "D": "CloudTrail logs API activity in your own account for auditing; it isn't where AWS publishes its external certifications."
+      }
+    }
+  },
+  "3b9ecd704127": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "Resource Groups build custom views across tagged resources",
+      "correct": "AWS Resource Groups let you organize resources by tag (for example, environment=dev/test/prod) into a single custom view, so you can see and manage just that environment's resources together.",
+      "distractors": {
+        "B": "Placement Groups control how EC2 instances are physically placed relative to each other (cluster, spread, partition) — unrelated to building a management view.",
+        "C": "The AWS Management Console is the overall AWS web UI; it doesn't itself create per-environment custom views.",
+        "D": "Tag Editor lets you add, edit, and find tags across resources, but it doesn't create the persistent custom console that Resource Groups provides."
+      }
+    }
+  },
+  "017d8197917b": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "CloudWatch collects and monitors EC2 metrics",
+      "correct": "Amazon CloudWatch collects metrics — CPU utilization, network, status checks — from running EC2 instances so you can monitor performance and set alarms.",
+      "distractors": {
+        "A": "Amazon Inspector scans workloads for software vulnerabilities and unintended network exposure; it doesn't collect performance metrics.",
+        "C": "CloudFormation provisions and manages infrastructure as code; it isn't a monitoring tool.",
+        "D": "CloudTrail logs API calls for auditing, not performance metrics."
+      }
+    }
+  },
+  "4990d4de74a0": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "X-Ray traces requests across your application to find bottlenecks",
+      "correct": "AWS X-Ray traces requests as they travel through your application's components, helping you pinpoint the source of performance bottlenecks and errors that cause long load times.",
+      "distractors": {
+        "A": "Amazon Detective analyzes security findings to investigate potential security issues, not general application performance.",
+        "C": "Security Hub aggregates security findings and compliance checks; it doesn't diagnose performance problems.",
+        "D": "AWS Shield protects against DDoS attacks; it has nothing to do with load-time performance."
+      }
+    }
+  },
+  "3c987bfba82e": {
+    "taskStatement": "3.3",
+    "explanation": {
+      "concept": "Fargate and Lambda run without you provisioning servers",
+      "correct": "AWS Fargate runs containers without you managing the underlying EC2 instances, and AWS Lambda runs code in response to events with no servers to provision at all — both are serverless compute.",
+      "distractors": {
+        "A": "Amazon EC2 requires you to provision, patch, and manage the underlying virtual servers yourself.",
+        "D": "Amazon ECS can run its tasks on EC2, which requires you to manage the cluster's underlying instances.",
+        "E": "Amazon EMR runs on managed EC2 clusters that you size and manage, not a serverless model."
+      }
+    }
+  },
+  "660bf0ca664a": {
+    "taskStatement": "3.3",
+    "secondaryTaskStatement": "2.2",
+    "explanation": {
+      "concept": "Dedicated Hosts give physical-server-level isolation, for compliance",
+      "correct": "An EC2 Dedicated Host is a physical server fully dedicated to your use, letting you meet compliance requirements that mandate isolated hardware and letting you apply existing per-socket or per-VM software licenses.",
+      "distractors": {
+        "B": "Reserved Instances are a billing discount for committing to usage; they still run on shared physical hardware.",
+        "C": "Spot Instances use spare shared capacity at a discount, with no hardware isolation guarantee.",
+        "D": "On-Demand Instances also run on shared, multi-tenant hardware by default."
+      }
+    }
+  },
+  "1e40f754f04e": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Architecture Optimization = periodically right-sizing workloads to cut waste",
+      "correct": "Architecture Optimization is the cost governance practice of regularly reviewing and refining workload architecture — right-sizing, adopting managed or serverless options, retiring unused resources — to get the most value from existing AWS spend.",
+      "distractors": {
+        "A": "Tagging Enforcement ensures resources are tagged consistently for cost allocation and visibility, not architectural efficiency itself.",
+        "C": "Budgeting Processes are about setting and tracking spending targets, not re-architecting workloads.",
+        "D": "Resource Controls (like SCPs and guardrails) restrict what can be provisioned; they don't optimize architecture that's already running."
+      }
+    }
+  },
+  "e1b1ac81a278": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Relational databases (RDS) guarantee ACID transactions; Redshift does not",
+      "correct": "Amazon RDS runs managed relational database engines (MySQL, PostgreSQL, SQL Server, Oracle, Aurora) that support ACID-compliant transactions, which is exactly what a financial application requires.",
+      "distractors": {
+        "A": "Redshift is a data warehouse optimized for large-scale analytics (OLAP) queries, not transactional (OLTP) workloads with ACID guarantees.",
+        "C": "CloudHSM is a hardware security module for managing encryption keys, not a database.",
+        "D": "AWS DMS migrates data between databases; it isn't a database itself."
+      }
+    }
+  },
+  "0e28fba80da6": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Policies are the permission documents attached to identities",
+      "correct": "An IAM policy is a JSON document that defines a set of permissions; attaching one directly to a user grants that user those permissions.",
+      "distractors": {
+        "A": "\"IAM Identity\" isn't itself a permission-granting construct — it refers to the users, roles, and groups that policies get attached to.",
+        "B": "An IAM Group bundles multiple users together, but the actual permissions still come from the policy attached to the group.",
+        "C": "An IAM Role is assumed temporarily by a trusted entity; it isn't used to attach permissions directly to one specific user."
+      }
+    }
+  },
+  "de322ee442e2": {
+    "taskStatement": "1.4",
+    "secondaryTaskStatement": "1.2",
+    "explanation": {
+      "concept": "Variable expense: pay for compute only while you're using it",
+      "correct": "The ability to launch EC2 instances when demand spikes and terminate them when it subsides turns compute into a variable, on-demand expense instead of fixed capacity sized for peak load year-round — that's what makes AWS more economical for workloads with fluctuating demand.",
+      "distractors": {
+        "A": "Launching powerful instances handles a spike technically, but it doesn't explain the cost advantage over a traditional data center by itself.",
+        "B": "Paying upfront for bigger discounts (Reserved Instances) is the opposite strategy for a workload with unpredictable, varying capacity needs.",
+        "D": "Choosing cheaper instance types helps control cost generally, but it doesn't address the core economic advantage of matching capacity to fluctuating demand."
+      }
+    }
+  },
+  "218072a1e554": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "RDS supports MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, and Aurora — not Teradata",
+      "correct": "Teradata is not one of the database engines Amazon RDS supports; RDS covers MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, and Aurora.",
+      "distractors": {
+        "A": "PostgreSQL is a supported RDS engine.",
+        "B": "Oracle is a supported RDS engine.",
+        "C": "Microsoft SQL Server is a supported RDS engine."
+      }
+    }
+  },
+  "2bdefecadaa0": {
+    "taskStatement": "1.3",
+    "explanation": {
+      "concept": "DMS migrates databases into AWS with minimal downtime",
+      "correct": "AWS Database Migration Service (DMS) moves on-premises databases into AWS, and can even convert between database engines, while keeping the source database operational during the migration.",
+      "distractors": {
+        "B": "S3 Transfer Acceleration speeds up uploads to S3 over long distances; it's not a database migration tool.",
+        "C": "AWS Directory Service provides managed Microsoft Active Directory; it's unrelated to database migration.",
+        "D": "Transit Gateway is a network hub for connecting VPCs and on-premises networks, not a database migration tool."
+      }
+    }
+  },
+  "74145b235be4": {
+    "taskStatement": "3.3",
+    "explanation": {
+      "concept": "Lightsail = simplest path to a small website via preconfigured blueprints",
+      "correct": "Amazon Lightsail offers preconfigured application blueprints, including WordPress, that launch a ready-to-use instance in a few clicks — the easiest starting point for a new customer running a simple site.",
+      "distractors": {
+        "B": "Installing WordPress on a bare EC2 instance requires you to configure the web server, database, and OS yourself — more setup than Lightsail's blueprint.",
+        "C": "S3 static website hosting can't run WordPress, which needs server-side PHP and a database.",
+        "D": "AWS CDK is an infrastructure-as-code framework for developers, not a way to directly host a website."
+      }
+    }
+  },
+  "0f9e321b7770": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "KMS = managed multi-tenant key service; CloudHSM = dedicated single-tenant HSM",
+      "correct": "AWS KMS is the managed service for creating and controlling encryption keys used across AWS services, and AWS CloudHSM provides dedicated hardware security modules for customers who need exclusive control over their keys — both are key management options.",
+      "distractors": {
+        "B": "Certificate Manager issues and manages SSL/TLS certificates, not general-purpose encryption keys.",
+        "C": "CodeDeploy automates application deployments; it's unrelated to key management.",
+        "D": "CodeCommit is a source-code repository, unrelated to key management."
+      }
+    }
+  },
+  "8347b532a161": {
+    "taskStatement": "3.3",
+    "secondaryTaskStatement": "3.4",
+    "explanation": {
+      "concept": "RDS manages the engine for you; EC2 lets you install and run your own database software",
+      "correct": "Amazon EC2 gives you a full virtual machine where you can install and run any relational database software yourself, including custom or unsupported engines — something the managed RDS service doesn't allow.",
+      "distractors": {
+        "B": "Cognito handles user sign-up, sign-in, and identity federation, unrelated to running database software.",
+        "C": "RDS only supports its own list of pre-built engines; you can't install custom database software on it.",
+        "D": "Amazon Inspector scans for vulnerabilities; it doesn't run software."
+      }
+    }
+  },
+  "f97bd9e3d914": {
+    "taskStatement": "3.3",
+    "secondaryTaskStatement": "1.2",
+    "explanation": {
+      "concept": "Auto Scaling adjusts capacity automatically to match unpredictable load",
+      "correct": "AWS Auto Scaling monitors demand and automatically adds or removes resources, such as EC2 instances, to match it — exactly what's needed when CPU and RAM requirements change unpredictably.",
+      "distractors": {
+        "B": "ELB distributes traffic across healthy targets; it doesn't itself add or remove capacity.",
+        "C": "Amazon Route 53 is a DNS and traffic-routing service, not a capacity-adjustment tool.",
+        "D": "Amazon ECS orchestrates containers; scaling the underlying capacity still requires Auto Scaling (or a similar mechanism) underneath it."
+      }
+    }
+  },
+  "2683f779bdb6": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "IAM extends identity management from on-premises into AWS",
+      "correct": "AWS IAM lets an operations team keep managing user identities and access in AWS, and can integrate with an existing on-premises directory through federation, letting the team continue performing the same role they did on-premises.",
+      "distractors": {
+        "B": "AWS Outposts extends AWS infrastructure to on-premises hardware; it doesn't manage identities.",
+        "C": "\"AWS Federation\" isn't a standalone AWS service — federation is a capability of IAM, not a separate product.",
+        "D": "Amazon Redshift is a data warehouse, unrelated to identity management."
+      }
+    }
+  },
+  "5bc75d07fc68": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Cloud design favors loose coupling and disposable resources over rigid, fixed infrastructure",
+      "correct": "Designing for loose coupling between components (B) and treating servers as disposable, replaceable resources (D) are core cloud design principles that enable independent scaling and quick recovery from failure.",
+      "distractors": {
+        "A": "Reserved capacity is a purchasing decision, not a design principle; cloud design favors elastic, on-demand capacity that scales with load.",
+        "C": "Cloud design favors managed services over running and maintaining your own servers wherever possible.",
+        "E": "Choosing multi-AZ vs multi-Region is a resiliency decision, not one of the core design principles being tested here."
+      }
+    }
+  },
+  "001df2888784": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "IAM Credential Report = account-wide audit of every user's credential status",
+      "correct": "The IAM Credential Report lists every IAM user in the account along with the status of their passwords, access keys, and MFA devices, generated on demand from the IAM console.",
+      "distractors": {
+        "A": "CloudTrail Trails log API activity, not a roster of users and their credential status.",
+        "C": "AWS Artifact holds compliance reports and agreements, not a list of your account's IAM users.",
+        "D": "The Cost and Usage Report covers billing data, not identity or credential information."
+      }
+    }
+  },
+  "ba942117cca8": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "CloudHSM: generate and control your own encryption keys in dedicated hardware",
+      "correct": "AWS CloudHSM provisions dedicated, single-tenant hardware security modules so you can generate and manage your own encryption keys under your exclusive control, meeting stricter key-custody requirements than KMS's shared model.",
+      "distractors": {
+        "A": "AWS Shield protects against DDoS attacks, not key generation.",
+        "B": "Certificate Manager manages SSL/TLS certificates, not general-purpose encryption keys.",
+        "D": "AWS WAF filters web traffic against common exploits; it has nothing to do with encryption keys."
+      }
+    }
+  },
+  "186863850432": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Regions and Availability Zones stack together for the highest redundancy",
+      "correct": "Deploying across multiple Availability Zones in multiple Regions protects against both a data-center-level failure and an entire Region becoming unavailable — the highest level of redundancy and fault tolerance available.",
+      "distractors": {
+        "A": "AWS provides the redundant infrastructure, but you still have to architect your own application to actually take advantage of multiple AZs and Regions.",
+        "B": "A single Availability Zone is itself a single point of failure — no protection against a data-center outage.",
+        "C": "Multiple AZs within one Region still leave you exposed if that entire Region has an outage."
+      }
+    }
+  },
+  "1bff4aadcd07": {
+    "taskStatement": "3.6",
+    "secondaryTaskStatement": "3.4",
+    "explanation": {
+      "concept": "S3 and DynamoDB replicate data across multiple AZs automatically, by design",
+      "correct": "Amazon S3 and Amazon DynamoDB automatically store and replicate data across multiple Availability Zones within a Region, so both survive the loss of a single AZ without any action from you.",
+      "distractors": {
+        "A": "Instance Store is ephemeral storage physically attached to a single EC2 host; its data is lost if that instance or its underlying hardware fails.",
+        "D": "Amazon Route 53 is a DNS service — it doesn't store or replicate your application data.",
+        "E": "AWS VPN provides an encrypted network connection; it doesn't replicate data."
+      }
+    }
+  },
+  "efed2f02f8c5": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "CloudFront charges by requests and traffic, not by compute or storage volumes",
+      "correct": "CloudFront cost is driven by the number of requests served (A) and the volume and distribution of traffic delivered to viewers (B), which varies by the edge locations and regions it's served from — the dimensions the CDN actually meters.",
+      "distractors": {
+        "C": "\"Number of Volumes\" is an EBS or block-storage concept, not something CloudFront bills on.",
+        "D": "Instance type is an EC2 compute concept; CloudFront has no instances to size.",
+        "E": "Storage Class is an S3 concept; CloudFront doesn't store objects long-term by storage tier."
+      }
+    }
+  },
+  "6e1fe16f0b50": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "The Acceptable Use Policy defines what you may not do with AWS services",
+      "correct": "The AWS Acceptable Use Policy is the public document that spells out prohibited uses of AWS services, such as illegal activity, security violations, and abuse.",
+      "distractors": {
+        "A": "Service Control Policies are an AWS Organizations feature for restricting what actions accounts or users can take — a technical control, not the policy document defining prohibited uses.",
+        "B": "AWS Artifact provides compliance reports and agreements, not the content of the Acceptable Use Policy.",
+        "C": "AWS Budgets tracks and alerts on spending, unrelated to usage policy."
+      }
+    }
+  },
+  "c5bb9cc54b0f": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Security Bulletins and the Security Blog are public and free; a TAM, the Support API, and paid training are not",
+      "correct": "AWS Security Bulletins and the AWS Security Blog are publicly published content that anyone can read for free, with no AWS Support plan required.",
+      "distractors": {
+        "B": "A Technical Account Manager (TAM) is a named contact included only with Enterprise Support, a paid plan.",
+        "C": "The AWS Support API requires a Business or Enterprise Support plan to access.",
+        "E": "AWS Classroom Training is paid, instructor-led training."
+      }
+    }
+  },
+  "13c5fb0c96c3": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Versioning keeps every version of an object, including deleted ones",
+      "correct": "S3 Versioning keeps every version of an object, including a deletion, so an accidentally deleted object can be restored by retrieving the prior version.",
+      "distractors": {
+        "B": "Bucket Policies control who can access a bucket; they don't help you recover an object that's already been deleted.",
+        "C": "Lifecycle Policies transition or expire objects on a schedule — they don't protect against accidental deletion, and can even delete objects intentionally.",
+        "D": "Disabling Cross-Region Replication removes a feature; it does nothing to protect against accidental deletion."
+      }
+    }
+  },
+  "2b12e1a8068e": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "AWS secures the physical infrastructure — Regions, Availability Zones, edge locations",
+      "correct": "AWS is responsible for security \"of\" the cloud, which includes physically securing the Regions, Availability Zones, and edge locations that make up the global infrastructure.",
+      "distractors": {
+        "B": "Auditing your own usage and configuration is the customer's job.",
+        "C": "Monitoring your own resource usage is the customer's responsibility.",
+        "D": "Securing access to your AWS resources, such as IAM configuration, is the customer's responsibility — security \"in\" the cloud."
+      }
+    }
+  },
+  "148206669c30": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Trusted Advisor: seven core checks on Basic/Developer, the full set on Business/Enterprise",
+      "correct": "The Basic and Developer Support plans give access only to the seven core Trusted Advisor checks (covering security and service limits); the full set of checks across all categories requires Business or Enterprise Support.",
+      "distractors": {
+        "A": "Business & Enterprise Support unlock the full Trusted Advisor check set, not just the limited seven.",
+        "C": "Developer & Enterprise mixes a limited plan with the top-tier plan, so this pairing doesn't describe the seven-check limitation consistently.",
+        "D": "Developer & Business mixes a limited plan with a full-checks plan, the same inconsistency."
+      }
+    }
+  },
+  "0f89cc626035": {
+    "taskStatement": "3.3",
+    "needsReview": "The stored key (D) is likely wrong. Lambda genuinely can be invoked directly from mobile apps via the AWS Mobile SDK, so that IS a real benefit. Option B (\"resizable compute capacity in the cloud\") is Amazon EC2's own official tagline, not a Lambda characteristic — Lambda abstracts compute away entirely rather than offering resizable capacity — which makes B the stronger candidate for \"NOT a benefit of Lambda.\"",
+    "explanation": {
+      "concept": "Lambda's real benefits: no server management, pay-per-use, and event-driven invocation — including from mobile/web clients",
+      "correct": "Per the stored answer key, being callable directly from a mobile app is treated as the option that doesn't describe a benefit of AWS Lambda here, in contrast with the other three statements which are standard, well-documented Lambda benefits.",
+      "distractors": {
+        "A": "Running code without provisioning or managing servers is a core, genuine Lambda benefit.",
+        "B": "Per the stored key this is treated as a Lambda benefit, though the phrase \"resizable compute capacity in the cloud\" is actually EC2's own official description — see the needsReview note.",
+        "C": "\"No charge when your code is not running\" is exactly how Lambda's pay-per-invocation pricing works — a real, documented benefit."
+      }
+    }
+  },
+  "c7af907fe432": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "AWS holds broad third-party assurance certifications customers can leverage",
+      "correct": "AWS has achieved many common assurance certifications and attestations, such as ISO 9001 and HIPAA eligibility, alongside SOC and PCI DSS, which customers can use as part of meeting their own compliance obligations.",
+      "distractors": {
+        "A": "False — meeting regulatory compliance in the cloud is achievable, which is the whole point of AWS's certifications and the shared responsibility model.",
+        "B": "AWS is not responsible for its customers' legal and regulatory compliance; customers remain responsible for how they configure and use AWS services within their own regulatory context.",
+        "D": "Individual services being periodically assessed is true in a general sense, but it's vaguer and less specific than AWS's actual named certifications, which is what customers rely on."
+      }
+    }
+  },
+  "acd40f693fa3": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Scaling a fully managed database's infrastructure is AWS's job",
+      "correct": "DynamoDB is a fully managed NoSQL database; AWS handles the underlying infrastructure scaling, so the customer never provisions or resizes servers for it.",
+      "distractors": {
+        "A": "The security team handles IAM policies and data protection choices, not the underlying database infrastructure scaling.",
+        "B": "The development team builds the application and configures throughput settings, but the physical scaling of DynamoDB's infrastructure is AWS's job.",
+        "D": "Internal DevOps manages application-level configuration, not DynamoDB's underlying infrastructure scaling."
+      }
+    }
+  },
+  "bed6ffddef2c": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "Elastic Transcoder converts media files between formats for different devices",
+      "correct": "Amazon Elastic Transcoder converts media files from one format or resolution to another, which is exactly what's needed to make video playable across different mobile devices.",
+      "distractors": {
+        "B": "Amazon Pinpoint is a marketing and customer-engagement messaging service (email, SMS, push), unrelated to media conversion.",
+        "C": "Amazon S3 stores the media files but doesn't convert their format.",
+        "D": "Amazon Rekognition analyzes images and video for objects, faces, and content — it doesn't transcode media."
+      }
+    }
+  },
+  "abbb259bb18c": {
+    "taskStatement": "4.2",
+    "secondaryTaskStatement": "2.3",
+    "explanation": {
+      "concept": "Organizations centralizes access control and consolidates billing across accounts",
+      "correct": "AWS Organizations lets you apply Service Control Policies to control what actions member accounts can take (A), and it consolidates billing so usage across every account in the organization is combined onto one bill with shared volume discounts (E).",
+      "distractors": {
+        "B": "\"An accelerated path to cloud adoption\" is marketing language for AWS's broader migration and adoption programs, not a defined capability of the Organizations service itself.",
+        "C": "Managing payment methods happens in the Billing console at the account level; Organizations consolidates billing, but doesn't itself manage payment methods.",
+        "D": "\"Achieving desired business outcomes\" is generic marketing phrasing, not a specific Organizations capability."
+      }
+    }
+  },
+  "8530433ff858": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Redshift = AWS's data warehouse service for large-scale analytics",
+      "correct": "Amazon Redshift is AWS's managed data warehouse service, built for running fast analytical queries across large volumes of structured data — exactly what building a cloud data warehouse requires.",
+      "distractors": {
+        "A": "AWS Shield protects against DDoS attacks, unrelated to data warehousing.",
+        "C": "Amazon RDS is built for transactional (OLTP) workloads, not the large-scale analytical (OLAP) queries a data warehouse is optimized for.",
+        "D": "Amazon Comprehend is a natural-language-processing service, not a data warehouse."
+      }
+    }
+  },
+  "029a7bb35b8c": {
+    "taskStatement": "3.8",
+    "explanation": {
+      "concept": "AWS Marketplace = catalog of third-party software that runs on AWS",
+      "correct": "AWS Marketplace is a digital catalog where you can find, buy, and deploy third-party software solutions that run on AWS infrastructure.",
+      "distractors": {
+        "A": "Application Discovery Service helps inventory on-premises servers and applications for migration planning, not buying software.",
+        "B": "Amazon DevPay was a deprecated billing and account-management service for software vendors; it wasn't the marketplace itself.",
+        "D": "Resource Groups organizes your own AWS resources by tag; it has nothing to do with buying third-party software."
+      }
+    }
+  },
+  "925bb28bbb82": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "CodeCommit = managed private Git repository",
+      "correct": "AWS CodeCommit is a fully managed source-control service hosting private Git repositories, letting you store, version, and manage your application code.",
+      "distractors": {
+        "A": "CodePipeline orchestrates the release process — build, test, deploy stages — but it doesn't store code itself.",
+        "C": "AWS X-Ray traces application requests for performance debugging, unrelated to source control.",
+        "D": "Amazon Inspector scans workloads for vulnerabilities, not a code repository."
+      }
+    }
+  },
+  "4400a4d82a0c": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Route 53 latency-based routing sends users to the lowest-latency Region",
+      "correct": "Amazon Route 53 supports latency-based routing policies that direct users to the AWS Region that gives them the lowest network latency.",
+      "distractors": {
+        "A": "Amazon Cognito handles user authentication and identity, not DNS routing.",
+        "B": "AWS Systems Manager manages and automates operational tasks on your resources, not DNS routing.",
+        "C": "AWS Cloud9 is a cloud-based IDE, unrelated to routing traffic."
+      }
+    }
+  },
+  "937ba7d439ff": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Federation lets users sign in with existing corporate credentials",
+      "correct": "Federation lets users authenticate with an existing identity provider, such as corporate Active Directory or a SAML provider, and receive temporary AWS credentials without needing a separate IAM user.",
+      "distractors": {
+        "B": "Access keys are long-term credentials for programmatic access; they don't let you reuse an existing corporate login.",
+        "C": "IAM Permissions define what an already-authenticated identity can do, not how they sign in in the first place.",
+        "D": "WAF rules filter web application traffic; they're unrelated to how users authenticate."
+      }
+    }
+  },
+  "8a025aef06c7": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Inherited controls: the physical and environmental controls AWS fully manages",
+      "correct": "Data center physical security (C) and environmental controls like power, HVAC, and fire suppression (D) are entirely AWS's responsibility — customers inherit them fully, with no work of their own.",
+      "distractors": {
+        "A": "Security awareness and training is a shared control — each organization still trains its own staff.",
+        "B": "Communications controls, such as customer incident notifications, are also a shared responsibility, not fully inherited.",
+        "E": "Resource Configuration Management is the customer's job — they choose how to configure the resources they provision."
+      }
+    }
+  },
+  "c2ffd9a2c450": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "The AWS Service Health Dashboard reports the operational status of every AWS service",
+      "correct": "status.aws.amazon.com is the AWS Service Health Dashboard, showing the current operating status of AWS services across all Regions.",
+      "distractors": {
+        "A": "The Billing Dashboard shows your account's spending and lives in the Billing console, not this URL.",
+        "B": "There's no separate \"Cost Dashboard\" at this address; cost tools live in the Billing and Cost Management console.",
+        "D": "There's no \"Security Dashboard\" at this URL; security posture tools like Security Hub are accessed from the Management Console."
+      }
+    }
+  },
+  "061058b13721": {
+    "taskStatement": "3.5",
+    "secondaryTaskStatement": "3.6",
+    "explanation": {
+      "concept": "Move content physically closer to users: regional storage plus edge caching",
+      "correct": "Storing assets in the Region closest to your users (A) reduces the physical distance data has to travel, and serving them from S3 through CloudFront (E) caches copies at edge locations even closer to viewers — both directly cut latency.",
+      "distractors": {
+        "B": "Adding an EBS volume and scaling up a single server doesn't address the network distance between the server and end users, which is the real source of latency here.",
+        "C": "Replicating across Availability Zones improves durability and availability within one Region; it doesn't move data physically closer to users elsewhere.",
+        "D": "Elastic Transcoder changes media format and quality, which can shrink file size, but it doesn't address the network distance causing latency."
+      }
+    }
+  },
+  "81ee16d27f78": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "Security design principles: temporary least-privilege credentials plus real-time traceability",
+      "correct": "Two of AWS's security design principles are using IAM roles and temporary credentials instead of long-term ones (B), and enabling real-time logging and monitoring for full traceability of actions (D).",
+      "distractors": {
+        "A": "Manual monitoring is the opposite of the principle, which favors automating security monitoring and response.",
+        "C": "Scaling horizontally to protect from failures is a reliability and architecture principle, not one of the security design principles.",
+        "E": "The security pillar doesn't say to avoid storing sensitive data in the cloud — it says to protect data in transit and at rest, wherever it lives."
+      }
+    }
+  },
+  "ccc6f636b87e": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Cost allocation tags segment billing reports by project or department",
+      "correct": "Applying cost allocation tags to resources lets AWS's billing reports break spending down by tag value, such as department or project, giving the company per-department cost visibility.",
+      "distractors": {
+        "A": "The Pricing Calculator estimates costs before you build something; it doesn't track or categorize costs already incurred by department.",
+        "B": "Amazon Aurora is a relational database engine; it has no cost-forecasting capability.",
+        "D": "The Price List API returns AWS's published service prices, not a way to track or categorize your own department-level spending."
+      }
+    }
+  }
+}

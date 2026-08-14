@@ -1,0 +1,603 @@
+{
+  "9c720736f66c": {
+    "taskStatement": "1.4",
+    "explanation": {
+      "concept": "TCO comparison: cloud removes capex, not opex",
+      "correct": "AWS lets a company avoid large upfront capital expenditures (buying racks, data centers, hardware) and replace them with variable, pay-as-you-go operational spend. That shift away from unpredictable capex is the core driver of the AWS TCO Calculator's savings estimates.",
+      "distractors": {
+        "B": "AWS runs on a shared responsibility model, but a company remains responsible for its own third-party software license costs and compliance regardless of hosting location.",
+        "C": "Moving to AWS trades capex for variable opex; it does not eliminate operational expenditure altogether — you still pay for the resources you consume.",
+        "D": "Managed application hosting isn't what drives TCO down here; many AWS workloads (e.g. EC2) still require the customer to manage the application itself."
+      }
+    }
+  },
+  "fbc88869c378": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Instructor-led learning vs self-serve AWS resources",
+      "correct": "AWS Classroom Training and Online Tech Talks are both delivered live by AWS instructors and experts, making them the instructor-led options among the choices. Classroom Training is in-person or virtual instructor-led courses; Online Tech Talks are live webinars run by AWS specialists.",
+      "distractors": {
+        "A": "Trusted Advisor is an account-inspection tool for cost, performance, and security checks, not a training resource.",
+        "C": "The AWS Blog is self-serve written content with no instructor or live session.",
+        "D": "AWS Forums are a self-serve, community Q&A resource, not an instructor-led format."
+      }
+    }
+  },
+  "2eeb84c77312": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Console access hardening: authentication factors and policy",
+      "correct": "Multi-Factor Authentication adds a second proof of identity beyond the password, and a strong password policy (length, complexity, rotation) raises the bar for guessing or brute-forcing a login. Both directly harden the console sign-in step.",
+      "distractors": {
+        "A": "Secrets Manager stores and rotates application secrets like database credentials — it doesn't protect console sign-in.",
+        "B": "Certificate Manager issues and manages SSL/TLS certificates for encrypting traffic to services, unrelated to console login security.",
+        "D": "Security groups are stateful firewalls for EC2 instances and other resources; they don't govern who can log into the Management Console."
+      }
+    }
+  },
+  "a33834c47095": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "The VPC dashboard configures networking primitives inside a VPC, not services outside it",
+      "correct": "Security Groups and Subnets are both configured from the VPC Dashboard, alongside route tables, NACLs, internet/NAT gateways, and VPC peering — the building blocks of a VPC's own network.",
+      "distractors": {
+        "A": "CloudFront is a global content delivery service managed from its own console, not the VPC Dashboard.",
+        "B": "Route 53 is AWS's DNS service, managed separately from a VPC's internal networking.",
+        "E": "Elastic Load Balancing has its own console; while a load balancer attaches to VPC subnets, it isn't configured from the VPC Dashboard itself."
+      }
+    }
+  },
+  "be77a299122f": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Physical security of data centers sits entirely on AWS's side of the shared responsibility line",
+      "correct": "AWS designs, builds, and audits the physical security of its data centers (badges, cameras, guards, environmental controls) with no customer visibility or role — auditing that is AWS's sole responsibility.",
+      "distractors": {
+        "A": "IAM policies are configured and owned by the customer, who is responsible for auditing their own permission settings.",
+        "C": "S3 bucket policies are customer-defined access controls, so auditing them is a customer responsibility.",
+        "D": "CloudTrail logs record customer account activity; auditing that log is a customer task, not AWS's."
+      }
+    }
+  },
+  "d0961e3a5fc0": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Consolidated billing gives one invoice and pooled volume, not free extra limits",
+      "correct": "Consolidated billing combines multiple accounts under a single management-account invoice (A), and because usage across all linked accounts is aggregated, the group can cross into higher-volume, lower-price tiers sooner (D).",
+      "distractors": {
+        "B": "Service limits are set per account and don't increase automatically just because accounts are consolidated.",
+        "C": "There's no fixed discount — savings come from volume pricing and Reserved Instance/Savings Plan sharing, which vary with actual usage.",
+        "E": "Each linked account can have its own support plan; the management account's support plan isn't automatically extended to every account."
+      }
+    }
+  },
+  "e87dbf99ef9c": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "Undifferentiated heavy lifting AWS takes off a customer's plate",
+      "correct": "AWS-managed database services like RDS handle patching the database engine software and taking automated backups on the customer's behalf, freeing internal IT staff from that recurring maintenance work.",
+      "distractors": {
+        "B": "Testing application releases is the customer's own application-layer responsibility; AWS doesn't test a customer's code.",
+        "D": "Designing a database schema is a data-modeling decision only the customer's team can make for their own application.",
+        "E": "Penetration testing of a customer's own workloads remains the customer's responsibility (subject to AWS's testing policy), not something AWS performs for them."
+      }
+    }
+  },
+  "432978ad8780": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Expanding to a new Region is operational, not contractual",
+      "correct": "AWS Regions are available to any account already using AWS — there's no separate contract or sign-up. A company expands simply by starting to deploy resources in the new Region.",
+      "distractors": {
+        "A": "No new contract is needed; AWS pricing and terms already cover all public Regions under the existing account.",
+        "B": "Availability Zones are physically fixed data centers within a Region — they can't be relocated to another Region.",
+        "D": "The AWS Management Console is a single global web application; there's no separate per-Region download."
+      }
+    }
+  },
+  "5b430096abbb": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Elastic Load Balancing's value is adapting to changing traffic",
+      "correct": "Elastic Load Balancers distribute incoming traffic across targets and scale their own capacity as traffic patterns shift, which is exactly why they suit workloads with unpredictable or bursty demand.",
+      "distractors": {
+        "A": "There's no feature that converts an Application Load Balancer into a Classic Load Balancer — load balancer type is chosen at creation, and each type is managed independently.",
+        "B": "This continues the same false claim about converting between load balancer types; the two are separate products with separate configurations.",
+        "D": "ELB does automatically adjust capacity, but it is a paid service billed hourly plus usage — it is not provided free of charge."
+      }
+    }
+  },
+  "df5da9d75785": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "One-hour response time starts at the Business plan",
+      "correct": "The Business Support plan is the lowest tier offering a guaranteed under-1-hour response time for business-critical, production-system-down cases. Developer and Basic have slower or best-effort response times.",
+      "distractors": {
+        "A": "Enterprise also offers fast response times but at a higher cost — it isn't the minimum plan needed.",
+        "C": "The Developer plan's fastest response time is well over an hour for system-impaired cases, not under one hour.",
+        "D": "The Basic plan includes no case-based technical support with guaranteed response times at all."
+      }
+    }
+  },
+  "e511d1056af5": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Low-cost plus immediate retrieval rules out archival storage",
+      "correct": "Amazon S3 offers durable, low-cost object storage with millisecond retrieval, making it the right fit when backups must stay both cheap and instantly accessible. Glacier is cheaper still but trades away immediate retrieval.",
+      "distractors": {
+        "B": "Glacier is cheaper per GB than S3 but retrieval takes minutes to hours, failing the 'immediate retrieval' requirement.",
+        "C": "EBS is block storage attached to a single EC2 instance, priced higher than S3 and not designed as a durable backup repository.",
+        "D": "EC2 instance store is ephemeral — its contents are lost when the instance stops or terminates, so it's unsuitable for durable backups."
+      }
+    }
+  },
+  "4cac23dd8a58": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Professional Services vs Solutions Architects vs Account Managers",
+      "correct": "AWS Professional Services is the paid consulting team that helps customers plan and execute cloud adoption across defined specialty practice areas such as migration, security, and DevOps.",
+      "distractors": {
+        "A": "Enterprise Support is a support plan tier, not a consulting engagement team.",
+        "B": "Solutions Architects provide pre-sales technical guidance; the paid, practice-area-based engagement team is Professional Services.",
+        "D": "Account Managers own the commercial relationship, not hands-on paid delivery engagements."
+      }
+    }
+  },
+  "362b4e2ad2b7": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "24/7 multi-channel support with under-1-hour response starts at Business",
+      "correct": "Business Support provides 24/7 phone, email, and chat access with under-1-hour response for production-system-down issues, at a lower cost than Enterprise, which offers the same responsiveness plus extras like a Concierge team.",
+      "distractors": {
+        "A": "Basic includes no case-based technical support channels at all.",
+        "B": "Developer support is limited to business-hours email access with no guaranteed 1-hour response.",
+        "D": "Enterprise meets the requirement but costs more than Business, which already satisfies it — so it isn't the lowest-cost option."
+      }
+    }
+  },
+  "cdf59120893e": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "AWS Config tracks configuration change history; other tools track cost, performance, or vulnerabilities",
+      "correct": "AWS Config continuously records configuration changes to AWS resources and evaluates them against rules, making it the service for auditing change management over time.",
+      "distractors": {
+        "B": "Trusted Advisor gives point-in-time best-practice checks on cost, security, performance, and limits — it doesn't track a history of configuration changes.",
+        "C": "CloudWatch monitors metrics, logs, and alarms for operational performance, not resource configuration history.",
+        "D": "Amazon Inspector scans for software vulnerabilities and network exposure on running workloads, not configuration change tracking."
+      }
+    }
+  },
+  "a7025c79bac4": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Trusted Advisor recommends and flags; it doesn't scan software or auto-remediate",
+      "correct": "Trusted Advisor inspects the account and surfaces cost-optimization recommendations (B) and flags resources whose permission settings look risky (C) — but it only advises, it doesn't fix anything or scan application code.",
+      "distractors": {
+        "A": "Scanning application software for vulnerabilities is Amazon Inspector's job, not Trusted Advisor's.",
+        "D": "Trusted Advisor only reports findings; it never automatically changes account settings on the customer's behalf.",
+        "E": "Detecting a compromised EC2 instance based on behavior is Amazon GuardDuty's role, not Trusted Advisor's."
+      }
+    }
+  },
+  "c1207490b9ce": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "RDS is the managed relational database service",
+      "correct": "Amazon RDS provisions, patches, and backs up relational database engines such as MySQL and PostgreSQL as a managed service, which is what 'managed service to host databases' describes.",
+      "distractors": {
+        "A": "AWS Batch runs batch computing jobs at scale — it has nothing to do with hosting databases.",
+        "B": "AWS Artifact is a portal for compliance reports and agreements, not a compute or database service.",
+        "C": "AWS Data Pipeline moves and transforms data between sources on a schedule; it doesn't host a database itself."
+      }
+    }
+  },
+  "9345752ead51": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Long-term access key ID / secret access key pairs belong to IAM users",
+      "correct": "An IAM user is the identity that can be issued a long-term access key ID and secret access key for programmatic access, such as configuring the AWS CLI.",
+      "distractors": {
+        "A": "An IAM group is a collection of users for shared permission assignment; it doesn't itself hold credentials.",
+        "C": "An IAM role is assumed temporarily and uses short-lived STS credentials, not a persistent access key pair.",
+        "D": "An IAM policy is a JSON permissions document; it has no credentials of its own."
+      }
+    }
+  },
+  "a70d12220a45": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Data-layer protections are the customer's job under shared responsibility",
+      "correct": "Encrypting data at rest is a customer responsibility — AWS provides the encryption tools (e.g. KMS, S3 default encryption), but the customer must choose to enable and configure them for their own data.",
+      "distractors": {
+        "A": "Wiping decommissioned disk drives is part of AWS's physical infrastructure decommissioning process.",
+        "B": "Firmware updates on physical hardware are managed entirely by AWS as part of infrastructure maintenance.",
+        "D": "Network cabling specifications are a physical data-center detail that AWS controls, not the customer."
+      }
+    }
+  },
+  "60408678b3ce": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "EFS is the managed, scalable NFS file system for Linux workloads",
+      "correct": "Amazon EFS provides a fully managed, elastic NFS file system that can be mounted concurrently by many Linux-based EC2 instances and on-premises servers — matching the 'shared file storage' requirement exactly.",
+      "distractors": {
+        "A": "S3 is object storage accessed over HTTP APIs, not a mountable file system for servers.",
+        "B": "Glacier is cold archival object storage meant for infrequently accessed backups, not shared file access.",
+        "C": "EBS volumes attach to a single EC2 instance at a time (with rare multi-attach exceptions) — they aren't a general shared file system."
+      }
+    }
+  },
+  "6ce7a97ef3d5": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Programmatic access needs the access key ID / secret access key pair",
+      "correct": "Programmatic access to AWS (CLI, SDKs, API) is authenticated with an access key ID paired with a secret access key — together they function like a username and password for API calls.",
+      "distractors": {
+        "B": "AWS has no credential called a 'primary key' for account access.",
+        "D": "A user ID alone isn't a valid AWS credential for signing API requests.",
+        "E": "There is no AWS credential called a 'secondary key.'"
+      }
+    }
+  },
+  "7c1430c8cba3": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Shared responsibility includes an intangible shared control: awareness and training",
+      "correct": "AWS lists 'Awareness and Training' as a shared control — AWS trains its own employees on security, while customers must train their own staff on how to use AWS securely. Both parties own a piece of it.",
+      "distractors": {
+        "A": "Client-side encryption keys for S3 are entirely customer-managed and customer-supplied — AWS has no role in it.",
+        "B": "Configuring an EC2 instance (OS, applications, network settings) is entirely a customer responsibility.",
+        "C": "Environmental controls of physical data centers are entirely AWS's responsibility, with no customer role."
+      }
+    }
+  },
+  "ee7e742374eb": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Instance store is ephemeral, physically tied to the host",
+      "correct": "Amazon EC2 instance store is physically attached, temporary block storage; its data is lost whenever the instance is stopped or terminated, unlike EBS, which persists independently.",
+      "distractors": {
+        "A": "EBS volumes persist independently of the instance lifecycle and survive a stop, unless explicitly deleted.",
+        "C": "EFS is a durable, persistent network file system, not ephemeral storage tied to one instance.",
+        "D": "S3 is durable, persistent object storage that exists independently of any EC2 instance."
+      }
+    }
+  },
+  "92a41b679db3": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Consolidated billing pools usage to unlock volume pricing tiers",
+      "correct": "By combining usage across linked accounts into one bill, consolidated billing lets the whole organization qualify for volume-based pricing discounts sooner than any single account would alone.",
+      "distractors": {
+        "B": "Consolidated billing is about billing, not IAM — it doesn't share access permissions between accounts.",
+        "C": "Consolidated billing produces a single combined bill, not multiple separate bills.",
+        "D": "Tagging for cost allocation is still needed to break down costs by project or team; consolidated billing doesn't remove that need."
+      }
+    }
+  },
+  "52a9453043b0": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "Serverless means no server to provision or patch, whatever the workload type",
+      "correct": "AWS Step Functions (serverless workflow orchestration), DynamoDB (serverless NoSQL database), and SNS (serverless pub/sub messaging) all require no server provisioning or capacity management from the customer.",
+      "distractors": {
+        "A": "EC2 requires provisioning and managing servers, so this group mixes a non-serverless compute service in with serverless ones.",
+        "B": "Kinesis and SQS are serverless, but EMR runs managed clusters of servers that the customer provisions and sizes.",
+        "D": "Athena and Cognito are serverless, but EC2 requires the customer to provision and manage the underlying instances."
+      }
+    }
+  },
+  "9b5e2592e2e5": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Dedicated Hosts expose physical sockets/cores, which is what hardware-bound licenses require",
+      "correct": "Dedicated Hosts give visibility into the underlying physical server's sockets and cores, letting customers bring existing server-bound software licenses — often tied to physical hardware — into AWS.",
+      "distractors": {
+        "A": "Spot Instances are spare capacity sold at a discount with no special licensing accommodation.",
+        "B": "Reserved Instances are a billing commitment for capacity discounts, unrelated to physical hardware visibility for licensing.",
+        "D": "On-Demand Instances run on shared hardware with no visibility into the physical sockets/cores needed for hardware-bound licenses."
+      }
+    }
+  },
+  "781d39018de7": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Least privilege and MFA are the two core account-access hardening practices",
+      "correct": "Granting least privilege limits what each IAM user can do if compromised, and MFA adds a second factor beyond the password for privileged users — both directly reduce the risk of account compromise.",
+      "distractors": {
+        "A": "CloudTrail records activity for later investigation; it doesn't itself prevent unauthorized access.",
+        "C": "Sharing one IAM user among many people is a security anti-pattern — it removes accountability and increases blast radius.",
+        "D": "CloudFront is a content delivery service, unrelated to account access security."
+      }
+    }
+  },
+  "b1e0f9bc2c9a": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "CloudFormation is AWS's infrastructure-as-code service",
+      "correct": "AWS CloudFormation lets you define infrastructure in template files (JSON/YAML) and provisions or updates it declaratively, which is exactly what infrastructure as code means.",
+      "distractors": {
+        "A": "CodePipeline automates release pipelines (build, test, deploy) — it orchestrates deployments, it doesn't define infrastructure as code.",
+        "B": "CodeDeploy automates application code deployment to compute resources; it doesn't provision the infrastructure itself.",
+        "C": "Direct Connect is a dedicated network link between on-premises and AWS, unrelated to infrastructure provisioning."
+      }
+    }
+  },
+  "b3574ff21974": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Multi-AZ protects against a single Availability Zone's failure",
+      "correct": "Spreading an application across multiple Availability Zones means a disruption in one AZ (power, network, hardware) doesn't take the whole application down, directly raising availability.",
+      "distractors": {
+        "A": "A Region-wide natural disaster can affect multiple AZs simultaneously since they're in the same metro area; multi-Region protects against that, not multi-AZ.",
+        "C": "AZs within a Region sit close together for low-latency replication, not spread widely enough to serve a wider geography the way edge locations do.",
+        "D": "Multi-AZ deployments can add slight latency from synchronous replication between zones; it isn't primarily a latency-reduction technique."
+      }
+    }
+  },
+  "8ef2bb4cee30": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Aurora is MySQL-compatible with cloud-native scaling",
+      "correct": "Amazon Aurora is compatible with MySQL, offering automatic storage scaling and read replica scaling well beyond what a self-managed MySQL instance provides, while staying wire-compatible with existing MySQL tooling.",
+      "distractors": {
+        "B": "Redshift is a data warehouse for analytics (OLAP), not a MySQL-compatible transactional database.",
+        "C": "DynamoDB is a NoSQL key-value/document database, not MySQL-compatible.",
+        "D": "ElastiCache is an in-memory cache (Redis/Memcached), not a MySQL-compatible database."
+      }
+    }
+  },
+  "b5ddebcdf32b": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "AWS design principles favor decoupling over tight, monolithic coupling",
+      "correct": "Loose coupling — designing components to interact through well-defined interfaces such as queues or APIs rather than direct dependencies — is a core AWS Well-Architected design principle that improves scalability and fault isolation.",
+      "distractors": {
+        "A": "AWS design principles push to eliminate single points of failure, not implement them.",
+        "C": "AWS favors breaking monoliths into smaller, independently scalable components, not building monolithic designs.",
+        "D": "AWS design favors horizontal (elastic) scaling over vertical scaling, which has hard upper limits."
+      }
+    }
+  },
+  "70fec310ba60": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Concierge and Technical Account Manager are Enterprise-only perks",
+      "correct": "The Concierge team — billing and account experts dedicated to Enterprise Support customers — is exclusive to the Enterprise plan and not offered at any lower tier.",
+      "distractors": {
+        "A": "Trusted Advisor's core checks are available on every plan; the full check set is available from Business and up, not exclusively Enterprise.",
+        "B": "Support cases can be opened at multiple plan tiers (Developer and above), not just Enterprise.",
+        "D": "Amazon Connect is a customer-contact-center service, unrelated to AWS Support plan tiers."
+      }
+    }
+  },
+  "5e10e9c1e839": {
+    "taskStatement": "1.4",
+    "explanation": {
+      "concept": "Cloud economics: capex to opex, not the reverse",
+      "correct": "On-premises data centers require large upfront capital expenditure for hardware; moving to AWS replaces that with variable, pay-as-you-go operational expenditure — capex becomes opex.",
+      "distractors": {
+        "A": "This reverses the actual direction of the shift — cloud moves spend from upfront capex to variable opex, not the other way around.",
+        "B": "This mislabels the destination as 'capex' when the AWS pay-as-you-go model is operational expense (opex), not capital expense.",
+        "D": "The move doesn't eliminate spending altogether; the company still pays for the resources it consumes, just structured differently."
+      }
+    }
+  },
+  "1f3b453c1590": {
+    "taskStatement": "1.4",
+    "explanation": {
+      "concept": "Physical isolation for TCO purposes means Dedicated Hosts",
+      "correct": "Dedicated Hosts provide a physical server reserved entirely for one customer, which is the compute model that delivers actual physical isolation — the cost of that isolation is what belongs in the TCO analysis.",
+      "distractors": {
+        "B": "Reserved Instances are a billing discount on shared, multi-tenant hardware — they don't provide physical isolation.",
+        "C": "On-Demand Instances also run on shared multi-tenant hardware with no physical isolation guarantee.",
+        "D": "No Upfront Reserved Instances are just a payment-option variant of Reserved Instances, still on shared hardware."
+      }
+    }
+  },
+  "26e9a0e09d3e": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Glacier is purpose-built for long-term, infrequently accessed archives",
+      "correct": "Amazon S3 Glacier is designed specifically for long-term, low-cost archival storage such as data backups that are rarely accessed, trading retrieval speed for a much lower storage price.",
+      "distractors": {
+        "A": "RDS is a managed relational database service, not an archival storage tier.",
+        "C": "Snowball is a physical device for bulk one-time data transfer into or out of AWS, not an ongoing storage location.",
+        "D": "EBS is block storage for active EC2 workloads, priced much higher than Glacier and not intended for long-term archives."
+      }
+    }
+  },
+  "02ed862891ea": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Phone support begins at the Business plan",
+      "correct": "Business Support is the lowest tier that includes phone access to AWS Support alongside email and chat; Developer and Basic have no phone support channel.",
+      "distractors": {
+        "A": "Enterprise also includes phone support but costs more than the minimum plan that already offers it.",
+        "C": "Developer support is limited to email/web-based contact during business hours — no phone channel.",
+        "D": "Basic Support includes no case-based technical support, phone or otherwise."
+      }
+    }
+  },
+  "0fd301de2b09": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Spot trades interruption risk for the deepest discount",
+      "correct": "Spot Instances use AWS's spare compute capacity and can be discounted up to 90% off the On-Demand price, in exchange for the instance being reclaimed with short notice when capacity is needed elsewhere.",
+      "distractors": {
+        "A": "Reserved Instances offer discounts up to roughly 70-75% for a 1- or 3-year commitment, not 90%.",
+        "B": "On-Demand is the standard, undiscounted pay-as-you-go rate — the baseline other pricing models discount from.",
+        "C": "Dedicated Hosts can offer license-related savings but don't reach anywhere near a 90% discount off On-Demand."
+      }
+    }
+  },
+  "dd81ac488b67": {
+    "taskStatement": "3.5",
+    "secondaryTaskStatement": "3.6",
+    "explanation": {
+      "concept": "S3 stores the video; CloudFront caches it at edge locations for low latency",
+      "correct": "Amazon S3 durably stores the video files, and Amazon CloudFront caches and serves that content from edge locations close to viewers, which is what minimizes latency for large-scale video delivery.",
+      "distractors": {
+        "A": "'appGateway' isn't an AWS service name relevant to video content delivery.",
+        "C": "EFS is a shared network file system for compute workloads, not a content-delivery mechanism for end users.",
+        "D": "Glacier is archival cold storage with retrieval delays of minutes to hours — the opposite of low-latency delivery."
+      }
+    }
+  },
+  "f2d864be1684": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Edge locations cache and deliver content close to users — they don't run applications",
+      "correct": "Edge locations are CloudFront's globally distributed caching points: they deliver content closer to end users (B) and reduce load on the origin server by serving cached responses locally (D).",
+      "distractors": {
+        "A": "Edge locations cache and serve content; they don't host full applications the way EC2 or Lambda do.",
+        "C": "NoSQL database caching is what DynamoDB Accelerator (DAX) or ElastiCache do — not the role of CloudFront edge locations.",
+        "E": "Sending notifications to end users is Amazon SNS's job, not an edge location's."
+      }
+    }
+  },
+  "9ab009f0ed33": {
+    "taskStatement": "1.3",
+    "explanation": {
+      "concept": "The TCO Calculator quantifies migration savings before you move",
+      "correct": "The AWS TCO Calculator compares the cost of running workloads on-premises versus on AWS and produces a detailed report estimating the savings from migrating — exactly the tool for that use case.",
+      "distractors": {
+        "B": "Cost Explorer visualizes and forecasts AWS spend after you're already using AWS; it doesn't compare against on-premises costs.",
+        "C": "Budgets sets spending thresholds and alerts on AWS usage; it doesn't produce a savings comparison report.",
+        "D": "Migration Hub tracks the progress and status of migration tasks across tools, not cost-savings estimates."
+      }
+    }
+  },
+  "ef154f4125dd": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Personal Health Dashboard is customized to your resources; Service Health Dashboard is generic",
+      "correct": "AWS Personal Health Dashboard filters AWS service health events down to the ones actually affecting the customer's own resources, giving a personalized operational view rather than a general status page.",
+      "distractors": {
+        "A": "The Service Health Dashboard shows the general operational status of AWS services for everyone, not tailored to one account's resources.",
+        "B": "X-Ray traces requests through a customer's own application for performance debugging; it doesn't report AWS service health.",
+        "D": "CloudWatch monitors metrics and logs for a customer's resources, but it doesn't report on the health of the underlying AWS services themselves."
+      }
+    }
+  },
+  "f787d5e1b72b": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "Offloading infrastructure lets a business focus on its core work",
+      "correct": "By having AWS manage the undifferentiated heavy lifting of infrastructure, a business frees its staff and budget to focus on activities that differentiate it competitively, rather than running data centers.",
+      "distractors": {
+        "A": "Moving to AWS doesn't eliminate IT bills — usage-based charges replace capital IT costs.",
+        "B": "Servers in each customer's own data center describes an on-premises or hybrid model, not a benefit of moving to AWS.",
+        "D": "Leaving servers unpatched is a security risk, not a stated benefit of any cloud migration."
+      }
+    }
+  },
+  "bab49586d450": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Basic Support has no case-based channel — only self-serve community resources",
+      "correct": "The Basic Support plan includes no technical support cases; the way a Basic-plan user gets help is through AWS's self-serve resources like the Discussion Forums, documentation, and Trusted Advisor's core checks.",
+      "distractors": {
+        "A": "Senior Support Engineers are engaged through paid case-based support (Business/Enterprise), not included in Basic.",
+        "B": "Technical Account Managers are an Enterprise-plan benefit, not available on Basic.",
+        "C": "Trusted Advisor's full check set requires Business or Enterprise support; Basic only gets a handful of core checks, not full technical assistance."
+      }
+    }
+  },
+  "487407979586": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Regional disasters require a multi-Region strategy, not just multi-AZ",
+      "correct": "A natural disaster can affect an entire geographic area, including all Availability Zones in a Region, so deploying applications across multiple AWS Regions is what protects against that scale of disruption.",
+      "distractors": {
+        "A": "Multiple AZs within one Region protect against a data-center-level failure, but a region-wide disaster can affect all AZs in that Region at once.",
+        "B": "Hybrid cloud still keeps infrastructure within the same geographic area unless it explicitly spans other regions, so it doesn't solve a regional disaster.",
+        "D": "AWS Artifact is a compliance-document repository, not a mechanism for replicating running applications across Regions."
+      }
+    }
+  },
+  "0e8091283c8c": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Backing up your own data/volumes is a customer responsibility",
+      "correct": "Amazon EBS volumes are customer-managed storage; ensuring they're backed up (e.g. via snapshots) is the customer's job under the shared responsibility model, since AWS doesn't decide what data needs preserving.",
+      "distractors": {
+        "A": "AWS manages the network connectivity of its own infrastructure to the internet as part of security 'of' the cloud.",
+        "B": "Patching the underlying AWS Cloud infrastructure is AWS's responsibility, not the customer's.",
+        "C": "Physical security of AWS data centers is entirely AWS's responsibility."
+      }
+    }
+  },
+  "191e5c07ee76": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Spot suits interruption-tolerant, non-critical workloads",
+      "correct": "Infrequent, interruptible batch jobs can tolerate being reclaimed with short notice, making them ideal for Spot Instances, which trade that interruption risk for up to 90% savings over On-Demand.",
+      "distractors": {
+        "A": "A main production website needs consistent availability, which doesn't tolerate Spot's interruption risk.",
+        "B": "A 99.999% uptime SLA requires highly reliable capacity, which Spot Instances — reclaimable at any time — can't guarantee.",
+        "C": "A heavily used legacy database needs steady, uninterrupted compute, unsuited to Spot's reclaim behavior."
+      }
+    }
+  },
+  "c7606858274b": {
+    "taskStatement": "3.2",
+    "explanation": {
+      "concept": "Region selection weighs latency to users and legal/data-residency requirements",
+      "correct": "Choosing a Region closer to end users reduces network latency (A), and some workloads must keep data within specific jurisdictions for legal or regulatory reasons — data sovereignty (C). Both are standard Region-selection criteria alongside cost, services offered, and compliance.",
+      "distractors": {
+        "B": "AWS doesn't localize an application's UI language based on Region choice — that's an application-level concern, not infrastructure.",
+        "D": "AWS data centers use sophisticated cooling systems regardless of climate; the customer doesn't pay a separate 'cooling cost' that varies by Region choice.",
+        "E": "Physical proximity to a company's own office isn't a technical factor AWS documents as a Region-selection criterion — Regions are chosen for infrastructure and compliance needs, not office visits."
+      }
+    }
+  },
+  "796e9234e1b0": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Personal Health Dashboard alerts on events affecting your specific resources",
+      "correct": "AWS Personal Health Dashboard proactively alerts a customer when an AWS operational event is likely to affect that customer's specific resources, unlike the general Service Health Dashboard.",
+      "distractors": {
+        "B": "The Service Health Dashboard reports overall AWS service status for all customers, without targeting alerts to any one account's resources.",
+        "C": "Trusted Advisor gives best-practice recommendations on cost, security, and performance — it doesn't alert on AWS operational events.",
+        "D": "Infrastructure Event Management is a paid Enterprise engagement for planning specific events (e.g. product launches), not an automated alerting service."
+      }
+    }
+  },
+  "cf523e096a39": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "The DR spectrum: cost and complexity rise as downtime risk falls",
+      "correct": "Multi-site active-active runs full production capacity in more than one location simultaneously, so if one site fails, the other is already serving live traffic — giving it the lowest probability of downtime among the four DR strategies.",
+      "distractors": {
+        "A": "Backup and restore is the slowest and cheapest strategy, with the highest downtime risk since infrastructure must be rebuilt from backups.",
+        "B": "Pilot light keeps only core systems running at minimal capacity, requiring scale-up time before full recovery — more downtime risk than active-active.",
+        "C": "Warm standby runs a scaled-down but functional copy that needs to scale up during failover, which still introduces some downtime versus an already-active second site."
+      }
+    }
+  },
+  "a5cbbda8c408": {
+    "taskStatement": "3.1",
+    "explanation": {
+      "concept": "CodeCommit is AWS's managed Git repository service",
+      "correct": "AWS CodeCommit is a fully managed source control service hosting private Git repositories, making version control its primary purpose.",
+      "distractors": {
+        "A": "CodeStar provides a unified project dashboard across the whole CI/CD toolchain; it doesn't itself store code history.",
+        "B": "The AWS CLI is a tool for interacting with AWS services from a terminal — it isn't a version control system.",
+        "C": "Cognito manages user sign-up, sign-in, and access control for applications, unrelated to source control."
+      }
+    }
+  },
+  "540f1c4402b6": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "MFA plus a strong password policy are the two direct sign-in hardening controls",
+      "correct": "Enabling MFA adds a second authentication factor beyond the password, and enforcing a strong password policy (length, complexity, expiration) raises the difficulty of guessing or cracking credentials — both directly strengthen account logon security.",
+      "distractors": {
+        "A": "Certificate Manager issues TLS/SSL certificates for encrypting traffic to services — unrelated to console logon.",
+        "C": "Cognito manages authentication for a customer's own application's end users, not AWS account console logons.",
+        "E": "AWS Organizations manages multi-account structure and consolidated billing/policies; it doesn't itself add a logon security control."
+      }
+    }
+  }
+}

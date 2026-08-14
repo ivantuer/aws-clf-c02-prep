@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useProgress } from 'src/store/ProgressContext';
 import { QuestionCard } from 'src/components/QuestionCard';
-import { optionOrder, questionsForExam, selectDrill, shuffle } from 'src/lib/session';
+import { optionOrder, questionsForExam, selectDrill, shuffle, unansweredFirst } from 'src/lib/session';
 import { effectiveAnswer, isCorrect, makeAttempt } from 'src/store/progress';
 import { clearSession, loadSession, saveSession } from 'src/store/session-store';
 import type { DomainId, TaskStatementId } from 'src/data/taxonomy';
@@ -63,7 +63,8 @@ export function Session() {
       task: (params.get('task') as TaskStatementId) ?? undefined,
       ids: params.get('ids')?.split(',').filter(Boolean),
     });
-    return state.settings.shuffleDrillQuestions ? shuffle(selected, seed) : selected;
+    const ordered = state.settings.shuffleDrillQuestions ? shuffle(selected, seed) : selected;
+    return unansweredFirst(ordered, state);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, exam, params, questions, seed]);
 

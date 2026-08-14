@@ -1,0 +1,26 @@
+{
+  "e31cf9d7dcd8": {
+    "taskStatement": "1.3",
+    "explanation": {
+      "concept": "AWS Professional Services delivers paid, specialty-area consulting",
+      "correct": "AWS Professional Services is the team that helps customers accelerate cloud adoption through paid engagements across specialty practice areas such as migration, DevOps, and application modernization.",
+      "distractors": {
+        "A": "AWS Enterprise Support is a paid support tier for operational assistance and guidance, not a consulting engagement team.",
+        "B": "AWS Solutions Architects provide technical guidance and design advice, but the paid, specialty-area engagement model described here is specifically Professional Services.",
+        "D": "AWS Account Managers manage the commercial relationship; they don't deliver paid technical adoption engagements themselves."
+      }
+    }
+  },
+  "3457ecca2974": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Dedicated Hosts expose the physical server, satisfying license terms tied to sockets, cores, or VMs",
+      "correct": "Dedicated Hosts give you visibility into and control over the physical server an instance runs on, which lets you bring your own server-bound software licenses (BYOL) that are tied to physical cores, sockets, or hosts.",
+      "distractors": {
+        "A": "Spot Instances are about discounted, interruptible pricing; they don't address license portability.",
+        "B": "Reserved Instances offer a billing discount but don't expose the physical host identity that server-bound licensing requires.",
+        "D": "On-Demand Instances run on shared multi-tenant hardware and don't expose the host, so they can't satisfy licenses tied to a specific physical server."
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "8ad4808c5abb": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Physical/environmental controls are entirely AWS's job",
+      "correct": "Auditing physical data center assets is entirely AWS's responsibility under the shared responsibility model — customers never get physical access to AWS facilities, so AWS alone manages and audits that layer.",
+      "distractors": {
+        "A": "Patching operating system software is a customer task for IaaS resources like EC2 (the guest OS).",
+        "B": "Encrypting data is generally a customer choice and configuration, not something AWS does unilaterally on the customer's behalf.",
+        "C": "Enforcing MFA is configured and enabled by the customer for their own IAM users, not automatically applied by AWS."
+      }
+    }
+  }
+}

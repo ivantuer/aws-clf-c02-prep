@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T15:03:30.254Z",
+  "generatedAt": "2026-08-14T06:40:40.813Z",
   "source": "kananinirav/AWS-Certified-Cloud-Practitioner-Notes",
   "examCount": 23,
   "totalOccurrences": 1142,
@@ -13466,6 +13466,10 @@
         {
           "exam": 14,
           "number": 42
+        },
+        {
+          "exam": 15,
+          "number": 31
         }
       ]
     },
@@ -14315,29 +14319,6 @@
         {
           "exam": 15,
           "number": 26
-        }
-      ]
-    },
-    {
-      "id": "e61401f798e1",
-      "stem": "Which of the following services falls under the responsibility of the customer to maintain operating system configuration, security patching, and networking? - A. Amazon RDS",
-      "options": {
-        "B": "Amazon EC2",
-        "C": "Amazon ElastiCache",
-        "D": "AWS Fargate"
-      },
-      "answer": [
-        "B"
-      ],
-      "multiSelect": false,
-      "sourceExplanation": "Explanation:\n- The customer is responsible for managing, support, patching and control of the guest operating system and AWS services provided like EC2.\nReference: <https://www.whizlabs.com/blog/aws-security-shared-responsibility/>",
-      "references": [
-        "https://www.whizlabs.com/blog/aws-security-shared-responsibility/"
-      ],
-      "occurrences": [
-        {
-          "exam": 15,
-          "number": 31
         }
       ]
     },
@@ -18622,9 +18603,10 @@
       ]
     },
     {
-      "id": "b6a20bf167f2",
-      "stem": "What is a user responsible for when running an application in the AWS Cloud? - A. Managing physical hardware",
+      "id": "f06869bae048",
+      "stem": "What is a user responsible for when running an application in the AWS Cloud?",
       "options": {
+        "A": "Managing physical hardware",
         "B": "Updating the underlying hypervisor",
         "C": "Providing a list of users approved for data center access",
         "D": "Managing application software updates"

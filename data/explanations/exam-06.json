@@ -142,7 +142,8 @@
         "C": "AWS Database Migration Service is scoped to migrating databases specifically, not general server/VM workloads.",
         "D": "AWS Application Discovery Service inventories and analyzes on-premises servers to help plan a migration; it does not perform the migration itself."
       }
-    }
+    },
+    "outdated": "AWS Server Migration Service has reached end of life; AWS Application Migration Service (MGN) is the current tool for bulk on-premises workload migration. Explanation kept consistent with the stored key."
   },
   "c37b9461dd83": {
     "taskStatement": "3.1",
@@ -157,7 +158,7 @@
     }
   },
   "9b2eea34feab": {
-    "taskStatement": "1.1",
+    "taskStatement": "3.1",
     "explanation": {
       "concept": "Hybrid = cloud resources connected to on-premises infrastructure",
       "correct": "A hybrid deployment model connects cloud-based resources with existing infrastructure that remains on-premises, letting an organization integrate both environments.",
@@ -178,7 +179,8 @@
         "C": "AWS Backup centralizes backup management, but restoring from a backup takes longer than failing over to a continuously replicated standby environment.",
         "D": "AWS Glue is an ETL service for preparing and cataloging data; it has no role in disaster recovery failover."
       }
-    }
+    },
+    "outdated": "CloudEndure Disaster Recovery has been superseded by AWS Elastic Disaster Recovery (AWS DRS), and CloudEndure Migration by AWS Application Migration Service (MGN). Explanation kept consistent with the stored key/options."
   },
   "3d40cc57483d": {
     "taskStatement": "3.6",
@@ -368,10 +370,11 @@
       "correct": "The AWS TCO (Total Cost of Ownership) Calculator is designed to compare the cost of running workloads on-premises against running them on AWS, which is exactly what a non-AWS customer evaluating a move would need.",
       "distractors": {
         "A": "AWS Cost Explorer analyzes actual historical AWS usage and cost — it requires existing AWS activity to work with, which a non-AWS customer doesn't have.",
-        "B": "AWS Pricing Calculator estimates the cost of AWS services you plan to use, but it isn't purpose-built for the on-premises-versus-AWS comparison the TCO Calculator provides.",
+        "B": "AWS Pricing Calculator estimates the cost of AWS services you plan to use. The dedicated on-premises-versus-AWS TCO comparison was historically a separate tool; that comparison capability has since been folded into Pricing Calculator, but at the time this question was written it named a distinct TCO Calculator.",
         "C": "AWS Budgets sets spending alerts and thresholds on an existing AWS account; it has no on-premises comparison function."
       }
-    }
+    },
+    "outdated": "The standalone AWS TCO Calculator has been retired; its on-premises-vs-AWS comparison functionality now lives inside AWS Pricing Calculator. Explanation kept consistent with the stored key."
   },
   "b6ab634592c0": {
     "taskStatement": "2.2",
@@ -395,7 +398,8 @@
         "C": "AWS Quick Starts are pre-built reference deployment templates and guides, not a Puppet-based configuration engine.",
         "D": "AWS CloudTrail logs API activity for auditing; it has no role in configuring EC2 instances."
       }
-    }
+    },
+    "outdated": "AWS OpsWorks (Chef Automate and Puppet Enterprise) has been announced for end of life. The Chef/Puppet association is historically accurate for the exam's intent, so the key is kept as-is."
   },
   "a25bf6883051": {
     "taskStatement": "3.1",

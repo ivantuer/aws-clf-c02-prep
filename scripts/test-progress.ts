@@ -1,5 +1,6 @@
 import { recordAttempt, MASTERY_STREAK } from '../src/store/progress';
 import type { ProgressState, Attempt } from '../src/data/types';
+import { unansweredFirst } from '../src/lib/session';
 
 const base: ProgressState = {
   version: 1,
@@ -54,6 +55,23 @@ d = recordAttempt(d, 'q2', at(true, 'drill'));
 check('non-consecutive drill corrects do not clear', d.questions['q2'].inRegistry === true);
 
 check('attempt history keeps every attempt incl. mocks', s.questions[q].attempts.length === 6);
+
+const mk = (id: string) => ({ id, occurrences: [{ exam: 1, number: 1 }] }) as never;
+const pool = [mk('a'), mk('b'), mk('c'), mk('d'), mk('e')];
+const seen: ProgressState = {
+  ...base,
+  questions: {
+    a: { attempts: [at(true, 'drill')], streak: 1, inRegistry: false },
+    c: { attempts: [at(false, 'mock')], streak: 0, inRegistry: true },
+  },
+};
+const ordered = unansweredFirst(pool, seen).map((item) => (item as { id: string }).id);
+check('unanswered questions come first', ordered.join('') === 'bdeac');
+check('no question is dropped or duplicated', ordered.length === 5 && new Set(ordered).size === 5);
+check('relative order is preserved within each group', ordered.slice(0, 3).join('') === 'bde');
+
+const noProgress = unansweredFirst(pool, base).map((item) => (item as { id: string }).id);
+check('all-unanswered pool keeps its order', noProgress.join('') === 'abcde');
 
 console.log(ok ? '\nALL PASS' : '\nFAILURES');
 process.exit(ok ? 0 : 1);

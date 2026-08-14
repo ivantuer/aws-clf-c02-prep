@@ -1,0 +1,524 @@
+{
+  "8fda65f149f4": {
+    "taskStatement": "1.4",
+    "secondaryTaskStatement": "4.2",
+    "explanation": {
+      "concept": "TCO Calculator compares AWS cost against on-premises cost",
+      "correct": "The AWS TCO Calculator is purpose-built to compare the total cost of running a workload on-premises versus on AWS, factoring in hardware, labor, facilities, and other cost elements — exactly what a cost-benefit migration analysis needs.",
+      "distractors": {
+        "A": "Cost Explorer visualizes and forecasts spend on an AWS account you already have; it has no on-premises comparison.",
+        "C": "The AWS Pricing Calculator (formerly Simple Monthly Calculator) estimates the cost of AWS resources only, not a comparison against existing infrastructure.",
+        "D": "Trusted Advisor gives best-practice recommendations on an existing AWS account; it doesn't model migration cost-benefit."
+      }
+    }
+  },
+  "21cc706aace8": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Consolidated billing shares Reserved Instance discounts across linked accounts",
+      "correct": "Linking accounts under consolidated billing pools usage, so unused Reserved Instance discounts purchased in one account can apply to matching instance usage in any linked account in the organization.",
+      "distractors": {
+        "A": "Cost Explorer analyzes and visualizes spend; it doesn't share or transfer RI billing benefits between accounts.",
+        "C": "The RI Utilization Report shows how well existing reservations are being used — a reporting tool, not a mechanism for sharing benefits.",
+        "D": "An EC2 Instance Usage Report tracks usage and cost, but doesn't itself pool or share RI discounts across accounts."
+      }
+    }
+  },
+  "3a6ab91a3968": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "AWS Organizations enables consolidated billing across accounts",
+      "correct": "AWS Organizations lets a company group multiple AWS accounts under one management account and turn on consolidated billing, producing a single invoice and pooling volume discounts.",
+      "distractors": {
+        "A": "Cost and Usage Reports export detailed line-item billing data; they don't consolidate multiple accounts into one bill.",
+        "C": "Cost Explorer visualizes and forecasts spend but doesn't merge multiple accounts' billing.",
+        "D": "Budgets sends alerts when spend or usage crosses a threshold; it has nothing to do with consolidating accounts."
+      }
+    }
+  },
+  "5dab35ae160e": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "CloudFront caches content at edge locations near end users",
+      "correct": "Amazon CloudFront is AWS's CDN — it caches application data at edge locations around the world so users far from the origin Region get low-latency responses from a nearby cache instead of the origin.",
+      "distractors": {
+        "B": "Direct Connect is a dedicated private network link between a specific on-premises site and AWS; it doesn't reduce latency for globally distributed end users.",
+        "C": "Route 53 resolves DNS and can route to the nearest endpoint, but it doesn't cache or serve the application data itself.",
+        "D": "S3 Transfer Acceleration speeds up uploads into an S3 bucket over CloudFront's edge network; it isn't for serving data out to end users."
+      }
+    }
+  },
+  "a4fa9dd195ba": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "Cloud trades capex for opex",
+      "correct": "Moving fully to the cloud eliminates upfront capital investment in hardware and data centers, replacing it with pay-as-you-go operational spend — a core benefit of cloud computing.",
+      "distractors": {
+        "A": "On-premises deployment requires buying and maintaining physical hardware, which is capital expense by definition.",
+        "B": "Hybrid deployment still keeps some on-premises infrastructure, so capital expense isn't fully eliminated.",
+        "D": "Platform as a service is a service model, not a deployment model, and doesn't by itself describe a capex-to-opex trade."
+      }
+    }
+  },
+  "d2b1374c5b15": {
+    "taskStatement": "1.1",
+    "needsReview": "The commonly cited official answer for this practice question is D — users can gather asset metadata reliably via a few API calls (e.g. describing EC2 instances) versus manual audits in a physical data center. AWS does not perform infrastructure discovery scans on a customer's behalf as a stated asset-management feature, so the stored key (B) looks off; explanation below is written to match the stored key as instructed.",
+      "explanation": {
+      "concept": "Asset visibility on AWS vs. a physical data center",
+      "correct": "As stored, the key credits AWS with performing infrastructure discovery scans on the customer's behalf, contrasting with the manual physical audits required in a traditional data center.",
+      "distractors": {
+        "A": "AWS does not provide a Configuration Management Database for customers to maintain; that's a customer-built or third-party tool, not an AWS asset-management feature.",
+        "C": "EC2 doesn't automatically generate and deliver an asset report to an S3 bucket as a built-in feature.",
+        "D": "Gathering asset metadata via API calls is a real AWS capability, but it isn't the option the stored key selects here."
+      }
+    }
+  },
+  "100aa420841b": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Cross-Region read replicas for global redundancy",
+      "correct": "Amazon RDS cross-Region read replicas maintain an asynchronously replicated copy of the database in a different Region, giving global redundancy and a fast-to-promote disaster-recovery target.",
+      "distractors": {
+        "A": "Snapshots are point-in-time backups; restoring one takes time and doesn't provide standing redundancy in another Region.",
+        "B": "Automatic patching and updating keeps the engine current; it has nothing to do with geographic redundancy.",
+        "D": "Provisioned IOPS is a storage performance option for a single instance, not a redundancy mechanism."
+      }
+    }
+  },
+  "c673326dfb1a": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Least privilege access",
+      "correct": "Least privilege access means granting only the permissions required to perform a specific task, nothing more — the core IAM security best practice for minimizing risk.",
+      "distractors": {
+        "A": "\"Restricted access\" isn't the formal AWS term for this concept and doesn't capture the task-specific scoping least privilege implies.",
+        "B": "\"As-needed access\" isn't the AWS-defined term for this security principle.",
+        "D": "\"Token access\" describes a credential mechanism, not the concept of scoping permissions to what's needed."
+      }
+    }
+  },
+  "553741bcdcbc": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Cost allocation needs a way to attribute spend to an owner",
+      "correct": "Creating a separate account per department (B) gives each department its own bill, and tagging instances with a department value (D) lets Cost Explorer and Cost and Usage Reports break down spend by tag — both are standard cost-allocation techniques.",
+      "distractors": {
+        "A": "MFA is an account-security control; it has no bearing on identifying which department incurred a cost.",
+        "C": "Reserved Instances reduce the cost of compute; they don't attribute spend to a department.",
+        "E": "Paying by purchase order is a payment/procurement method, not a mechanism for breaking down cost by department."
+      }
+    }
+  },
+  "960613ed812c": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Security \"in\" the cloud is the customer's job",
+      "correct": "Configuring the guest operating system, network settings, and firewall (security groups) on resources like EC2 is squarely the customer's responsibility under the shared responsibility model.",
+      "distractors": {
+        "A": "Securing the physical hardware, facilities, and network infrastructure is AWS's responsibility — security \"of\" the cloud.",
+        "B": "Providing compliance certificates and reports to customers under NDA is something AWS does, not the customer.",
+        "D": "Obtaining industry certifications and third-party attestations is AWS's job, demonstrating security of its infrastructure."
+      }
+    }
+  },
+  "2a12a38843cf": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "Trusted Advisor gives real-time best-practice guidance",
+      "correct": "AWS Trusted Advisor inspects an account and provides real-time recommendations across cost optimization, performance, security, fault tolerance, and service limits, including security best-practice checks.",
+      "distractors": {
+        "A": "X-Ray traces requests through distributed applications for debugging performance issues; it doesn't give security best-practice guidance.",
+        "C": "CloudWatch collects metrics, logs, and alarms on resource performance; it doesn't provide prescriptive security recommendations.",
+        "D": "Systems Manager is an operational management tool (patching, automation, run commands); it doesn't proactively flag security best-practice gaps account-wide."
+      }
+    }
+  },
+  "896448e2a97f": {
+    "taskStatement": "3.3",
+    "secondaryTaskStatement": "1.2",
+    "explanation": {
+      "concept": "Auto Scaling adds elasticity to EC2 capacity",
+      "correct": "Amazon EC2 Auto Scaling automatically adds or removes instances based on demand, giving the fleet elasticity so it can grow during spikes and shrink to save cost during lulls.",
+      "distractors": {
+        "A": "Resource groups are an organizational feature for viewing and managing related resources together; they don't change capacity.",
+        "B": "Lifecycle policies (e.g. for AMIs or S3 objects) automate retention and transitions, not compute capacity in response to demand.",
+        "C": "An Application Load Balancer distributes incoming traffic across existing targets; it doesn't add or remove instances itself."
+      }
+    }
+  },
+  "9daad61d447d": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "Customer owns encryption and network/firewall configuration",
+      "correct": "Encryption management (C) — choosing what and how to encrypt — and firewall management (E) — configuring security groups and NACLs — are both customer responsibilities \"in\" the cloud.",
+      "distractors": {
+        "A": "Virtualization management is AWS's job as part of securing the underlying infrastructure, not a customer responsibility.",
+        "B": "Hardware management is AWS's responsibility — the physical servers and host infrastructure.",
+        "D": "Facilities management (data center physical security, power, cooling) is entirely AWS's responsibility."
+      }
+    }
+  },
+  "2e0f61977644": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Storage Gateway bridges on-premises apps to AWS storage",
+      "correct": "AWS Storage Gateway presents AWS Cloud storage to on-premises applications through standard protocols like NFS, SMB, and iSCSI, so existing apps can use S3 or EBS-backed storage without changes.",
+      "distractors": {
+        "A": "Direct Connect provides a private network link to AWS; it's a connectivity service, not a storage protocol gateway.",
+        "B": "Snowball is a physical device for one-time bulk data transfer, not an ongoing standard-protocol storage bridge.",
+        "D": "Snowball Edge adds local compute/storage to a Snowball device for offline processing, not continuous protocol-based access from on-premises apps."
+      }
+    }
+  },
+  "1f8653a6193c": {
+    "taskStatement": "2.1",
+    "explanation": {
+      "concept": "AWS patches the infrastructure layer, not the guest OS",
+      "correct": "Updating the firmware on the underlying EC2 host hardware is part of AWS's security \"of\" the cloud responsibility — the physical and virtualization layer customers never touch.",
+      "distractors": {
+        "A": "Updating network ACLs is a customer configuration task within their VPC.",
+        "B": "Patching the guest operating system running inside an EC2 instance is the customer's job, not AWS's.",
+        "D": "Updating security group rules is a customer-managed firewall configuration, not an AWS responsibility."
+      }
+    }
+  },
+  "33028d8dee31": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Multi-AZ RDS embodies \"design for failure\"",
+      "correct": "Deploying an RDS instance across multiple Availability Zones maintains a synchronously replicated standby in a separate AZ, so the workload can survive an AZ-level failure — the design-for-failure principle in action.",
+      "distractors": {
+        "A": "Loose coupling is about decoupling application components (e.g. via queues), not about redundant copies of a database.",
+        "C": "Automating everything that can be automated is about operational tooling and IaC, not the specific reason for Multi-AZ.",
+        "D": "\"Use services, not servers\" is about preferring managed services generally; it doesn't explain the redundancy Multi-AZ provides."
+      }
+    }
+  },
+  "7b1156bcec77": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Least privilege = only the permissions the task requires",
+      "correct": "Granting least privilege means scoping IAM permissions to exactly what's needed to perform a given task — no more, no less.",
+      "distractors": {
+        "A": "Least privilege applies to any principal (user, group, or role), not only single users.",
+        "B": "IAM policies are the mechanism used to grant permissions, but the concept isn't defined by which tool implements it.",
+        "C": "Granting broad AdministratorAccess to trusted users is the opposite of least privilege."
+      }
+    }
+  },
+  "f48b7683b6ea": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Loose coupling isolates failures",
+      "correct": "Loose coupling means components interact through well-defined interfaces (like queues or APIs) without depending on each other's internal state, so a failure in one component doesn't cascade into the others.",
+      "distractors": {
+        "A": "Loose coupling is about resilience and independence between components, not specifically about minimizing request latency.",
+        "B": "Loose coupling reduces dependencies between workflows; it doesn't create dependent workflows — that's closer to tight coupling.",
+        "D": "This describes the opposite of a cloud principle — loose coupling is unrelated to physical data center operations."
+      }
+    }
+  },
+  "165a911bb362": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "Direct Connect provides private, dedicated hybrid connectivity",
+      "correct": "AWS Direct Connect establishes a dedicated network connection from an on-premises site to AWS, bypassing the public internet for more consistent, private connectivity — exactly what hybrid architecture needs.",
+      "distractors": {
+        "A": "A NAT Gateway lets resources in a private subnet reach the internet; it doesn't connect an on-premises network to AWS.",
+        "C": "S3 Transfer Acceleration speeds up uploads to S3 over the public internet via CloudFront edges; it isn't a private hybrid link.",
+        "D": "AWS WAF filters malicious web traffic at the application layer; it has nothing to do with hybrid connectivity."
+      }
+    }
+  },
+  "3ad7e001e249": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "MFA and strong passwords harden account logon",
+      "correct": "Enabling Multi-Factor Authentication (B) and enforcing a strong password policy (D) are the standard controls for hardening how users authenticate to an AWS account.",
+      "distractors": {
+        "A": "AWS Certificate Manager issues and manages TLS/SSL certificates; it doesn't affect how users log in to the account.",
+        "C": "Amazon Cognito manages sign-in for your own applications' end users, not access to the AWS account itself.",
+        "E": "AWS Organizations centrally manages multiple accounts; it doesn't directly strengthen an individual logon's security."
+      }
+    }
+  },
+  "b094cd98c95a": {
+    "taskStatement": "2.3",
+    "explanation": {
+      "concept": "Organizations centralizes access management across accounts",
+      "correct": "AWS Organizations, combined with service control policies, lets a company centrally manage access and guardrails across all accounts in the organization from one place.",
+      "distractors": {
+        "A": "Service Catalog offers a curated self-service catalog of approved IT products; it doesn't centrally manage access.",
+        "B": "Config tracks resource configuration and compliance over time; it isn't an access-management service.",
+        "C": "Trusted Advisor gives best-practice recommendations; it doesn't centrally manage cross-account access."
+      }
+    }
+  },
+  "a667ef7f48c0": {
+    "taskStatement": "4.2",
+    "explanation": {
+      "concept": "Budgets alerts on a spend threshold",
+      "correct": "AWS Budgets lets a customer set a custom cost or usage threshold and sends a notification when actual or forecasted spend approaches or exceeds that dollar amount.",
+      "distractors": {
+        "A": "Cost and Usage Reports export detailed billing data for analysis; they don't send threshold-based alerts.",
+        "C": "Cost Explorer visualizes historical and forecasted spend but doesn't proactively alert on a threshold you set.",
+        "D": "Trusted Advisor flags some cost-optimization opportunities, but it isn't a custom dollar-threshold alerting tool."
+      }
+    }
+  },
+  "55101deddce4": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "TAM is an Enterprise Support feature",
+      "correct": "A designated Technical Account Manager is included starting with the Enterprise Support plan, providing proactive, ongoing operational guidance.",
+      "distractors": {
+        "B": "Business Support gives 24/7 access to Cloud Support Engineers but no designated TAM.",
+        "C": "Developer Support offers business-hours email access to support, well below the level that includes a TAM.",
+        "D": "Basic Support is free and self-service only, with no dedicated technical contact."
+      }
+    }
+  },
+  "892320099610": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Reliability pillar: recover automatically from failure",
+      "correct": "One of the Well-Architected Framework's Reliability design principles is the ability to automatically recover from failure, detecting and responding to issues before they cause a customer-facing impact.",
+      "distractors": {
+        "A": "Deploying to a single Availability Zone is a single point of failure — the opposite of a reliability best practice.",
+        "C": "Designing for cost optimization is a separate Well-Architected pillar, not part of the Reliability pillar.",
+        "D": "Performing operations as code is an Operational Excellence pillar principle, not specifically a Reliability one."
+      }
+    }
+  },
+  "a97012c5b5b5": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "Elastic capacity removes the need to guess",
+      "correct": "In the cloud, capacity scales up or down with actual demand, so users don't have to forecast and provision for peak load years in advance the way they would on-premises.",
+      "distractors": {
+        "B": "The cloud is valuable partly because it lets users move away from existing hardware contracts, not rely on them.",
+        "C": "Cloud costs vary with usage rather than being fixed regardless of traffic — the opposite of this claim.",
+        "D": "AWS doesn't let customers avoid audits; compliance obligations still apply, AWS just provides supporting documentation via Artifact."
+      }
+    }
+  },
+  "fb49260eaa58": {
+    "taskStatement": "1.2",
+    "explanation": {
+      "concept": "Design for failure is a core cloud architecture principle",
+      "correct": "Cloud applications should be designed assuming any component can fail, building in redundancy and automated recovery rather than assuming perfect uptime.",
+      "distractors": {
+        "A": "Storing data and backups in the same Region undermines durability — backups should live in a separate Region for disaster recovery.",
+        "B": "Tightly coupled components are an anti-pattern; a failure in one can cascade through the whole system.",
+        "C": "Avoiding multi-threading isn't a cloud architecture principle and is unrelated to resilience."
+      }
+    }
+  },
+  "c793d0c00baa": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "Infrequent, short-duration workloads suit On-Demand pricing",
+      "correct": "A workload that runs uninterrupted for only 24 hours once a year doesn't justify a 1- or 3-year Reserved Instance commitment; On-Demand pricing charges only for the hours actually used, making it the most cost-efficient choice here.",
+      "distractors": {
+        "B": "Reserved Instances require a long-term commitment; paying for a full year to use an instance for one day would be wasteful.",
+        "C": "Spot Instances can be interrupted by AWS at any time, which conflicts with the requirement for an uninterruptible workload.",
+        "D": "Dedicated Instances add a premium for physical server isolation and don't address the infrequent, short-duration usage pattern."
+      }
+    }
+  },
+  "f735003a7782": {
+    "taskStatement": "3.4",
+    "explanation": {
+      "concept": "Aurora is MySQL-compatible with auto-scaling storage",
+      "correct": "Amazon Aurora is a MySQL- and PostgreSQL-compatible managed database whose storage automatically grows in increments as data is added, up to a very large maximum, without manual provisioning.",
+      "distractors": {
+        "A": "EC2 is raw compute; running a database on it means manually installing, managing, and scaling everything yourself.",
+        "B": "RDS for MySQL runs actual MySQL (not described as \"compatible\") and its storage must be provisioned and managed, unlike Aurora's automatic storage growth.",
+        "C": "Lightsail is a simplified VPS platform for small workloads, not a managed relational database service with auto-scaling storage."
+      }
+    }
+  },
+  "a2c26d7a36f9": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "VPC Peering connects two VPCs directly",
+      "correct": "VPC Peering establishes a private network connection between two VPCs, allowing resources in each to communicate as if they were on the same network.",
+      "distractors": {
+        "A": "VPC endpoints provide private connectivity from a VPC to supported AWS services, not to another VPC.",
+        "B": "EC2-Classic was a legacy platform, and ClassicLink connected EC2-Classic instances to a VPC — unrelated to connecting two VPCs.",
+        "D": "Direct Connect is a dedicated link between an on-premises network and AWS, not a way to connect two VPCs to each other."
+      }
+    }
+  },
+  "f78e3bd9c813": {
+    "taskStatement": "1.4",
+    "secondaryTaskStatement": "4.2",
+    "explanation": {
+      "concept": "TCO Calculator compares on-premises cost to AWS cost",
+      "correct": "The AWS TCO Calculator is designed specifically to compare the total cost of an on-premises workload against the equivalent workload running on AWS.",
+      "distractors": {
+        "A": "The Pricing Calculator (formerly Simple Monthly Calculator) estimates AWS-only costs; it doesn't model an on-premises comparison.",
+        "C": "The Billing and Cost Management console reports actual incurred AWS charges, not a pre-migration on-premises-versus-AWS comparison.",
+        "D": "Cost Explorer analyzes trends in existing AWS spend; it has no on-premises cost input."
+      }
+    }
+  },
+  "522638eb7f1e": {
+    "taskStatement": "3.6",
+    "explanation": {
+      "concept": "Snowmobile moves exabyte-scale data",
+      "correct": "AWS Snowmobile is a truck-mounted, secure data transport service purpose-built for moving exabyte-scale datasets into AWS, far beyond what Snowball devices handle.",
+      "distractors": {
+        "A": "AWS Batch runs batch computing jobs; it isn't a data transport service.",
+        "B": "Snowball moves petabyte-scale data via ruggedized devices, an order of magnitude below exabyte scale.",
+        "C": "Migration Hub tracks the progress of application migrations; it doesn't physically move data itself."
+      }
+    }
+  },
+  "4d6e8e7796b0": {
+    "taskStatement": "4.1",
+    "explanation": {
+      "concept": "AWS pricing is pay-as-you-go with variable cost",
+      "correct": "AWS pricing is fundamentally pay-as-you-go (B) — you pay only for what you consume — which makes the total bill a variable cost (E) that scales with actual usage rather than being fixed.",
+      "distractors": {
+        "A": "AWS's core pricing model isn't fixed-term; usage-based pricing is the default (RIs/Savings Plans are optional exceptions).",
+        "C": "Colocation is a physical data center hosting arrangement, not a cloud pricing model.",
+        "D": "\"Planned\" isn't an AWS pricing concept; costs follow actual usage, not a pre-set plan."
+      }
+    }
+  },
+  "25c4b0f72c67": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "ELB offers Classic and Application Load Balancer types (among others)",
+      "correct": "Elastic Load Balancing includes Classic Load Balancers (C), the original ELB type, and Application Load Balancers (E), which route HTTP/HTTPS traffic at Layer 7 — both are real ELB load balancer types.",
+      "distractors": {
+        "A": "\"Public load balancers with Application Auto Scaling capabilities\" isn't a real ELB load balancer type.",
+        "B": "F5 Big-IP and Citrix NetScaler are third-party appliances, not AWS Elastic Load Balancing types.",
+        "D": "\"Cross-zone load balancers with public and private IPs\" isn't a named ELB type — cross-zone balancing is a configurable feature, not a load balancer type."
+      }
+    }
+  },
+  "ad54d9c2acfb": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "No long-term contracts, pay only for what you use",
+      "correct": "AWS's pay-as-you-go model means no long-term contracts are required to get started, letting a company pay only for the resources it actually consumes.",
+      "distractors": {
+        "A": "AWS abstracts away the underlying hardware; customers get less low-level physical control than in their own data center, not more.",
+        "C": "AWS has a large global edge network, but it doesn't have a point of presence in literally every country.",
+        "D": "AWS enforces account-level service quotas (which can be raised), so there's no claim of unlimited resource creation."
+      }
+    }
+  },
+  "18cb7b4cbf7a": {
+    "taskStatement": "3.5",
+    "explanation": {
+      "concept": "CloudFront edge caching minimizes latency globally",
+      "correct": "Amazon CloudFront caches frequently accessed content at edge locations close to users worldwide, so requests are served from a nearby cache rather than traveling back to the origin Region — the fastest option for globally distributed users.",
+      "distractors": {
+        "A": "CloudTrail logs API activity for auditing; it doesn't serve or accelerate content delivery.",
+        "C": "CloudFormation deploys infrastructure as code across Regions; it doesn't cache or serve application data to end users.",
+        "D": "A virtual private gateway over Direct Connect provides a private link for one on-premises network, not fast delivery to end users spread across multiple Regions."
+      }
+    }
+  },
+  "fbae71412e0e": {
+    "taskStatement": "2.2",
+    "explanation": {
+      "concept": "AWS Artifact is the self-service compliance document portal",
+      "correct": "AWS Artifact provides on-demand, self-service access to AWS's compliance reports, certifications, and agreements (like SOC reports and ISO certifications) whenever a customer needs them for audits.",
+      "distractors": {
+        "A": "AWS Config tracks a customer's own resource configuration and compliance against defined rules; it isn't a portal for AWS's compliance documents.",
+        "B": "AWS Certificate Manager issues and manages TLS/SSL certificates, unrelated to compliance reporting.",
+        "C": "Amazon Inspector automatically scans workloads for vulnerabilities; it doesn't distribute AWS's own compliance attestations."
+      }
+    }
+  },
+  "505f6470098f": {
+    "taskStatement": "3.3",
+    "secondaryTaskStatement": "3.4",
+    "explanation": {
+      "concept": "EC2 gives full control to install and run your own database",
+      "correct": "Amazon EC2 provides raw virtual machines where a customer can install, configure, and fully manage their own database engine, which is what \"self-managed\" requires.",
+      "distractors": {
+        "A": "Route 53 is a DNS service; it has no role in hosting a database engine.",
+        "B": "X-Ray traces requests through an application for debugging and performance analysis; it isn't a hosting service.",
+        "C": "Snowmobile is a bulk physical data transport service, not a place to run a database."
+      }
+    }
+  },
+  "9bf4c0718f5d": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "TAM is exclusive to Enterprise Support",
+      "correct": "A dedicated Technical Account Manager, who provides proactive architectural and operational guidance, is a benefit unique to the Enterprise Support plan.",
+      "distractors": {
+        "A": "\"Technical Project Manager\" isn't an AWS Support role.",
+        "C": "Access to Cloud Support Engineers is available on multiple support plans, not exclusive to Enterprise.",
+        "D": "\"Solutions Architect\" isn't the named exclusive Enterprise Support benefit — that role is the Technical Account Manager."
+      }
+    }
+  },
+  "8b64546f3d3c": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "On-demand resources absorb peak usage without over-provisioning",
+      "correct": "AWS lets a growing start-up provision compute resources on demand for peak usage and release them afterward, avoiding the cost of permanently over-provisioned hardware sized for the busiest moment.",
+      "distractors": {
+        "B": "Automating developer environment provisioning is a convenience, not the primary mechanism by which AWS reduces compute costs.",
+        "C": "Automating customer relationship management is unrelated to computing costs.",
+        "D": "A fixed monthly computing budget is the opposite of AWS's elastic, usage-based cost model."
+      }
+    }
+  },
+  "90210e49f4ce": {
+    "taskStatement": "1.1",
+    "explanation": {
+      "concept": "Agility enables fast iteration on changing requirements",
+      "correct": "Agility is the cloud characteristic that lets teams quickly provision resources, experiment, and adjust course as requirements evolve — exactly what a fast-moving start-up needs.",
+      "distractors": {
+        "A": "Elasticity is about automatically scaling capacity with demand, not about the speed of adapting a product's requirements.",
+        "B": "Reliability is about consistent, correct performance of a workload, not about how quickly a team can pivot.",
+        "C": "Performance describes how well a workload runs, not the ability to adjust direction quickly."
+      }
+    }
+  },
+  "a3f9ee77eb4f": {
+    "taskStatement": "4.3",
+    "explanation": {
+      "concept": "Full Trusted Advisor checks require Business or Enterprise Support",
+      "correct": "The full set of Trusted Advisor checks (across cost, performance, security, fault tolerance, and service limits) is available on both Business and Enterprise Support plans.",
+      "distractors": {
+        "A": "Developer Support doesn't include the full Trusted Advisor check set, only the core checks available at every tier.",
+        "B": "Basic Support only gets the core/security checks, not the full set.",
+        "C": "Developer Support again lacks the full check set that Business and Enterprise provide."
+      }
+    }
+  },
+  "2e0c3c0ebe5a": {
+    "taskStatement": "2.4",
+    "explanation": {
+      "concept": "WAF and CloudFront contribute to DDoS mitigation",
+      "correct": "AWS WAF (A) filters malicious layer-7 traffic and Amazon CloudFront (D) absorbs and disperses volumetric traffic at edge locations; both work alongside AWS Shield as part of AWS's DDoS mitigation story.",
+      "distractors": {
+        "B": "DynamoDB is a managed NoSQL database with no DDoS mitigation features of its own.",
+        "C": "EC2 is a compute service; it doesn't provide built-in DDoS mitigation beyond baseline AWS network protections.",
+        "E": "Amazon Inspector scans for software vulnerabilities; it doesn't mitigate DDoS traffic."
+      }
+    }
+  },
+  "6ad1d2227891": {
+    "taskStatement": "1.4",
+    "secondaryTaskStatement": "4.2",
+    "explanation": {
+      "concept": "TCO on AWS counts usage-based costs, not infrastructure ownership costs",
+      "correct": "For workloads running on AWS, a TCO model considers compute (A), storage (C), and data transfer (D) costs — the usage-based costs AWS actually bills for.",
+      "distractors": {
+        "B": "Facilities costs are what you pay for a physical data center; running on AWS avoids that cost entirely.",
+        "E": "Network infrastructure costs (routers, switches, cabling) are an on-premises expense the cloud eliminates.",
+        "F": "Hardware lifecycle costs (purchase, refresh, disposal) apply to owned equipment, not to AWS-managed infrastructure."
+      }
+    }
+  }
+}

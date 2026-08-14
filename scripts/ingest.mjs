@@ -27,6 +27,17 @@ function normalise(text) {
     .join(' ');
 }
 
+function splitInlineOptions(text) {
+  const parts = text.split(/\s+-\s+(?=[A-Z]\.\s)/);
+  const stem = parts.shift();
+  const options = {};
+  for (const part of parts) {
+    const match = /^([A-Z])\.\s+(.*)$/.exec(part.trim());
+    if (match) options[match[1]] = match[2].trim().replace(/\.$/, '');
+  }
+  return { stem, options };
+}
+
 function hashStem(stem) {
   return createHash('md5').update(normalise(stem)).digest('hex').slice(0, 12);
 }
@@ -42,8 +53,9 @@ function parseExam(text, examNumber) {
     const block = lines.slice(start, starts[index + 1] ?? lines.length);
     const [, number, firstLine] = QUESTION_START.exec(block[0]);
 
-    const options = {};
-    let stem = firstLine;
+    const inline = splitInlineOptions(firstLine);
+    const options = { ...inline.options };
+    let stem = inline.stem;
     let answer = null;
     let sourceExplanation = [];
     let insideDetails = false;

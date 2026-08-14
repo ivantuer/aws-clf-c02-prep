@@ -61,6 +61,16 @@ export function selectDrill(
   return filters.limit ? pool.slice(0, filters.limit) : pool;
 }
 
+export function unansweredFirst(questions: Question[], state: ProgressState): Question[] {
+  const unanswered: Question[] = [];
+  const answered: Question[] = [];
+  for (const question of questions) {
+    if (state.questions[question.id]?.attempts.length) answered.push(question);
+    else unanswered.push(question);
+  }
+  return [...unanswered, ...answered];
+}
+
 export function optionOrder(question: Question, shuffled: boolean, seed: number): string[] {
   const letters = Object.keys(question.options).sort();
   return shuffled ? shuffle(letters, seed) : letters;
